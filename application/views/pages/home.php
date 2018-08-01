@@ -1,11 +1,11 @@
 <div id="home-page">
 
-    <div id="home-banner" class="parallax-bg">
+    <div id="home-banner" class="default-parallax">
 
         <div class="container-fluid">
             <div id="banner" class="row">
 
-                <div class="col-md-12">
+                <div class="col-md-12 centered-content">
                     <h1 class="entry-title border-lr">Lorem ipsum dolor sit amet</h1>
                     <p class="entry-desc">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br/>
@@ -19,120 +19,12 @@
 
     </div><!-- #home-banner -->
 
-    <div class="client-quote">
-        
-        <div class="container">
-            <div class="row">
-            
-                <div class="col-md-6">
-                    <div class="quotes">
-                        <i class="fa fa-user"></i>
-                        <blockquote>
-                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti similique quibusdam
-                            dignissimos deserunt ducimus harum quos! Vero voluptatem repudiandae sit facere impedit doloribus,
-                            aliquid labore accusantium quibusdam amet nihil inventore neque reiciendis libero."
-                        </blockquote>
-                        <h3 class="client-name">Name/Company <span>Position/Info</span></h3>
-                    </div><!-- .quotes -->
-                </div><!-- .col-md-6 -->
-
-                <div class="col-md-6">
-                    <div class="quotes">
-                        <i class="fa fa-user"></i>
-                        <blockquote>
-                            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti similique quibusdam
-                            dignissimos deserunt ducimus harum quos! Vero voluptatem repudiandae sit facere impedit doloribus,
-                            aliquid labore accusantium quibusdam amet nihil inventore neque reiciendis libero."
-                        </blockquote>
-                        <h3 class="client-name">Name/Company <span>Position/Info</span></h3>
-                    </div><!-- .quotes -->
-                </div><!-- .col-md-6 -->
-
-            </div><!-- .row -->
-
-            <div id="achievements" class="row">
-
-                <div class="col-md-2">
-                    <i class="fa fa-trophy"></i>
-                    <h4 class="achievement-title">Title</h4>
-                    <p class="event">Event</p>
-                </div><!-- .col-md-2 -->
-
-                <div class="col-md-2">
-                    <i class="fa fa-trophy"></i>
-                    <h4 class="achievement-title">Title</h4>
-                    <p class="event">Event</p>
-                </div><!-- .col-md-2 -->
-
-                <div class="col-md-2">
-                    <i class="fa fa-trophy"></i>
-                    <h4 class="achievement-title">Title</h4>
-                    <p class="event">Event</p>
-                </div><!-- .col-md-2 -->
-
-                <div class="col-md-2">
-                    <i class="fa fa-trophy"></i>
-                    <h4 class="achievement-title">Title</h4>
-                    <p class="event">Event</p>
-                </div><!-- .col-md-2 -->
-
-                <div class="col-md-2">
-                    <i class="fa fa-trophy"></i>
-                    <h4 class="achievement-title">Title</h4>
-                    <p class="event">Event</p>
-                </div><!-- .col-md-2 -->
-
-                <div class="col-md-2">
-                    <i class="fa fa-trophy"></i>
-                    <h4 class="achievement-title">Title</h4>
-                    <p class="event">Event</p>
-                </div><!-- .col-md-2 -->
-
-            </div><!-- .row -->
-        </div><!-- .container -->
-
-    </div><!-- .client-quote -->
-
-    <div class="client-quote parallax-bg">
-        
-        <div class="container">
-            <div class="row">
-            
-                <div class="col-md-6">
-                    <div class="quotes">
-                        <i class="fa fa-user"></i>
-                        <blockquote>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti similique quibusdam
-                            dignissimos deserunt ducimus harum quos! Vero voluptatem repudiandae sit facere impedit doloribus,
-                            aliquid labore accusantium quibusdam amet nihil inventore neque reiciendis libero.
-                        </blockquote>
-                        <h3 class="client-name">Name/Company Name<span>Position/Info</span></h3>
-                    </div><!-- .quotes -->
-                </div><!-- .col-md-6 -->
-
-                <div class="col-md-6">
-                    <div class="quotes">
-                        <i class="fa fa-user"></i>
-                        <blockquote>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti similique quibusdam
-                            dignissimos deserunt ducimus harum quos! Vero voluptatem repudiandae sit facere impedit doloribus,
-                            aliquid labore accusantium quibusdam amet nihil inventore neque reiciendis libero.
-                        </blockquote>
-                        <h3 class="client-name">Name/Company Name<span>Position/Info</span></h3>
-                    </div><!-- .quotes -->
-                </div><!-- .col-md-6 -->
-
-            </div><!-- .row -->
-        </div><!-- .container -->
-
-    </div><!-- .client-quote -->
-
     <div id="tasting-experience">
 
         <div class="container-fluid">
             <div class="row">
             
-                <div class="col-md-12">
+                <div class="col-md-12 centered-content">
                 
                     <h2 class="entry-title border-lr">The Tasting Experience</h2>
 
@@ -173,52 +65,52 @@
 
     </div><!-- #tasting-experience -->
 
-    <div class="parallax-bg">
+    <div class="parallax-1">
 
-    </div><!-- .parallax-bg -->
+    </div><!-- .parallax-1 -->
 
-    <div id="trademark-service">
+    <div id="trademark-services">
         
         <div class="container-fluid">
             <div class="row">
             
-                <div class="col-md-12">
+                <div class="col-md-12 centered-content">
                 
-                    <h2 class="entry-title border-lr">The Tasting Experience</h2>
+                    <h2 class="entry-title border-lr">Our Services</h2>
 
                     <div class="container">
                     
-                        <div class="row tasting-food">
+                        <div class="row our-services">
 
                             <div class="col-md-3">
-                                <a href="#">
+                                <a href="#" class="service">
                                     <img src="<?php echo base_url(); ?>/assets/images/services_image_1.jpg" alt="">
                                     <h3>Services 1</h3>
                                 </a>
                             </div><!-- .col-md-3 -->
 
                             <div class="col-md-3">
-                                <a href="#">
+                                <a href="#" class="service">
                                     <img src="<?php echo base_url(); ?>/assets/images/services_image_2.jpg" alt="">
                                     <h3>Services 2</h3>
                                 </a>
                             </div><!-- .col-md-3 -->
 
                             <div class="col-md-3">
-                                <a href="#">
+                                <a href="#" class="service">
                                     <img src="<?php echo base_url(); ?>/assets/images/services_image_3.jpg" alt="">
                                     <h3>Services 3</h3>
                                 </a>
                             </div><!-- .col-md-3 -->
 
                             <div class="col-md-3">
-                                <a href="#">
+                                <a href="#" class="service">
                                     <img src="<?php echo base_url(); ?>/assets/images/services_image_4.jpg" alt="">
                                     <h3>Services 4</h3>
                                 </a>
                             </div><!-- .col-md-3 -->
 
-                        </div><!-- .tasting-food -->
+                        </div><!-- .our-services -->
 
                     </div>
 
@@ -236,21 +128,21 @@
 
     </div><!-- #trademark-service -->
 
-    <div class="parallax-bg">
+    <div class="parallax-2">
         
-    </div><!-- .parallax-bg -->
+    </div><!-- .parallax-2 -->
 
     <div id="our-story">
 
         <div class="container-fluid">
             <div class="row">
             
-                <div class="col-md-12">
+                <div class="col-md-12 centered-content">
                 
-                    <h2 class="entry-title border-lr">The Tasting Experience</h2>
+                    <h2 class="entry-title border-lr">About Us</h2>
 
                     <div class="container">
-                        <div class="row tasting-food">
+                        <div class="row about-us">
 
                             <div class="col-md-4">
                                 <i class="fa fa-user"></i>
@@ -262,7 +154,7 @@
                                 <i class="fa fa-user"></i>
                             </div><!-- .col-md-4 -->
 
-                        </div><!-- .tasting-food -->
+                        </div><!-- .about-us -->
                     </div><!-- .container -->
 
                     <p class="entry-desc">
@@ -278,5 +170,9 @@
         </div><!-- .container-fluid -->
 
     </div><!-- #our-story -->
+
+    <div class="parallax-3">
+        
+    </div><!-- .parallax-3 -->
 
 </div><!-- #home-page -->
