@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array();
+$autoload['libraries'] = array('database', 'form_validation');
 
 /*
 | -------------------------------------------------------------------
@@ -126,10 +126,10 @@ $autoload['language'] = array();
 | Prototype:
 |
 |	$autoload['model'] = array('first_model', 'second_model');
-|
+|'
 | You can also supply an alternative model name to be assigned
 | in the controller:
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array();
+$autoload['model'] = array('Services_model', 'Header_model');

@@ -38,14 +38,14 @@
                     <div class="container">
                     
                         <div class="row our-services">
-
-                            <div class="col-md-3">
-                                <a href="#" class="service">
-                                    <img src="<?php echo base_url(); ?>/assets/images/services_image_1.jpg" alt="">
-                                    <h3>Services 1</h3>
-                                </a>
-                            </div><!-- .col-md-3 -->
-
+                            <?php foreach($services as $service) ?>
+                                <div class="col-md-3">
+                                    <a href="#" class="service">
+                                        <img src="<?php echo base_url(); ?>/assets/images/services_image_1.jpg" alt="">
+                                        <h3><?php echo $service['Service_Type']; ?></h3>
+                                    </a>
+                                </div><!-- .col-md-3 -->
+                            ?>
                             <div class="col-md-3">
                                 <a href="#" class="service">
                                     <img src="<?php echo base_url(); ?>/assets/images/services_image_2.jpg" alt="">
@@ -66,7 +66,6 @@
                                     <h3>Services 4</h3>
                                 </a>
                             </div><!-- .col-md-3 -->
-
                         </div><!-- .our-services -->
 
                     </div>
