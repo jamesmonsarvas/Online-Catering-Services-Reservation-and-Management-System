@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 20, 2018 at 11:22 PM
+-- Generation Time: Aug 30, 2018 at 05:46 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -21,18 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `cateringdb`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `about_cms`
---
-
-CREATE TABLE `about_cms` (
-  `ID` int(11) NOT NULL,
-  `Header_Title` varchar(45) DEFAULT NULL,
-  `About_Desc` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -64,19 +52,6 @@ CREATE TABLE `customer` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer_event`
---
-
-CREATE TABLE `customer_event` (
-  `id` int(11) NOT NULL,
-  `customerID` int(11) DEFAULT NULL,
-  `reservationID` int(11) DEFAULT NULL,
-  `dateOfReservation` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `event_category`
 --
 
@@ -84,19 +59,6 @@ CREATE TABLE `event_category` (
   `eventCategoryID` int(11) NOT NULL,
   `eventName` varchar(45) DEFAULT NULL,
   `eventDesc` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `feedback`
---
-
-CREATE TABLE `feedback` (
-  `feedbackID` int(11) NOT NULL,
-  `customerID` int(11) DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `comment` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -122,24 +84,6 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `header_cms`
---
-
-CREATE TABLE `header_cms` (
-  `Company_Title` varchar(45) NOT NULL,
-  `Background_IMG` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `header_cms`
---
-
-INSERT INTO `header_cms` (`Company_Title`, `Background_IMG`) VALUES
-('Kirstian Event Needs', NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `login_attempts`
 --
 
@@ -149,13 +93,6 @@ CREATE TABLE `login_attempts` (
   `login` varchar(100) NOT NULL,
   `time` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `login_attempts`
---
-
-INSERT INTO `login_attempts` (`id`, `ip_address`, `login`, `time`) VALUES
-(1, '::1', 'sampleeemail.com', 1534794089);
 
 -- --------------------------------------------------------
 
@@ -187,22 +124,6 @@ CREATE TABLE `package_items_cms` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservation`
---
-
-CREATE TABLE `reservation` (
-  `reservationID` int(11) NOT NULL,
-  `eventCategoryID` int(11) DEFAULT NULL,
-  `venueName` varchar(45) DEFAULT NULL,
-  `numberOfGuest` int(11) DEFAULT NULL,
-  `dateOfTaste` date DEFAULT NULL,
-  `timeOfTaste` time DEFAULT NULL,
-  `status` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `services_cms`
 --
 
@@ -218,24 +139,8 @@ CREATE TABLE `services_cms` (
 --
 
 INSERT INTO `services_cms` (`ID`, `services_slug`, `services_title`, `services_desc`) VALUES
-(4, 'Wedding', 'Wedding', 'This is wedding service.'),
-(5, 'Party', 'Party', 'This is party service.'),
-(6, 'Childrens-Party', 'Children\'s Party', 'This is for children'),
-(7, 'debut', 'Debut', 'This is debut');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `staff`
---
-
-CREATE TABLE `staff` (
-  `staffID` int(11) NOT NULL,
-  `staffLname` varchar(45) DEFAULT NULL,
-  `staffFname` varchar(45) DEFAULT NULL,
-  `contactNumber` int(11) DEFAULT NULL,
-  `availability` tinyint(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+(8, 'wedding', 'Wedding', '<p>Sample Wedding</p>'),
+(15, 'mobile-bar', 'Mobile Bar', '<p>Sample</p>');
 
 -- --------------------------------------------------------
 
@@ -268,10 +173,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1534794541, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-(2, '::1', 'sample@gmail.com', '$2y$08$9SCZcdR2l6z0MYdsX5TXOO6tG2QP3tJCBBTjoBcwp2.OXF0lPdMlC', NULL, 'sample@gmail.com', NULL, NULL, NULL, NULL, 1534793880, 1534794103, 1, 'James', 'Monsarvas', 'Kirstian', '09352729624'),
-(3, '::1', 'sampleemail@gmail.com', '$2y$08$wOeJeeYjdAXtRmkmmLci.uUsyrj6ULp.pulgYE/VAWHvtDy3foXb2', NULL, 'sampleemail@gmail.com', NULL, NULL, NULL, NULL, 1534794031, NULL, 1, 'James', 'Monsarvas', '', '09352729624'),
-(4, '::1', 'sampleemaail@gmail.com', '$2y$08$.mxPyviFYNc9RhZHHJxzTObqqEyVZwAqCHKL/3OPCdbLjCty1o1J.', NULL, 'sampleemaail@gmail.com', NULL, NULL, NULL, NULL, 1534794074, NULL, 1, 'James', 'Monsarvas', '', '09352729624');
+(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1535643730, 1, 'Mharik Angelo', 'Gutlay', 'Kirstian Event Needs', '+639086655099');
 
 -- --------------------------------------------------------
 
@@ -291,20 +193,11 @@ CREATE TABLE `users_groups` (
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (1, 1, 1),
-(2, 1, 2),
-(3, 2, 2),
-(4, 3, 2),
-(5, 4, 2);
+(2, 1, 2);
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `about_cms`
---
-ALTER TABLE `about_cms`
-  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `admin`
@@ -319,37 +212,16 @@ ALTER TABLE `customer`
   ADD PRIMARY KEY (`customerID`);
 
 --
--- Indexes for table `customer_event`
---
-ALTER TABLE `customer_event`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_Customer_Event_customer1_idx` (`customerID`),
-  ADD KEY `fk_Customer_Event_Reservation1_idx` (`reservationID`);
-
---
 -- Indexes for table `event_category`
 --
 ALTER TABLE `event_category`
   ADD PRIMARY KEY (`eventCategoryID`);
 
 --
--- Indexes for table `feedback`
---
-ALTER TABLE `feedback`
-  ADD PRIMARY KEY (`feedbackID`),
-  ADD KEY `fk_Feedback_customer_idx` (`customerID`);
-
---
 -- Indexes for table `groups`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `header_cms`
---
-ALTER TABLE `header_cms`
-  ADD PRIMARY KEY (`Company_Title`);
 
 --
 -- Indexes for table `login_attempts`
@@ -371,23 +243,10 @@ ALTER TABLE `package_items_cms`
   ADD KEY `fk_Package_Items_CMS_Package_CMS1_idx` (`Package_ID`);
 
 --
--- Indexes for table `reservation`
---
-ALTER TABLE `reservation`
-  ADD PRIMARY KEY (`reservationID`),
-  ADD KEY `fk_Reservation_Event1_idx` (`eventCategoryID`);
-
---
 -- Indexes for table `services_cms`
 --
 ALTER TABLE `services_cms`
   ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `staff`
---
-ALTER TABLE `staff`
-  ADD PRIMARY KEY (`staffID`);
 
 --
 -- Indexes for table `users`
@@ -409,12 +268,6 @@ ALTER TABLE `users_groups`
 --
 
 --
--- AUTO_INCREMENT for table `about_cms`
---
-ALTER TABLE `about_cms`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
@@ -427,12 +280,6 @@ ALTER TABLE `event_category`
   MODIFY `eventCategoryID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `feedback`
---
-ALTER TABLE `feedback`
-  MODIFY `feedbackID` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
@@ -442,7 +289,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `package_cms`
@@ -460,13 +307,7 @@ ALTER TABLE `package_items_cms`
 -- AUTO_INCREMENT for table `services_cms`
 --
 ALTER TABLE `services_cms`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `staff`
---
-ALTER TABLE `staff`
-  MODIFY `staffID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -485,29 +326,10 @@ ALTER TABLE `users_groups`
 --
 
 --
--- Constraints for table `customer_event`
---
-ALTER TABLE `customer_event`
-  ADD CONSTRAINT `fk_Customer_Event_Reservation1` FOREIGN KEY (`reservationID`) REFERENCES `reservation` (`reservationID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Customer_Event_customer1` FOREIGN KEY (`customerID`) REFERENCES `customer` (`customerID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `feedback`
---
-ALTER TABLE `feedback`
-  ADD CONSTRAINT `fk_Feedback_customer` FOREIGN KEY (`customerID`) REFERENCES `customer` (`customerID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Constraints for table `package_items_cms`
 --
 ALTER TABLE `package_items_cms`
   ADD CONSTRAINT `fk_Package_Items_CMS_Package_CMS1` FOREIGN KEY (`Package_ID`) REFERENCES `package_cms` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `reservation`
---
-ALTER TABLE `reservation`
-  ADD CONSTRAINT `fk_Reservation_Event1` FOREIGN KEY (`eventCategoryID`) REFERENCES `event_category` (`eventCategoryID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `users_groups`

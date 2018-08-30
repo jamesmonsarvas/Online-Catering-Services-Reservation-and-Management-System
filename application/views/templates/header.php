@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/fontawesome-all.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/flexslider.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css">
+    <script src="<?php echo site_url('assets/js/ckeditor5-build-classic/ckeditor.js') ?>"></script>
+    
 </head>
 <body>
 

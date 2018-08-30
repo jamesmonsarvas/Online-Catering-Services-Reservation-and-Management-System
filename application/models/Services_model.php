@@ -22,12 +22,33 @@
 			$slug = url_title($this->input->post('services-title'));
 
 			$data = array(
-				'services_title' => $this->input->post('services-title'),
 				'services_slug' => strtolower($slug),
+				'services_title' => $this->input->post('services-title'),
 				'services_desc' => $this->input->post('services-desc')
 			);
 
 			return $this->db->insert('services_cms', $data);
+		}
+
+		public function update_services()
+		{
+			$slug = url_title($this->input->post('services-title'));
+
+			$data = array(
+				'services_slug' => strtolower($slug),
+				'services_title' => $this->input->post('services-title'),
+				'services_desc' => $this->input->post('services-desc')
+			);
+
+			$this->db->where('ID', $this->input->post('id'));
+			return $this->db->update('services_cms', $data);
+		}
+
+		public function delete_services($id)
+		{
+			$this->db->where('ID', $id);
+			$this->db->delete('services_cms');
+			return true;
 		}
 	}
 ?>

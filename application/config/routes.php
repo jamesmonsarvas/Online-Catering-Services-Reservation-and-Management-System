@@ -3,15 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // $route['admin/(:any)'] = 'admin/view/$1';
 
-$route['login'] = 'auth/login';
-$route['dashboard'] = 'auth/index';
-$route['register'] = 'auth/create_user';
+// $route['auth/login'] = 'auth/login';
+// $route['auth/index'] = 'auth/index';
+// $route['auth/register'] = 'auth/create_user';
+// $route['auth/forgot-password'] = 'auth/create_user';
 
-$route['admin/(:any)'] = 'admin/view/$1';
+$route['admin/services/update'] = 'admin/services/update';
+$route['admin/services/create'] = 'admin/services/create';
+$route['admin/services'] = 'admin/services/index';
 
-$route['services/create'] = 'services/create';
-$route['services'] = 'services/index';
-$route['services/(:any)'] = 'services/view/$1';
+$route['admin'] = 'admin/dashboard';
 
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
