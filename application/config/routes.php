@@ -12,6 +12,8 @@ $route['admin/services/update'] = 'admin/services/update';
 $route['admin/services/create'] = 'admin/services/create';
 $route['admin/services'] = 'admin/services/index';
 
+$route['services'] = 'services_output/index';
+
 $route['admin'] = 'admin/dashboard';
 
 $route['default_controller'] = 'pages/view';

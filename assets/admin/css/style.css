@@ -27,3 +27,17 @@
     margin: -100px 0 0 -100px;
     /* is width and height divided by two */
 }
+
+.default-btn {
+    width: 100%;
+}
+
+.cms-title {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.ck-editor .ck-content {
+    height: 350px;
+}

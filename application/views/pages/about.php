@@ -1,7 +1,7 @@
 
 <div id="about-page">
     
-    <div class="parallax-2">
+    <div class="parallax-4">
         <h1 class="entry-title">About Us</h1>
     </div>
 

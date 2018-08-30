@@ -38,7 +38,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
+      <a class="navbar-brand mr-1" href="<?php echo site_url(); ?>">Kirstian Event</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
@@ -94,15 +94,25 @@
                 <a class="dropdown-item" href="<?php echo site_url('admin/services/create') ?>">Add New</a>
               </div>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-fw fa-file"></i>
+                <span>Reservation</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                <a class="dropdown-item" href="<?php echo site_url('admin/reservation/index') ?>">All Reservation</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/reservation/create') ?>">Add New</a>
+              </div>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="charts.html">
                 <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
+                <span>Event</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="tables.html">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
+                <span>Clients</span></a>
             </li>
           </ul>
 

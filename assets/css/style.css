@@ -372,6 +372,7 @@ textarea {
     /* is width and height divided by two */
 }
 
+.default-parallax,
 .parallax-1,
 .parallax-2,
 .parallax-3,
@@ -379,19 +380,6 @@ textarea {
     padding: 15em 0;
     color: #fff;
     text-align: center;
-}
-
-.default-parallax {
-    position: relative;
-    padding: 10em 0;
-    color: #fff;
-}
-
-.default-parallax > h1 {
-    position: absolute;
-    left: 1em;
-    bottom: 1em;
-    font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
 .default-parallax {
