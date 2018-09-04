@@ -8,6 +8,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $route['auth/register'] = 'auth/create_user';
 // $route['auth/forgot-password'] = 'auth/create_user';
 
+$route['admin/packages/update'] = 'admin/packages/update';
+$route['admin/packages/create'] = 'admin/packages/create';
+$route['admin/packages'] = 'admin/packages/index';
+
 $route['admin/services/update'] = 'admin/services/update';
 $route['admin/services/create'] = 'admin/services/create';
 $route['admin/services'] = 'admin/services/index';

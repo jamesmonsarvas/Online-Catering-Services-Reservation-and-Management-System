@@ -1,5 +1,5 @@
 <?php
-    class Services_output extends Admin_Controller {
+    class Services_output extends CI_Controller {
 
         public function index() {
 

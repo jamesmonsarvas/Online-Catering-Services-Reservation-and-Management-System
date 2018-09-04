@@ -94,6 +94,18 @@
                 <a class="dropdown-item" href="<?php echo site_url('admin/services/create') ?>">Add New</a>
               </div>
             </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-fw fa-file"></i>
+                <span>Packages</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                <a class="dropdown-item" href="<?php echo site_url('admin/packages/index') ?>">All Package</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/packages/create') ?>">Add New</a>
+              </div>
+            </li>
+
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-fw fa-file"></i>
