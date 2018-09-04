@@ -189,29 +189,77 @@ a:focus {
 
 input,
 input[type="text"],
-textarea {
+input[type="email"],
+textarea,
+select {
+    color: #666;
     outline: none;
     transition: all .3s ease;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
     -o-transition: all .3s ease;
+    box-shadow: none !important;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    font-style: italic;
+}
+
+textarea {
+    resize: none;
+    height: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px 5px 8px 0;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #292929;
+    border-left: none;
+    background: transparent;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-bottom: 1px solid #29b4b2;
+}
+
+input[type="text"] {
+    margin: 0 0 28px;
+}
+
+input[type="text"]:last-child {
+    margin-bottom: 0;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #a1c2d1;
+  color: #666 !important;
   font-style: italic;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: #a1c2d1;
+  color: #666 !important;
   font-style: italic;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: #a1c2d1;
+  color: #666 !important;
   font-style: italic;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: #a1c2d1;
+  color: #666 !important;
   font-style: italic;
 }
 
@@ -279,14 +327,6 @@ fieldset {
     padding: 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-    resize: none;
-}
-
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
@@ -304,6 +344,7 @@ textarea {
 
 #menu-primary {
     margin-top: 15px;
+    text-align: right;
 }
 
 #menu-primary ul {
@@ -320,14 +361,20 @@ textarea {
 }
 
 #menu-primary li a {
-    padding: 10px 15px;
-    border-radius: 10px;
-    font-size: 20px;
+    padding: 10px 10px;
+    color: #f1ebf5;
+    font-size: 18px;
     text-transform: uppercase;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+}
+
+#menu-primary li a.default-btn {
+    margin-top: -5px;
+    font-weight: 400;
+}
+
+#menu-primary li a.default-btn:hover,
+#menu-primary li a.default-btn:active,
+#menu-primary li a.default-btn:focus {
     color: #f1ebf5;
 }
 
@@ -412,8 +459,8 @@ textarea {
     background-size: cover;
 }
 
-.entry-title.border-lr:before,
-.entry-title.border-lr:after {
+.border-lr:before,
+.border-lr:after {
     content: '';
     display: inline-block;
     width: 20%;
@@ -421,18 +468,16 @@ textarea {
     vertical-align: 20px;
 }
 
-.entry-title.border-lr:before {
+.border-lr:before {
     margin-right: 25px;
 }
 
-.entry-title.border-lr:after {
+.border-lr:after {
     margin-left: 25px;
 }
 
-
-
 .default-btn,
-input[type="submit"].default-btn {
+input[type="submit"] {
     position: relative;
     display: inline-block;
     vertical-align: middle;
@@ -457,16 +502,17 @@ input[type="submit"].default-btn {
     cursor: pointer;
 }
 
-input[type="submit"].default-btn {
+input[type="submit"] {
     margin: 35px auto 0;
     border-top: none;
     border-right: none;
     border-bottom: none;
     border-left: none;
+    color: #fff;
 }
 
 .default-btn:before,
-input[type="submit"].default-btn:before {
+input[type="submit"]:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -486,18 +532,18 @@ input[type="submit"].default-btn:before {
 .default-btn:hover,
 .default-btn:focus, 
 .default-btn:active,
-input[type="submit"].default-btn:hover,
-input[type="submit"].default-btn:focus,
-input[type="submit"].default-btn:active {
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:active {
     color: #fff;
 }
 
 .default-btn:hover:before,
 .default-btn:focus:before, 
 .default-btn:active:before,
-input[type="submit"].default-btn:hover:before,
-input[type="submit"].default-btn:focus:before, 
-input[type="submit"].default-btn:active:before {
+input[type="submit"]:hover:before,
+input[type="submit"]:focus:before, 
+input[type="submit"]:active:before {
     left: 0;
     right: 0;
 }
@@ -505,6 +551,20 @@ input[type="submit"].default-btn:active:before {
 .centered-content {
     padding: 5em 0;
     text-align: center;
+}
+
+.divider {
+    display: block;
+    width: 100%;
+    margin: 30px 0;
+    border-bottom: 2px solid #a1c2d1;
+}
+
+#about-page,
+#contact-page,
+#reservation,
+#services {
+    padding: 80px 0;
 }
 
 /* Header */
@@ -725,34 +785,6 @@ input[type="submit"].default-btn:active:before {
 
 #contact-page #contact-us .contact-us {
     margin-top: 30px;
-}
-
-#contact-page #contact-us input[type="text"],
-#contact-page #contact-us textarea {
-    width: 100%;
-    padding: 8px 5px 8px 0;
-    border-top: none;
-    border-right: none;
-    border-bottom: 1px solid #292929;
-    border-left: none;
-    background: transparent;
-}
-
-#contact-page #contact-us input[type="text"]:focus,
-#contact-page #contact-us textarea:focus {
-    border-bottom: 1px solid #29b4b2;
-}
-
-#contact-page #contact-us input[type="text"] {
-    margin: 0 0 28px;
-}
-
-#contact-page #contact-us input[type="text"]:last-child {
-    margin-bottom: 0;
-}
-
-#contact-page #contact-us textarea {
-    height: 100%;
 }
 
 /* Footer */

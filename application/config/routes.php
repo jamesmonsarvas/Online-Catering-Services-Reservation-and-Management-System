@@ -8,13 +8,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $route['auth/register'] = 'auth/create_user';
 // $route['auth/forgot-password'] = 'auth/create_user';
 
+$route['admin'] = 'admin/dashboard';
+
 $route['admin/services/update'] = 'admin/services/update';
 $route['admin/services/create'] = 'admin/services/create';
 $route['admin/services'] = 'admin/services/index';
 
-$route['services'] = 'services_output/index';
+// $route['reservation/update'] = 'reservation_output/update';
+// $route['reservation/create'] = 'reservation_output/create';
 
-$route['admin'] = 'admin/dashboard';
+$route['reservation'] = 'reservation_output/view';
+$route['services'] = 'services_output/view';
 
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';

@@ -1,38 +1,58 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <h3 class="cms-title">Services</h3>
+    <a href="<?php echo site_url('admin/services/create') ?>" class="btn btn-secondary">Add New</a>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
 
-<h3 class="cms-title">Services</h3>
-<a href="<?php echo site_url('admin/services/create') ?>" class="btn btn-secondary">Add New</a>
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
-<table class="table table-bordered table-striped">
-    <tr>
-        <th>ID</th>
-        <th>Services Title</th>
-        <th>Services Description</th>
-        <th>Services Slug</th>
-        <th></th>
-        <th></th>
-    </tr>
-    <?php foreach ($services as $service): ?>
-    <tr>
-        <td><?php echo $service['ID']; ?></td>
-        <td>
-            <a href="<?php echo base_url(); ?>admin/services/edit/<?php echo $service['services_slug']; ?>">
-                <?php echo $service['services_title']; ?>
-            </a>
-        </td>
-        <td><?php echo substr($service['services_desc'], 0, 80) . "..."; ?></td>
-        <td><?php echo $service['services_slug']; ?></td>
-        <td>
-            <a href="<?php echo base_url(); ?>admin/services/edit/<?php echo $service['services_slug']; ?>" class="btn default-btn btn-info float-left">Edit</a>
-        </td>
-        <td>
-            <?php echo form_open('admin/services/delete/' . $service['ID']); ?>
-                <input type="submit" class="btn default-btn btn-danger" value="Delete">
-            <?php echo form_close(); ?>
-        </td>
-    </tr>
-    <?php endforeach ?>
-    
-</table>
+        <thead>
+          <tr>
+            <th>Services Title</th>
+            <th>Services Description</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <?php foreach ($services as $service): ?>
+            <tr>
+              <td>
+                <a href="<?php echo base_url(); ?>admin/services/edit/<?php echo $service['services_slug']; ?>">
+                    <?php echo $service['services_title']; ?>
+                </a>
+              </td>
+              <td><?php echo substr($service['services_desc'], 0, 100) . "..."; ?></td>
+              <td>
+                <a href="<?php echo base_url(); ?>admin/services/edit/<?php echo $service['services_slug']; ?>" class="btn default-btn btn-info float-left">Edit</a>
+              </td>
+              <td>
+                <?php echo form_open('admin/services/delete/' . $service['ID']); ?>
+                    <input type="submit" class="btn default-btn btn-danger" value="Delete">
+                <?php echo form_close(); ?>
+              </td>
+            </tr>
+          <?php endforeach ?>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <th>Services Title</th>
+            <th>Services Description</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </tfoot>
+
+      </table>
+
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>
 
 <script>
 	ClassicEditor
