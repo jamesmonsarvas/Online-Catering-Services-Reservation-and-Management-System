@@ -5,17 +5,22 @@
 <table class="table table-bordered table-striped">
     <tr>
         <th>ID</th>
-        <th>Services Title</th>
-        <th>Services Description</th>
+        <th>Package Number</th>
+        <th>Price</th>
     </tr>
     <?php foreach ($packages as $package): ?>
     <tr>
-        <td><?php echo $package['pid']; ?></td>
-        <td><?php echo substr($package['menu'], 0, 80) . "..."; ?></td>
+        <td><?php echo $package['package_id']; ?></td>
+        <td><?php echo $package['package_no']; ?></td>
+        <td>P <?php echo $package['price']; ?></td>
         <td>
-            <?php echo form_open('admin/packages/delete/' . $package['pid']); ?>
-                <input type="submit" class="btn default-btn btn-danger" value="Delete">
-            <?php echo form_close(); ?>
+            <a href="<?php echo base_url(); ?>admin/packages/package_content_index/<?php echo $package['package_id']; ?>" class="btn default-btn btn-primary">View</a>
+        </td>
+        <td>
+            <a href="" class="btn default-btn btn-info">Update</a>
+        </td>
+        <td>
+            <a href="" class="btn default-btn btn-danger">Delete</a>
         </td>
     </tr>
     <?php endforeach ?>

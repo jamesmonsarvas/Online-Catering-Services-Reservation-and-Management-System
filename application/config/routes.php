@@ -1,16 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-// $route['admin/(:any)'] = 'admin/view/$1';
-
-// $route['auth/login'] = 'auth/login';
-// $route['auth/index'] = 'auth/index';
-// $route['auth/register'] = 'auth/create_user';
-// $route['auth/forgot-password'] = 'auth/create_user';
-
 $route['admin/packages/update'] = 'admin/packages/update';
 $route['admin/packages/create'] = 'admin/packages/create';
 $route['admin/packages'] = 'admin/packages/index';
+$route['admin/packages/package_content_index'] = "admin/packages/package_content_index";
+$route['admin/packages/list_of_menu'] = "admin/packages/list_of_menu";
 
 $route['admin'] = 'admin/dashboard';
 
