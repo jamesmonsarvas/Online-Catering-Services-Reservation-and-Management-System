@@ -96,57 +96,44 @@
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>No.</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of Event</th>
+                <th>Time of Event</th>
+                <th>Venue</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tfoot>
               <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>No.</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of Event</th>
+                <th>Time of Event</th>
+                <th>Venue</th>
+                <th>Status</th>
               </tr>
             </tfoot>
             <tbody>
-              <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-              </tr>
-              <tr>
-                <td>Garrett Winters</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>2011/07/25</td>
-                <td>$170,750</td>
-              </tr>
-              <tr>
-                <td>Ashton Cox</td>
-                <td>Junior Technical Author</td>
-                <td>San Francisco</td>
-                <td>66</td>
-                <td>2009/01/12</td>
-                <td>$86,000</td>
-              </tr>
-              <tr>
-                <td>Cedric Kelly</td>
-                <td>Senior Javascript Developer</td>
-                <td>Edinburgh</td>
-                <td>22</td>
-                <td>2012/03/29</td>
-                <td>$433,060</td>
-              </tr>
+              <?php foreach($reservations as $reservation) : ?>
+                <tr>
+                  <td><?php echo $reservation['reservation_id']; ?></td>
+                  <td><?php echo $reservation['firstname']; ?></td>
+                  <td><?php echo $reservation['lastname']; ?></td>
+                  <td><?php echo $reservation['date_of_event']; ?></td>
+                  <td><?php echo $reservation['time_of_event']; ?></td>
+                  <td><?php echo $reservation['venue']; ?></td>
+                  <td>
+                    <?php if($reservation['status'] == 1)
+                      echo "Pending";
+                      else 
+                      echo "Done";
+                    ?>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
             </tbody>
           </table>
         </div>

@@ -35,7 +35,7 @@
 .cms-title {
     float: left;
     margin-right: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .ck-editor .ck-content {

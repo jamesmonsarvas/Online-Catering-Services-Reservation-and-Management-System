@@ -1,5 +1,7 @@
 $(function () {
 
+    $("#datepicker").datepicker();
+
     $(window).scroll(function () {
         if ($(this).scrollTop() > 10) {
             $('#header').addClass("sticky");

@@ -1,59 +1,56 @@
-<div id="contact-page">
     
-     <div id="contact-banner" class="parallax-2">
+<div id="contact-banner" class="parallax-2">
 
-        <div class="container-fluid">
-            <div id="banner" class="row">
+  <div class="container-fluid">
+    <div id="banner" class="row">
 
-                <div class="col-md-12 centered-content">
-                    <h1 class="entry-title border-lr">Lorem ipsum dolor sit amet</h1>
-                    <p class="entry-desc">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br/>
-                        Obcaecati cumque et aspernatur consequuntur tenetur.
-                    </p>
-                </div><!-- .col-md-12 -->
+      <div class="col-md-12 centered-content">
+        <h1 class="entry-title border-lr">Contact Us</h1>
+      </div><!-- .col-md-12 -->
 
-            </div><!-- .row -->
-        </div><!-- .container-fluid -->
+    </div><!-- .row -->
+  </div><!-- .container-fluid -->
 
-    </div><!-- #contact-banner -->
+</div><!-- #contact-banner -->
 
-    <div id="contact-us">
+<div id="contact-page">
 
-        <div class="container-fluid">
-            <div class="row">
-            
-                <div class="col-md-12 centered-content">
-                
-                    <h2 class="entry-title border-lr">Message Us</h2>
+  <div id="contact-us">
 
-                    <div class="container">
+    <div class="container-fluid">
+      <div class="row">
+      
+        <div class="col-md-12 centered-content">
+      
+          <h2 class="entry-title border-lr">Give us a message</h2>
 
-                        <form action="" class="row contact-food">
+          <div class="container">
 
-                            <div class="col-md-6">
-                                <input type="text" placeholder="Full name*"></input>
-                                <input type="text" placeholder="Email address*"></input>
-                                <input type="text" placeholder="Telephone number*"></input>
-                                <input type="text" placeholder="Reason for contact*"></input>
-                            </div>
-                            
-                            <div class="col-md-6">
-                                <textarea placeholder="Message*"></textarea>
-                            </div>
+            <form action="" class="row contact-food">
 
-                            <input type="submit" value="Submit" class="default-btn">
+              <div class="col-md-6">
+                <input type="text" placeholder="Full name*"></input>
+                <input type="text" placeholder="Email address*"></input>
+                <input type="text" placeholder="Telephone number*"></input>
+                <input type="text" placeholder="Reason for contact*"></input>
+              </div>
+              
+              <div class="col-md-6">
+                <textarea placeholder="Message*"></textarea>
+              </div>
 
-                        </form>
+              <input type="submit" value="Submit" class="default-btn">
 
-                    </div><!-- .container -->
+            </form>
 
-                </div>
+          </div><!-- .container -->
 
-            </div><!-- .row -->
-        </div><!-- .container-fluid -->
+        </div>
 
-    </div><!-- #contact-experience -->
+      </div><!-- .row -->
+    </div><!-- .container-fluid -->
+
+  </div><!-- #contact-experience -->
 
 
-</div> <!-- end of contact-page -->
+</div> <!-- contact-page -->
