@@ -32,6 +32,8 @@
 			return $this->db->insert('package', $data);
 		}
 
+		//
+
 		public function delete_packages($id)
 		{
 			$this->db->where('package_id', $id);
