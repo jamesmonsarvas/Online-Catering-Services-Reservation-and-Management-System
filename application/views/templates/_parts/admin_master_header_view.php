@@ -30,9 +30,9 @@
 
   <body id="page-top">
 
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div id="status"></div>
-    </div>
+    </div> -->
 
     <?php if ($this->ion_auth->logged_in()) : ?>
 

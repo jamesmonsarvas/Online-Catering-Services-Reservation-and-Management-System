@@ -17,26 +17,41 @@
 <div id="reservation">
 
   <div class="container">
+
+    <div class="centered-content">
+
+      <h2 class="border-lr">Book a Full-Course Tasting Experience</h2>
+      <p>
+        We use the form below to find out details about your upcoming event so that we can provide you with the most appropriate,
+        complimentary tasting experience. If you'd rather talk to a representative, you can <a href="<?php echo site_url('contact/#contact-us')?>">contact us</a> here.
+      </p>
+
+      <p>
+        If you represent an organization that enjoys year-round events then register to taste our food today by simply
+        filling out the form below.
+      </p>
+
+    </div>
+
+    <div id="calendar"></div>
+
+    <script>
+      $(function () {
+        $('#calendar').calendar({
+          events: [
+            { start: '2018-09-05', end: '2018-09-05', summary: "Occupied", mask: true},
+          ]
+        });
+      });
+    </script>
+
     <?php echo validation_errors(); ?>
 
-    <?php echo form_open(''); ?>
+    <?php echo form_open('reservation/create'); ?>
       
       <div class="row">
 
-        <div class="centered-content">
-
-          <h2 class="border-lr">Book a Full-Course Tasting Experience</h2>
-          <p>
-            We use the form below to find out details about your upcoming event so that we can provide you with the most appropriate,
-            complimentary tasting experience. If you'd rather talk to a representative, you can <a href="<?php echo site_url('contact/#contact-us')?>">contact us</a> here.
-          </p>
-
-          <p>
-            If you represent an organization that enjoys year-round events then register to taste our food today by simply
-            filling out the form below.
-          </p>
-
-        </div>
+        <input type="hidden" name="id" value="<?php // echo $services['ID']; ?>">
 
         <div class="col-md-12">
 

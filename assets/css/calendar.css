@@ -1,0 +1,92 @@
+.calendar{
+    background: transparent;
+    border: 1px solid rgba(41, 180, 178, 0.1);
+    color: #666;
+    width:100%;
+    margin-bottom: 5em;
+    table-layout:fixed;
+}
+
+.calendar.purple{
+    background:#913CCD;
+}
+
+.calendar.pink{
+    background: #F15F74;
+}
+
+.calendar.orange{
+    background: #F76D3C;
+}
+
+.calendar.yellow{
+    background: #F7D842;
+}
+
+.calendar.green{
+    background: #98CB4A;
+}
+
+.calendar.grey{
+    background: #839098;
+}
+
+.calendar.blue{
+    background: #5481E6;
+}
+
+.calendar-title th {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #29b4b2;
+}
+
+.calendar-header th {
+    padding: 10px;
+    text-align: center;
+    background: rgba(41, 180, 178, 0.1);
+}
+
+.calendar tbody tr td{
+    text-align: center;
+    vertical-align: top;
+    width: 14.28%;
+}
+
+.calendar tbody tr td.day{
+    padding: 15px 0;
+}
+
+.calendar tbody tr td.day div:first-child{
+    padding:4px;
+    line-height:17px;
+    height:25px;
+}
+
+.calendar tbody tr td.day div:last-child{
+    font-size:10px;
+    padding:4px;
+    min-height:25px;
+}
+
+.calendar tbody tr td,
+.calendar tbody tr td.pad {
+    background: rgba(41, 180, 178, 0.15);
+    border: 1px solid rgba(41, 180, 178, 0.1);
+}
+
+.calendar tbody tr td.today {
+    color: #fff;
+    background: rgba(41, 180, 178, 0.5);
+}
+
+.calendar tbody tr td.mask-start,
+.calendar tbody tr td.mask,
+.calendar tbody tr td.mask-end {
+    background: rgba(254, 38, 9, 0.1);
+    color: #fe2609;
+}

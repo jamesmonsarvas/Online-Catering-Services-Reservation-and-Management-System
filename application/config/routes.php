@@ -13,10 +13,10 @@ $route['admin/services/update'] = 'admin/services/update';
 $route['admin/services/create'] = 'admin/services/create';
 $route['admin/services'] = 'admin/services/index';
 
-$route['reservation/update'] = 'reservation_output/update';
-$route['reservation/create'] = 'reservation_output/create';
 
 $route['reservation'] = 'reservation_output/view';
+$route['reservation/create'] = 'reservation_output/create';
+
 $route['services'] = 'services_output/view';
 
 $route['default_controller'] = 'pages/view';

@@ -1,4 +1,3 @@
-
 <div class="card mb-3">
   <div class="card-header">
     <h2 class="cms-title">Reservation</h2>
@@ -11,10 +10,12 @@
 
         <thead>
           <tr>
-						<th>Name</th>
+						<th>First Name</th>
+						<th>Last Name</th>
 						<th>Date of Event</th>
 						<th>Time of Event</th>
 						<th>Venue</th>
+						<th>Expected People</th>
 						<th>Status</th>
 						<th></th>
 						<th></th>
@@ -25,10 +26,12 @@
         <tbody>
           <?php foreach($reservations as $reservation) : ?>
 						<tr>
-							<td><?php echo $reservation['lastname'] . ", " . $reservation['firstname'] ; ?></td>
+							<td><?php echo $reservation['firstname']; ?></td>
+							<td><?php echo $reservation['lastname']; ?></td>
 							<td><?php echo $reservation['date_of_event']; ?></td>
 							<td><?php echo $reservation['time_of_event']; ?></td>
-							<td><?php echo $reservation['venue']; ?></td>
+							<td><?php echo $reservation['place_of_event']; ?></td>
+							<td><?php echo $reservation['exp_people_count']; ?></td>
 							<td>
 								<?php if($reservation['status'] == 1)
 									echo "Pending";
@@ -52,10 +55,12 @@
 
 				<tfoot>
           <tr>
-            <th>Name</th>
+						<th>First Name</th>
+						<th>Last Name</th>
 						<th>Date of Event</th>
 						<th>Time of Event</th>
 						<th>Venue</th>
+						<th>Expected People</th>
 						<th>Status</th>
 						<th></th>
 						<th></th>
@@ -67,6 +72,6 @@
 
     </div>
   </div>
-  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+  <div class="card-footer small text-muted">Updated at <?php echo $reservations[0]['timestamp']; ?> </div>
 </div>
 
