@@ -30,7 +30,9 @@
                 <a href="" class="btn default-btn btn-info">Update</a>
               </td>
               <td>
-                <a href="" class="btn default-btn btn-danger">Delete</a>
+                <?php echo form_open('admin/packages/delete/' . $package['package_id']); ?>
+                    <input type="submit" class="btn default-btn btn-danger" value="Delete">
+                <?php echo form_close(); ?>
               </td>
             </tr>
           <?php endforeach ?>

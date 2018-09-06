@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['admin/packages/update'] = 'admin/packages/update';
 $route['admin/packages/create'] = 'admin/packages/create';
 $route['admin/packages'] = 'admin/packages/index';
+$route['admin/packages/create_packages'] = 'admin/packages/create_packages';
 $route['admin/packages/package_content_index'] = "admin/packages/package_content_index";
 $route['admin/packages/list_of_menu'] = "admin/packages/list_of_menu";
 
