@@ -6,10 +6,9 @@
       <div id="banner" class="row">
 
         <div class="col-md-12 centered-content">
-          <h1 class="entry-title border-lr">Lorem ipsum dolor sit amet</h1>
+          <h1 class="entry-title border-lr">Welcome to Kirstian Event Needs</h1>
           <p class="entry-desc">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br/>
-              Obcaecati cumque et aspernatur consequuntur tenetur.
+              We are here to serve any event and any occassion, anywhere and anytime.
           </p>
           <a href="<?php echo site_url('reservation') ?>" class="default-btn">Schedule now!</a>
         </div><!-- .col-md-12 -->
@@ -45,17 +44,17 @@
               </div><!-- .container -->
 
               <p class="entry-desc">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br/>
-                Obcaecati cumque et aspernatur consequuntur tenetur.
+                Our food will surely last in your tastebuds,<br/>
+                because recipes are passed down to different generation of Leynes.
               </p>
 
               <a href="#" class="default-btn">Schedule Tasting now</a>
 
               <div class="contact-us">
                 <p>Or call us at</p>
-                <p>Globe <a href="tel:09959569567">0995-956-9567</a></p>
-                <p>Smark <a href="tel:09277577579">0927-757-7579</a></p>
-                <p>Office <a href="tel:0437564115">(043) 756-4115</a> / <a href="tel:0434567897">(043) 456-7897</a></p>
+                <p>Globe <a href="tel:09064702286">0906-470-2286</a></p>
+                <p>Smart <a href="tel:09214024939">0921-402-4939</a></p>
+                <p>Office <a href="tel:0495442126">(049) 544 2126</a></p>
               </div><!-- .contact-us -->
 
             </div>
@@ -115,8 +114,8 @@
             </div>
 
             <p class="entry-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui deserunt <br />
-              laboriosam nobis ipsa rem aspernatur necessitatibus possimus, quos laborum vel.
+              We cater different kind of events and occassions, <br />
+              from birthday parties, wedding, debuts and even fiesta.
             </p>
 
             <a href="#" class="default-btn">See all our Services</a>
@@ -158,8 +157,8 @@
           </div><!-- .container -->
 
           <p class="entry-desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br/>
-            Obcaecati cumque et aspernatur consequuntur tenetur.
+            Kirstian Event Needs is formerly known as Leynes,<br/>
+            which is founded by Mr. and Mrs. Leynes.
           </p>
 
           <a href="#" class="default-btn">Read More About Us</a>

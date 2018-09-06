@@ -26,7 +26,7 @@
       <div class="row">
 
         <div id="branding" class="col-md-4">
-            <a href="<?php echo site_url('/'); ?>" id="default-logo"><img src="<?php echo site_url('assets/images/default-logo.png'); ?>" alt=""></a>
+            <a href="<?php echo site_url('/'); ?>" id="default-logo"><img src="<?php echo site_url('assets/images/LOGO.png'); ?>" alt=""></a>
         </div><!-- #branding -->
 
         <nav id="menu-primary" class="col-md-8">
