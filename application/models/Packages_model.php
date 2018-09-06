@@ -22,6 +22,25 @@
 			// return $query->row_array();
 		}
 
+		public function create_packages() {
+
+			$data = array(
+				'package_no' => $this->input->post('package-no'),
+				'price' => $this->input->post('price')
+			);
+
+			return $this->db->insert('package', $data);
+		}
+
+		//
+
+		public function delete_packages($id)
+		{
+			$this->db->where('package_id', $id);
+			$this->db->delete('package');
+			return true;
+		}
+
 		public function get_packages_content($id) {
 
 			if ($id === null) {
@@ -29,7 +48,7 @@
 				$query = $this->db->get('package_content');
 				return $query->result_array();
 			}
-
+			$this->db->distinct();
 			$this->db->order_by('package_content.package_content_id', 'ASC');
 			$this->db->select('package_content.package_content_id, package_content.type_of_menu, package_pc.package_id');    
 			$this->db->from('package_content');
@@ -55,5 +74,7 @@
 			// working query :
 			// SELECT list_of_menu.list_of_menu_id, package_content.type_of_menu, list_of_menu.menu_details FROM list_of_menu JOIN package_content ON list_of_menu.package_content_id = package_content.package_content_id WHERE list_of_menu.package_content_id = 1
 		}
+
+		
 	}
 ?>

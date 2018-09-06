@@ -1,13 +1,20 @@
 <?php
     class Reservation_output extends CI_Controller {
 
-        public function view() {
+      public function view() {
 
-            $data['reservation'] = $this->Reservation_model->get_reservations();
-            $this->load->view('templates/header');
-            $this->load->view('reservation_output/view', $data);
-            $this->load->view('templates/footer');
-        }
+        $data['reservation'] = $this->Reservation_model->get_reservations();
+        $this->load->view('templates/header');
+        $this->load->view('reservation_output/view', $data);
+        $this->load->view('templates/footer');
+        
+      }
+
+      public function create() {
+
+          $this->Reservation_model->create_reservation();
+          redirect('reservation');
+      }
     }
 
 ?>

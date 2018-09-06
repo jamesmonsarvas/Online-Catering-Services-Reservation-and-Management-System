@@ -11,14 +11,18 @@
   <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/flexslider.css'); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/style.css'); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/jquery-ui.min.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/calendar.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/calendar-stylesheet.css'); ?>">
+  
+  <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
   <script src="<?php echo site_url('assets/js/ckeditor5-build-classic/ckeditor.js') ?>"></script>
     
 </head>
 <body>
 
-  <div id="preloader">
+  <!-- <div id="preloader">
       <div id="status"></div>
-  </div>
+  </div> -->
 
   <header id="header">
 

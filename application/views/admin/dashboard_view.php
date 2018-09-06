@@ -96,35 +96,35 @@
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <th>No.</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Date of Event</th>
                 <th>Time of Event</th>
                 <th>Venue</th>
+                <th>Expected People</th>
                 <th>Status</th>
               </tr>
             </thead>
             <tfoot>
               <tr>
-                <th>No.</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Date of Event</th>
                 <th>Time of Event</th>
                 <th>Venue</th>
+                <th>Expected People</th>
                 <th>Status</th>
               </tr>
             </tfoot>
             <tbody>
               <?php foreach($reservations as $reservation) : ?>
                 <tr>
-                  <td><?php echo $reservation['reservation_id']; ?></td>
                   <td><?php echo $reservation['firstname']; ?></td>
                   <td><?php echo $reservation['lastname']; ?></td>
                   <td><?php echo $reservation['date_of_event']; ?></td>
                   <td><?php echo $reservation['time_of_event']; ?></td>
-                  <td><?php echo $reservation['venue']; ?></td>
+                  <td><?php echo $reservation['place_of_event']; ?></td>
+                  <td><?php echo $reservation['exp_people_count']; ?></td>
                   <td>
                     <?php if($reservation['status'] == 1)
                       echo "Pending";

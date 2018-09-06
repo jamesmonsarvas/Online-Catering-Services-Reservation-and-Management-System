@@ -8,7 +8,6 @@
 			$this->db->order_by('reservation_id', 'DESC');
 			$this->db->select('*');    
 			$this->db->from('reservation');
-			$this->db->join('client', 'reservation.client_id = client.client_id');
 
 			$query = $this->db->get();
 			return $query->result_array();
@@ -17,38 +16,25 @@
 			// return $query->row_array();
 		}
 
-		public function create_services() {
+		public function create_reservation() {
 
-			$slug = url_title($this->input->post('services-title'));
-
-			$data = array(
-				'services_slug' => strtolower($slug),
-				'services_title' => $this->input->post('services-title'),
-				'services_desc' => $this->input->post('services-desc')
-			);
-
-			return $this->db->insert('services_cms', $data);
-		}
-
-		public function update_services()
-		{
-			$slug = url_title($this->input->post('services-title'));
+			$reference = url_title($this->input->post('reference-no'));
 
 			$data = array(
-				'services_slug' => strtolower($slug),
-				'services_title' => $this->input->post('services-title'),
-				'services_desc' => $this->input->post('services-desc')
+				'reference_no' => $reference,
+				'type_of_event' => $this->input->post('event'),
+				'place_of_event' => $this->input->post('place'),
+				'exp_people_count' => $this->input->post('people'),
+				'date_of_event' => date('Y-m-d', strtotime(str_replace('-', '/', $this->input->post('date')))),
+				'time_of_event' => $this->input->post('time'),
+				'email_address' => $this->input->post('email'),
+				'firstname' => $this->input->post('first-name'),
+				'lastname' => $this->input->post('last-name'),
+				'telephone' => $this->input->post('telephone')
 			);
 
-			$this->db->where('ID', $this->input->post('id'));
-			return $this->db->update('services_cms', $data);
+			return $this->db->insert('reservation', $data);
 		}
-
-		public function delete_services($id)
-		{
-			$this->db->where('ID', $id);
-			$this->db->delete('services_cms');
-			return true;
-		}
+		
 	}
 ?>
