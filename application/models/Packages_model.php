@@ -29,6 +29,8 @@
 				'price' => $this->input->post('price')
 			);
 
+
+
 			return $this->db->insert('package', $data);
 		}
 
@@ -39,6 +41,18 @@
 			$this->db->where('package_id', $id);
 			$this->db->delete('package');
 			return true;
+		}
+
+		public function get_all_packages() {
+			$this->db->order_by('package_content_id', 'ASC');
+			$this->db->select('*');    
+			$this->db->from('package_content');
+
+			$query = $this->db->get();
+			return $query->result_array();
+
+			// $query = $this->db->get('reservation');
+			// return $query->row_array();
 		}
 
 		public function get_packages_content($id) {
@@ -75,6 +89,51 @@
 			// SELECT list_of_menu.list_of_menu_id, package_content.type_of_menu, list_of_menu.menu_details FROM list_of_menu JOIN package_content ON list_of_menu.package_content_id = package_content.package_content_id WHERE list_of_menu.package_content_id = 1
 		}
 
-		
+		public function insert_new_content() {
+
+			$id = $this->input->post('id');
+			$data = array();
+			if ($id === null) {
+				$this->db->order_by('package_content_id', 'DESC');
+				$query = $this->db->get('package_content');
+				return $query->result_array();
+			}
+			$this->db->distinct();
+			$this->db->order_by('package_content.package_content_id', 'ASC');
+			$this->db->select('package_content.package_content_id, package_content.type_of_menu, package_pc.package_id');    
+			$this->db->from('package_content');
+			$this->db->join('package_pc', 'package_pc.package_content_id = package_content.package_content_id');
+
+			$query = $this->db->get_where('', array('package_id' => $id));
+			$results = $query->result_array();
+
+			$raw_data = array($this->input->post('type_of_menu'));
+
+			$flag = false;
+			foreach ($raw_data[0] as $raw) {
+				foreach ($results as $result) {
+					if ($result["package_content_id"] == $raw) {
+						$flag = true;
+						break;
+					}
+				}
+				if (!$flag) {
+					array_push($data, array(
+						'package_id' => $id,
+						'package_content_id' => $raw
+					));
+				}
+				$flag = false;
+			}
+			return $this->db->insert_batch('package_pc', $data);
+		}
+
+		public function delete_package($id)
+		{
+			$this->db->where('package_id', $id);
+			$this->db->delete('package_pc');
+			return true;
+		}
+
 	}
 ?>
