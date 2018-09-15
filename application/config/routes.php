@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['admin/packages'] = 'admin/packages/index';
 $route['admin/packages/create_packages'] = 'admin/packages/create_packages';
-
+$route['admin/packages/add_content'] = 'admin/packages/add_content';
 $route['admin/packages/package_content_index'] = "admin/packages/package_content_index";
 $route['admin/packages/package_content_index/insert_content'] = "admin/packages/package_content_index/insert_content";
 
@@ -14,8 +14,6 @@ $route['admin'] = 'admin/dashboard';
 $route['admin/services/update'] = 'admin/services/update';
 $route['admin/services/create'] = 'admin/services/create';
 $route['admin/services'] = 'admin/services/index';
-
-
 
 $route['reservation'] = 'reservation_output/view';
 $route['reservation/create'] = 'reservation_output/create';

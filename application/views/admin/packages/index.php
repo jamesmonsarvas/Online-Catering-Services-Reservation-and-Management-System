@@ -1,3 +1,39 @@
+  <?php
+  // function myFunction($id) 
+  // {
+  //   $pcArr = array();
+  //   foreach ($packages_content as $package_content) {
+  //     if ($package['package_id'] == $package_content['package_id']) {
+  //       array_push($pcArr, $package_content);
+  //     }
+  //   }
+    
+  //   for ($i=0; $i < 6; $i++) { 
+  //     $flag = "false";
+  //     foreach ($pcArr as $pc) {
+  //       if ($pc['package_content_id'] == $all_package_content[$i]['package_content_id'])
+  //       {
+  //           echo "<label class='form-check-label'>
+  //             <input type='checkbox' name='type_of_menu[]' class='form-check-input' checked value=".$all_package_content[$i]['package_content_id'].">".$all_package_content[$i]['type_of_menu']."
+  //           </label>
+  //           <br>";
+  //           $flag = "true";
+  //           break;
+  //       }
+  //       $index++;
+  //     }
+  //     if ($flag == "false") {
+  //       echo "<label class='form-check-label'>
+  //             <input type='checkbox' name='type_of_menu[]' class='form-check-input' value=".$all_package_content[$i]['package_content_id'].">".$all_package_content[$i]['type_of_menu']."
+  //           </label>
+  //           <br>";
+  //     }
+  //   }
+  // }
+?>
+
+
+
 <div class="card mb-3">
   <div class="card-header">
     <h3 class="cms-title">Packages</h3>
@@ -66,8 +102,8 @@
         <thead>
           <tr>
 						<th>Packages</th>
-						<th>Packages Price</th>
-            <th></th>
+						<th>Packages Menu</th>
+            <th>Packages Price</th>
             <th></th>
             <th></th>
           </tr>
@@ -76,13 +112,26 @@
         <tbody>
           <?php foreach ($packages as $package): ?>
             <tr>
-              <td><?php echo $package['package_no']; ?></td>
+              <td>
+                <?php echo $package['package_no']; ?>
+              </td>
+              <td class="package-no">
+                <ul class="package-menu">
+                  <?php foreach ($packages_content as $package_content): ?>
+                    <?php if ($package['package_id'] == $package_content['package_id']) : ?>
+                      <li>
+                        <?php echo form_open('admin/packages/delete_content/' . $package['package_id'] . "/" . $package_content['package_content_id']); ?>
+                            <label><?php echo $package_content['type_of_menu']; ?></label>
+                            <input type="submit" class="btn btn-danger delete-menu" value="X">
+                        <?php echo form_close(); ?>
+                      </li>
+                    <?php endif ?>
+                  <?php endforeach; ?>
+                </ul>
+              </td>
               <td><?php echo "&#8369;" . $package['price']; ?></td>
               <td>
-                <a href="<?php echo base_url(); ?>admin/packages/package_content_index/<?php echo $package['package_id']; ?>" class="btn default-btn btn-primary">View</a>
-              </td>
-              <td>
-                <a href="" class="btn default-btn btn-info">Update</a>
+                <a href="<?php echo site_url('admin/packages/add_content/') . $package['package_id']; ?>" class="btn default-btn btn-primary">Update</a>
               </td>
               <td>
                 <?php echo form_open('admin/packages/delete/' . $package['package_id']); ?>
@@ -97,8 +146,8 @@
 				<tfoot>
           <tr>
             <th>Packages</th>
-						<th>Packages Price</th>
-            <th></th>
+						<th>Packages Menu</th>
+            <th>Packages Price</th>
             <th></th>
             <th></th>
           </tr>

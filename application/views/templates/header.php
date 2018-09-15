@@ -18,7 +18,7 @@
   <script src="<?php echo site_url('assets/js/ckeditor5-build-classic/ckeditor.js') ?>"></script>
     
 </head>
-<body>
+<body id="<?=basename($_SERVER['PHP_SELF'],'.php')?>">
 
   <!-- <div id="preloader">
       <div id="status"></div>
@@ -41,9 +41,6 @@
               </li>
               <li <?php if($this->uri->segment(1)=="services/index"){echo 'class="active"';}?> >
                 <a href="<?php echo site_url('services'); ?>">Services</a>
-              </li>
-              <li <?php if($this->uri->segment(1)=="blog"){echo 'class="active"';}?> >
-                <a href="<?php echo site_url('blog'); ?>">Blog</a>
               </li>
               <li <?php if($this->uri->segment(1)=="about"){echo 'class="active"';}?> >
                 <a href="<?php echo site_url('about'); ?>">About</a>

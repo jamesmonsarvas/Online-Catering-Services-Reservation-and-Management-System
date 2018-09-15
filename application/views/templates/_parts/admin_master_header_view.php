@@ -28,7 +28,7 @@
 
   </head>
 
-  <body id="page-top">
+  <body id="<?=basename($_SERVER['PHP_SELF'],'.php')?>">
 
     <!-- <div id="preloader">
         <div id="status"></div>
@@ -79,7 +79,7 @@
           <!-- Sidebar -->
           <ul class="sidebar navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="<?php echo site_url('/admin'); ?>">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span>
               </a>
@@ -102,8 +102,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <a class="dropdown-item" href="<?php echo site_url('admin/packages/index') ?>">All Package</a>
-                <a class="dropdown-item" href="<?php echo site_url('admin/packages/create') ?>">Add New</a>
-              </div>
+                <a class="dropdown-item" href="<?php echo site_url('admin/packages/list_of_menu') ?>">List of Menus</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -113,8 +112,6 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <a class="dropdown-item" href="<?php echo site_url('admin/reservation/index') ?>">All Reservation</a>
-                <a class="dropdown-item" href="<?php echo site_url('admin/reservation/create') ?>">Add New</a>
-              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="charts.html">

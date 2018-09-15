@@ -97,13 +97,13 @@
 
         </tbody>
 
-				<tfoot>
+				<!-- <tfoot>
           <tr>
             <th>Type of Menu</th>
 						<th></th>
             <th></th>
           </tr>
-        </tfoot>
+        </tfoot> -->
 
       </table>
 

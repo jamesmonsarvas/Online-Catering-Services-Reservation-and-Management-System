@@ -2,7 +2,7 @@
     <h1 class="entry-title border-lr">Services</h1>
 </div>
 
-<div id="services">
+<div id="services-page">
   <div class="container">
 
     <div class="row">

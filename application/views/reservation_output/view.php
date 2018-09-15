@@ -14,7 +14,7 @@
     </div><!-- .row -->
   </div><!-- .container-fluid -->
 </div><!-- .parallax-2 -->
-<div id="reservation">
+<div id="reservation-page">
 
   <div class="container">
 
@@ -34,20 +34,26 @@
     </div>
 
     <div id="calendar"></div>
-
     <script>
+    
       $(function () {
         $('#calendar').calendar({
           events: [
-            { start: '2018-09-05', end: '2018-09-05', summary: "Occupied", mask: true},
+            <?php foreach ($reservations as $reservation) : ?>
+              <?php if ($reservation['status'] == 1) : ?>
+                { start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "Finished", mask: false},
+              <?php else : ?>
+                { start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "Occupied", mask: true},
+              <?php endif; ?>
+            <?php endforeach; ?>
           ]
         });
       });
     </script>
 
-    <?php echo validation_errors(); ?>
+    <?php // echo validation_errors(); ?>
 
-    <?php echo form_open('reservation/create'); ?>
+    <?php echo form_open('reservation/create', 'id="reservation-form"'); ?>
       
       <div class="row">
 
@@ -112,21 +118,21 @@
             </div>
 
             <div class="form-group col-md-4">
-              <input type="email" class="form-control" name="email" placeholder="6. Your email address">
+              <input type="email" class="form-control" id="email" name="email" placeholder="6. Your email address">
             </div>
           </div>
 
           <div class="row">
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" name="first-name" placeholder="7. Your first name">
+              <input type="text" class="form-control" id="first-name" name="first-name" placeholder="7. Your first name">
             </div>
 
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" name="last-name" placeholder="8. Your last name">
+              <input type="text" class="form-control" id="last-name" name="last-name" placeholder="8. Your last name">
             </div>
 
             <div class="form-group col-md-4">
-              <input type="text" class="form-control" name="telephone" placeholder="9. Your telephone">
+              <input type="text" class="form-control" id="telephone" name="telephone" placeholder="9. Your telephone">
             </div>
           </div>
 
@@ -137,6 +143,49 @@
       </div><!-- .row -->
 
     <?php echo form_close(); ?>
+
+    <script>
+      
+      $(document).ready(function () {
+
+        var event = document.getElementById('event');
+        var place = document.getElementById('place');
+        var people = document.getElementById('people');
+        var date = document.getElementById('datepicker');
+        var time = document.getElementById('time');
+        var email = document.getElementById('email');
+        var firstName = document.getElementById('first-name');
+        var lastName = document.getElementById('last-name');
+        var telephone = document.getElementById('telephone');
+
+        var reservationForm = document.getElementById('reservation-form');
+
+        var flag = true;
+
+        var data = [event, place, people, date, time, email, firstName, lastName, telephone];
+
+        reservationForm.addEventListener('submit', function(e) {
+
+          for (var index = 0; index < data.length; index++) {
+            if(data[index].value == "") {
+              data[index].style.borderColor = "red";
+              flag = true;
+            }
+            else {
+              data[index].style.borderColor = "#292929";
+              flag = false;
+            }
+          }
+
+          if (flag == true) {
+            e.preventDefault();
+          }
+
+        });
+
+      });
+
+    </script>
     
   </div><!-- .container -->
 

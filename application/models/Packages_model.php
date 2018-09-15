@@ -22,6 +22,24 @@
 			// return $query->row_array();
 		}
 
+		public function get_package($id) {
+			$this->db->order_by('package_id');
+			$query = $this->db->get_where('package', array('package_id' => $id));
+			return $query->result_array();
+		}
+
+		public function get_pc_by_pid($id) {
+			$this->db->distinct();
+			$this->db->order_by('package_content.package_content_id', 'ASC');
+			$this->db->select('package_content.package_content_id, package_content.type_of_menu, package_pc.package_id');    
+			$this->db->from('package_content');
+			$this->db->join('package_pc', 'package_pc.package_content_id = package_content.package_content_id');
+			$this->db->where('package_id', $id);
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
+
 		public function create_packages() {
 
 			$data = array(
@@ -29,12 +47,8 @@
 				'price' => $this->input->post('price')
 			);
 
-
-
 			return $this->db->insert('package', $data);
 		}
-
-		//
 
 		public function delete_packages($id)
 		{
@@ -55,38 +69,33 @@
 			// return $query->row_array();
 		}
 
-		public function get_packages_content($id) {
-
-			if ($id === null) {
-				$this->db->order_by('package_content_id', 'DESC');
-				$query = $this->db->get('package_content');
-				return $query->result_array();
-			}
+		public function get_packages_content() {
 			$this->db->distinct();
 			$this->db->order_by('package_content.package_content_id', 'ASC');
 			$this->db->select('package_content.package_content_id, package_content.type_of_menu, package_pc.package_id');    
 			$this->db->from('package_content');
 			$this->db->join('package_pc', 'package_pc.package_content_id = package_content.package_content_id');
 
-			$query = $this->db->get_where('', array('package_id' => $id));
+			$query = $this->db->get();
 			return $query->result_array();
 
 			// working query :
-			// SELECT package_content.package_content_id, package_content.type_of_menu FROM package_content JOIN package_pc ON package_pc.package_content_id = package_content.package_content_id WHERE package_pc.package_id = 1 ORDER BY package_content.package_content_id ASC;
+			// SELECT package_pc.package_id, package_content.package_content_id, package_content.type_of_menu FROM package_content JOIN package_pc ON package_pc.package_content_id = package_content.package_content_id ORDER BY package_pc.package_id ASC;
 		}
 
-		public function get_list_of_menu($id) {
+		public function get_all_package_content() {
+			$this->db->order_by('package_content_id');     
+			$query = $this->db->get('package_content');
+			return $query->result_array();
+		}
 
-			//$this->db->order_by('list_of_menu.list_of_menu_id', 'ASC');
-			$this->db->select('list_of_menu.list_of_menu_id, package_content.type_of_menu, list_of_menu.menu_details');    
-			$this->db->from('list_of_menu');
-			$this->db->join('package_content', 'list_of_menu.package_content_id = package_content.package_content_id');
-
-			$query = $this->db->get_where('', array('list_of_menu.package_content_id' => $id));
+		public function get_list_of_menu() {
+			$this->db->order_by('list_of_menu_id');     
+			$query = $this->db->get('list_of_menu');
 			return $query->result_array();
 
 			// working query :
-			// SELECT list_of_menu.list_of_menu_id, package_content.type_of_menu, list_of_menu.menu_details FROM list_of_menu JOIN package_content ON list_of_menu.package_content_id = package_content.package_content_id WHERE list_of_menu.package_content_id = 1
+			// SELECT list_of_menu.menu_details, package_content.type_of_menu FROM package_content JOIN list_of_menu ON package_content.package_content_id = list_of_menu.package_content_id;
 		}
 
 		public function insert_new_content() {
@@ -94,7 +103,7 @@
 			$id = $this->input->post('id');
 			$data = array();
 			if ($id === null) {
-				$this->db->order_by('package_content_id', 'DESC');
+				$this->db->order_by('package_content_id', 'ASC');
 				$query = $this->db->get('package_content');
 				return $query->result_array();
 			}
@@ -107,30 +116,61 @@
 			$query = $this->db->get_where('', array('package_id' => $id));
 			$results = $query->result_array();
 
+			/* Kinuha ko muna yung data sa package_pc sabay tinignan kung connected na ba sila.
+			Kapag hindi pa connected yung isang record, ipupush ko na sa $data sabay i-insert ko lahat
+			ng laman ng $data.
+			*/
+
 			$raw_data = array($this->input->post('type_of_menu'));
 
-			$flag = false;
+			$flag = "false";
 			foreach ($raw_data[0] as $raw) {
 				foreach ($results as $result) {
 					if ($result["package_content_id"] == $raw) {
-						$flag = true;
+						$flag = "true";
 						break;
 					}
 				}
-				if (!$flag) {
+				if ($flag == "false") {
 					array_push($data, array(
 						'package_id' => $id,
 						'package_content_id' => $raw
 					));
 				}
-				$flag = false;
+				$flag = "false";
 			}
-			return $this->db->insert_batch('package_pc', $data);
+			print_r($data);
+			if (!empty($data)) {
+				return $this->db->insert_batch('package_pc', $data);
+			}
+			else {
+				//return $this->db->insert_batch('package_pc', $data);
+				return false;
+			}
+		}
+
+		public function update_package()
+		{
+			$data = array(
+				'package_no' => $this->input->post('package-no'),
+				'price' => $this->input->post('price')
+			);
+
+			$this->db->where('package_id', $this->input->post('id'));
+			return $this->db->update('package', $data);
 		}
 
 		public function delete_package($id)
 		{
 			$this->db->where('package_id', $id);
+			$this->db->delete('package_pc');
+			return "true";
+		}
+
+		public function delete_content_in_package($pid, $cid)
+		{
+			$this->db->where('package_id', $pid);
+			$this->db->where('package_content_id', $cid);
 			$this->db->delete('package_pc');
 			return true;
 		}

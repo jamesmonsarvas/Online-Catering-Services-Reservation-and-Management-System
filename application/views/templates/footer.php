@@ -3,16 +3,49 @@
 
   <footer id="footer">
   
-    <div class="container-fluid footer-container">
+    <div class="container footer-container">
 
       <div class="footer-row">
-        <div class="footer-col">
-            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2299.1667256354463!2d121.12519978596443!3d14.269421430167657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d887e028f7a1%3A0x7261da2484447b59!2s83+JP+Rizal+St%2C+Cabuyao%2C+Laguna!5e0!3m2!1sen!2sph!4v1535730195208" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+        <div class="col-md-3">
+
+          <h3>Important Service</h3>
+          <ul id="footer-menu">
+            <li><a href="#">Wedding</a></li>
+            <li><a href="#">Debut</a></li>
+            <li><a href="#">Children's Party</a></li>
+            <li><a href="#">Corporate Party</a></li>
+          </ul>
         </div>
-        <div class="footer-col">
+
+        <div class="col-md-3">
+
+          <h3>Social Media</h3>
+              <p>
+                Stay in touch with  important live notifications of our event and promotions by subscribing to our social feeds below.
+              </p>
 
         </div>
+
+        <div class="col-md-3">
+          
+          <h3>Newsletter</h3>
+              <p>
+                Get instant access below to our events checked guide (helpful for planning events properly) and our weekly newsletter full tips.
+              </p>
+        </div>
+
+        <div class="col-md-3"> 
+        
+          <h3>Contact Us</h3>
+          <p>Blk 112 Lot 35 Phase 2 Mabuhay, Mamatid Cabuyao Laguna 0936 - 827 - 5666. <a href="#">Click here to send us message.</a></p>
+        </div>
       </div><!-- .footer-row -->
+
+      <div class="footer-row">
+        <p class="copyright">
+          Copyright &copy; 2018 All Rights Reserved.
+        </p>
+      </div>
 
     </div><!-- .container-fluid -->
 

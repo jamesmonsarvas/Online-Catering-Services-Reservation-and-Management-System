@@ -1,21 +1,11 @@
-    
+            <div class="copyright text-center">
+              <span>Copyright © Kirstian Event Needs 2018</span>
+            </div>    
           </div>
 
       </div>
 
     </div>
-
-    <?php if ($this->ion_auth->logged_in()): ?>
-
-    <footer class="sticky-footer">
-      <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-          <span>Copyright © Your Website 2018</span>
-        </div>
-      </div>
-    </footer>
-
-    <?php endif ?>
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
