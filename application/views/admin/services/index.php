@@ -13,7 +13,6 @@
             <th>Services Title</th>
             <th>Services Description</th>
             <th></th>
-            <th></th>
           </tr>
         </thead>
 
@@ -29,11 +28,6 @@
               <td>
                 <a href="<?php echo base_url(); ?>admin/services/edit/<?php echo $service['services_slug']; ?>" class="btn default-btn btn-info float-left">Edit</a>
               </td>
-              <td>
-                <?php echo form_open('admin/services/delete/' . $service['ID']); ?>
-                    <input type="submit" class="btn default-btn btn-danger" value="Delete">
-                <?php echo form_close(); ?>
-              </td>
             </tr>
           <?php endforeach ?>
         </tbody>
@@ -42,7 +36,6 @@
           <tr>
             <th>Services Title</th>
             <th>Services Description</th>
-            <th></th>
             <th></th>
           </tr>
         </tfoot>

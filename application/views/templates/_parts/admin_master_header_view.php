@@ -91,7 +91,6 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <a class="dropdown-item" href="<?php echo site_url('admin/services/index') ?>">All Services</a>
-                <a class="dropdown-item" href="<?php echo site_url('admin/services/create') ?>">Add New</a>
               </div>
             </li>
 
@@ -114,14 +113,19 @@
                 <a class="dropdown-item" href="<?php echo site_url('admin/reservation/index') ?>">All Reservation</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="charts.html">
+              <a class="nav-link" href="<?php echo site_url('admin/events/index') ?>">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Event</span></a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="<?php echo site_url('admin/feedback/index') ?>">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Feedback</span></a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="tables.html">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Clients</span></a>
+                <span>Report</span></a>
             </li>
           </ul>
 

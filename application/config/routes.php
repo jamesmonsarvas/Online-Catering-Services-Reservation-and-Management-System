@@ -18,6 +18,17 @@ $route['admin/services'] = 'admin/services/index';
 $route['reservation'] = 'reservation_output/view';
 $route['reservation/create'] = 'reservation_output/create';
 
+$route['reservation/index'] = 'admin/reservation/approve_reservation';
+$route['reservation/index'] = 'admin/reservation/cancel_reservation';
+
+$route['contact/create'] = 'pages/create';
+
+$route['feedback/index'] = 'admin/feedback/update_feature';
+
+$route['events/index'] = 'admin/feedback/update_event';
+
+// URL = Controller/Function/(Paramaters)
+
 $route['services'] = 'services_output/view';
 
 $route['default_controller'] = 'pages/view';

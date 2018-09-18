@@ -1,190 +1,199 @@
 /*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
 
 /*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+* What follows is the result of much research on cross-browser styling.
+* Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+* Kroc Camen, and the H5BP dev community and team.
+*/
 
 /* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+Base styles: opinionated defaults
+========================================================================== */
 
 html {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 body {
-    background: #f9f9f9;
-    color: #777777;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    line-height: 1.6;
+  background: #f9f9f9;
+  color: #777777;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  line-height: 1.6;
 }
 
 .container {
-    width: 100%;
-    max-width: 1170px;
+  width: 100%;
+  max-width: 1170px;
 }
 
 /* DesireBasic Font */
 
 @font-face {
-    font-family: 'DesireBasic';
-    src: url('../fonts/desirebasic-webfont.eot');
-    src: url('../fonts/desirebasic-webfont.eot?#iefix') format('embedded-opentype'),
-            url('../fonts/desirebasic-webfont.woff2') format('woff2'),
-            url('../fonts/desirebasic-webfont.woff') format('woff'),
-            url('../fonts/desirebasic-webfont.ttf') format('truetype'),
-            url('../fonts/desirebasic-webfont.svg#desirebasic') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'DesireBasic';
+  src: url('../fonts/desirebasic-webfont.eot');
+  src: url('../fonts/desirebasic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/desirebasic-webfont.woff2') format('woff2'),
+  url('../fonts/desirebasic-webfont.woff') format('woff'),
+  url('../fonts/desirebasic-webfont.ttf') format('truetype'),
+  url('../fonts/desirebasic-webfont.svg#desirebasic') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Cabrito Font */
 
 @font-face {
-    font-family: 'Cabrito';
-    src: url('../fonts/cabritodidonenormregular-webfont.eot');
-    src: url('../fonts/cabritodidonenormregular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/cabritodidonenormregular-webfont.woff2') format('woff2'),
-         url('../fonts/cabritodidonenormregular-webfont.woff') format('woff'),
-         url('../fonts/cabritodidonenormregular-webfont.ttf') format('truetype'),
-         url('../fonts/cabritodidonenormregular-webfont.svg#cabrito_didonenorm_regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Cabrito';
+  src: url('../fonts/cabritodidonenormregular-webfont.eot');
+  src: url('../fonts/cabritodidonenormregular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/cabritodidonenormregular-webfont.woff2') format('woff2'),
+  url('../fonts/cabritodidonenormregular-webfont.woff') format('woff'),
+  url('../fonts/cabritodidonenormregular-webfont.ttf') format('truetype'),
+  url('../fonts/cabritodidonenormregular-webfont.svg#cabrito_didonenorm_regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 
 }
 
 /* Roboto Font */
 
 @font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/roboto-black-webfont.eot');
-    src: url('../fonts/roboto-black-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/roboto-black-webfont.woff2') format('woff2'),
-         url('../fonts/roboto-black-webfont.woff') format('woff'),
-         url('../fonts/roboto-black-webfont.ttf') format('truetype'),
-         url('../fonts/roboto-black-webfont.svg#robotoblack') format('svg');
-    font-weight: 800;
-    font-style: normal;
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-black-webfont.eot');
+  src: url('../fonts/roboto-black-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/roboto-black-webfont.woff2') format('woff2'),
+  url('../fonts/roboto-black-webfont.woff') format('woff'),
+  url('../fonts/roboto-black-webfont.ttf') format('truetype'),
+  url('../fonts/roboto-black-webfont.svg#robotoblack') format('svg');
+  font-weight: 800;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/roboto-bold-webfont.eot');
-    src: url('../fonts/roboto-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/roboto-bold-webfont.woff2') format('woff2'),
-         url('../fonts/roboto-bold-webfont.woff') format('woff'),
-         url('../fonts/roboto-bold-webfont.ttf') format('truetype'),
-         url('../fonts/roboto-bold-webfont.svg#robotobold') format('svg');
-    font-weight: 700;
-    font-style: normal;
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-bold-webfont.eot');
+  src: url('../fonts/roboto-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/roboto-bold-webfont.woff2') format('woff2'),
+  url('../fonts/roboto-bold-webfont.woff') format('woff'),
+  url('../fonts/roboto-bold-webfont.ttf') format('truetype'),
+  url('../fonts/roboto-bold-webfont.svg#robotobold') format('svg');
+  font-weight: 700;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/roboto-light-webfont.eot');
-    src: url('../fonts/roboto-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/roboto-light-webfont.woff2') format('woff2'),
-         url('../fonts/roboto-light-webfont.woff') format('woff'),
-         url('../fonts/roboto-light-webfont.ttf') format('truetype'),
-         url('../fonts/roboto-light-webfont.svg#robotolight') format('svg');
-    font-weight: 300;
-    font-style: normal;
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-light-webfont.eot');
+  src: url('../fonts/roboto-light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/roboto-light-webfont.woff2') format('woff2'),
+  url('../fonts/roboto-light-webfont.woff') format('woff'),
+  url('../fonts/roboto-light-webfont.ttf') format('truetype'),
+  url('../fonts/roboto-light-webfont.svg#robotolight') format('svg');
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/roboto-medium-webfont.eot');
-    src: url('../fonts/roboto-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/roboto-medium-webfont.woff2') format('woff2'),
-         url('../fonts/roboto-medium-webfont.woff') format('woff'),
-         url('../fonts/roboto-medium-webfont.ttf') format('truetype'),
-         url('../fonts/roboto-medium-webfont.svg#robotomedium') format('svg');
-    font-weight: 600;
-    font-style: normal;
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-medium-webfont.eot');
+  src: url('../fonts/roboto-medium-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/roboto-medium-webfont.woff2') format('woff2'),
+  url('../fonts/roboto-medium-webfont.woff') format('woff'),
+  url('../fonts/roboto-medium-webfont.ttf') format('truetype'),
+  url('../fonts/roboto-medium-webfont.svg#robotomedium') format('svg');
+  font-weight: 600;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/roboto-regular-webfont.eot');
-    src: url('../fonts/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/roboto-regular-webfont.woff2') format('woff2'),
-         url('../fonts/roboto-regular-webfont.woff') format('woff'),
-         url('../fonts/roboto-regular-webfont.ttf') format('truetype'),
-         url('../fonts/roboto-regular-webfont.svg#robotoregular') format('svg');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-regular-webfont.eot');
+  src: url('../fonts/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/roboto-regular-webfont.woff2') format('woff2'),
+  url('../fonts/roboto-regular-webfont.woff') format('woff'),
+  url('../fonts/roboto-regular-webfont.ttf') format('truetype'),
+  url('../fonts/roboto-regular-webfont.svg#robotoregular') format('svg');
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/roboto-thin-webfont.eot');
-    src: url('../fonts/roboto-thin-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/roboto-thin-webfont.woff2') format('woff2'),
-         url('../fonts/roboto-thin-webfont.woff') format('woff'),
-         url('../fonts/roboto-thin-webfont.ttf') format('truetype'),
-         url('../fonts/roboto-thin-webfont.svg#robotothin') format('svg');
-    font-weight: 100;
-    font-style: normal;
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-thin-webfont.eot');
+  src: url('../fonts/roboto-thin-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/roboto-thin-webfont.woff2') format('woff2'),
+  url('../fonts/roboto-thin-webfont.woff') format('woff'),
+  url('../fonts/roboto-thin-webfont.ttf') format('truetype'),
+  url('../fonts/roboto-thin-webfont.svg#robotothin') format('svg');
+  font-weight: 100;
+  font-style: normal;
 }
+
+/* Font awesome */
+
+@font-face {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/fa-solid-900.eot");
+  src: url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff"), url("../fonts/fa-solid-900.ttf") format("truetype"), url("../fonts/fa-solid-900.svg#fontawesome") format("svg"); }
 
 /* Headings */
 
 h1,
 h2 {
-    font-family: 'DesireBasic', Arial, Helvetica, sans-serif;
+  font-family: 'DesireBasic', Arial, Helvetica, sans-serif;
 }
 
 h3,
 h4,
 h5,
 h6 {
-    font-family: 'Cabrito', Arial, Helvetica, sans-serif;
+  font-family: 'Cabrito', Arial, Helvetica, sans-serif;
 }
 
 h1 {
-    font-size: 78px;
+  font-size: 78px;
 }
 
 h2 {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 h3 {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 h4 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 h5 {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 h6 {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 /* Anchor */
 
 a {
-    color: #31bcbb;
-    font-size: 16px;
-    text-decoration: none;
-    transition: color .3s ease, background .3s ease, border .3s ease;
-    -webkit-transition: color .3s ease, background .3s ease, border .3s ease;
-    -moz-transition: color .3s ease, background .3s ease, border .3s ease;
-    -ms-transition: color .3s ease, background .3s ease, border .3s ease;
-    -o-transition: color .3s ease, background .3s ease, border .3s ease;
+  color: #31bcbb;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color .3s ease, background .3s ease, border .3s ease;
+  -webkit-transition: color .3s ease, background .3s ease, border .3s ease;
+  -moz-transition: color .3s ease, background .3s ease, border .3s ease;
+  -ms-transition: color .3s ease, background .3s ease, border .3s ease;
+  -o-transition: color .3s ease, background .3s ease, border .3s ease;
 }
 
 a:hover,
 a:active,
 a:focus {
-    color: #31bcbb;
-    text-decoration: none;
+  color: #31bcbb;
+  text-decoration: none;
 }
 
 input,
@@ -192,59 +201,59 @@ input[type="text"],
 input[type="email"],
 textarea,
 select {
-    color: #666;
-    outline: none;
-    transition: all .3s ease;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    box-shadow: none !important;
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    overflow: hidden;
+  color: #666;
+  outline: none;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  box-shadow: none !important;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  overflow: hidden;
 }
 
 input[type="text"],
 input[type="email"],
 textarea,
 select {
-    font-style: italic;
+  font-style: italic;
 }
 
 textarea {
-    resize: none;
-    height: 100%;
+  resize: none;
+  height: 100%;
 }
 
 input[type="text"],
 input[type="email"],
 textarea,
 select {
-    width: 100%;
-    padding: 8px 5px 8px 0;
-    border-top: none;
-    border-right: none;
-    border-bottom: 1px solid #292929;
-    border-left: none;
-    background: transparent;
+  width: 100%;
+  padding: 8px 5px 8px 0;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #292929;
+  border-left: none;
+  background: transparent;
 }
 
 input[type="text"]:focus,
 textarea:focus,
 select:focus {
-    border-bottom: 1px solid #29b4b2;
+  border-bottom: 1px solid #29b4b2;
 }
 
 input[type="text"] {
-    margin: 0 0 28px;
+  margin: 0 0 28px;
 }
 
 input[type="text"]:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -265,43 +274,43 @@ input[type="text"]:last-child {
 }
 
 /*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Vendor-prefixed and regular ::selection selectors cannot be combined:
+* https://stackoverflow.com/a/16982510/7133471
+*
+* Customize the background color to match your design.
+*/
 
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 /*
- * A better looking default horizontal rule
- */
+* A better looking default horizontal rule
+*/
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 /*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
+* Remove the gap between audio, canvas, iframes,
+* images, videos and the bottom of their containers:
+* https://github.com/h5bp/html5-boilerplate/issues/440
+*/
 
 audio,
 canvas,
@@ -309,115 +318,115 @@ iframe,
 img,
 svg,
 video {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    border: 0;
+  max-width: 100%;
+  height: auto;
+  border: 0;
 }
 
 /*
- * Remove default fieldset styles.
- */
+* Remove default fieldset styles.
+*/
 
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* ==========================================================================
-   Browser Upgrade Prompt
-   ========================================================================== */
+Browser Upgrade Prompt
+========================================================================== */
 
 .browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
 /* ==========================================================================
-   Menu Primary
-   ========================================================================== */
+Menu Primary
+========================================================================== */
 
 #menu-primary {
-    margin-top: 15px;
-    text-align: right;
+  margin-top: 15px;
+  text-align: right;
 }
 
 #menu-primary ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #menu-primary ul li {
-    display: inline-block;
+  display: inline-block;
 }
 
 #menu-primary ul li:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 #menu-primary li a {
-    padding: 10px 10px;
-    color: #f1ebf5;
-    font-size: 18px;
-    text-transform: uppercase;
+  padding: 10px 10px;
+  color: #f1ebf5;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 #menu-primary li a.default-btn {
-    margin-top: -5px;
-    font-weight: 400;
+  margin-top: -5px;
+  font-weight: 400;
 }
 
 #menu-primary li a.default-btn:hover,
 #menu-primary li a.default-btn:active,
 #menu-primary li a.default-btn:focus {
-    color: #f1ebf5;
+  color: #f1ebf5;
 }
 
 #menu-primary li a:hover,
 #menu-primary li a:active,
 #menu-primary li a:focus,
 #menu-primary li.active a {
-    color: #29b4b2;
+  color: #29b4b2;
 }
 
 /* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+Author's custom styles
+========================================================================== */
 
 /* Defaults */
 
 #preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fff;
-    /* change if the mask should have another color then white */
-    z-index: 9999;
-    /* makes sure it stays on top */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  /* change if the mask should have another color then white */
+  z-index: 9999;
+  /* makes sure it stays on top */
 }
 
 #status {
-    width: 600px;
-    height: 600px;
-    position: absolute;
-    left: 40%;
-    /* centers the loading animation horizontally one the screen */
-    top: 25%;
-    /* centers the loading animation vertically one the screen */
-    background-image: url('../images/preloader.gif');
-    /* path to your loading animation */
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: -100px 0 0 -100px;
-    /* is width and height divided by two */
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  left: 40%;
+  /* centers the loading animation horizontally one the screen */
+  top: 25%;
+  /* centers the loading animation vertically one the screen */
+  background-image: url('../images/preloader.gif');
+  /* path to your loading animation */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -100px 0 0 -100px;
+  /* is width and height divided by two */
 }
 
 .default-parallax,
@@ -425,109 +434,109 @@ fieldset {
 .parallax-2,
 .parallax-3,
 .parallax-4 {
-    padding: 15em 0;
-    color: #fff;
-    text-align: center;
+  padding: 15em 0;
+  color: #fff;
+  text-align: center;
 }
 
 .default-parallax {
-    background: url('../images/image-1.jpg') no-repeat top center;
-    background-attachment: fixed;
-    background-size: cover;
+  background: url('../images/image-1.jpg') no-repeat top center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .parallax-1 {
-    background: url('../images/image-2.jpg') no-repeat top center;
-    background-attachment: fixed;
-    background-size: cover;
+  background: url('../images/image-2.jpg') no-repeat top center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .parallax-2 {
-    background: url('../images/image-3.jpg') no-repeat top center;
-    background-attachment: fixed;
-    background-size: cover;
+  background: url('../images/image-3.jpg') no-repeat top center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .parallax-3 {
-    background: url('../images/image-4.jpg') no-repeat top center;
-    background-attachment: fixed;
-    background-size: cover;
+  background: url('../images/image-4.jpg') no-repeat top center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .parallax-4 {
-    background: url('../images/image-5.jpg') no-repeat top center;
-    background-attachment: fixed;
-    background-size: cover;
+  background: url('../images/image-5.jpg') no-repeat top center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .border-lr:before,
 .border-lr:after {
-    content: '';
-    display: inline-block;
-    width: 20%;
-    border-bottom: 2px solid #a1c2d1;
-    vertical-align: 20px;
+  content: '';
+  display: inline-block;
+  width: 20%;
+  border-bottom: 2px solid #a1c2d1;
+  vertical-align: 20px;
 }
 
 .border-lr:before {
-    margin-right: 25px;
+  margin-right: 25px;
 }
 
 .border-lr:after {
-    margin-left: 25px;
+  margin-left: 25px;
 }
 
 .default-btn,
 input[type="submit"] {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    margin-top: 25px;
-    padding: 20px 30px;
-    background: #29b4b2;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    overflow: hidden;
-    text-transform: uppercase;
-    
-    -moz-transform: perspective(1px) translateZ(0);
-    -ms-transform: perspective(1px) translateZ(0);
-    -o-transform: perspective(1px) translateZ(0);
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 25px;
+  padding: 20px 30px;
+  background: #29b4b2;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  overflow: hidden;
+  text-transform: uppercase;
 
-    
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -moz-transform: perspective(1px) translateZ(0);
+  -ms-transform: perspective(1px) translateZ(0);
+  -o-transform: perspective(1px) translateZ(0);
 
-    cursor: pointer;
+
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+  cursor: pointer;
 }
 
 input[type="submit"] {
-    margin: 35px auto 0;
-    border-top: none;
-    border-right: none;
-    border-bottom: none;
-    border-left: none;
-    color: #fff;
+  margin: 35px auto 0;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  color: #fff;
 }
 
 .default-btn:before,
 input[type="submit"]:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: 51%;
-    right: 51%;
-    bottom: 0;
-    background: #292929;
-    height: 5px;
-    -webkit-transition-property: left, right;
-    transition-property: left, right;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: #292929;
+  height: 5px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
 
 .default-btn:hover,
@@ -536,7 +545,7 @@ input[type="submit"]:before {
 input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:active {
-    color: #fff;
+  color: #fff;
 }
 
 .default-btn:hover:before,
@@ -545,366 +554,434 @@ input[type="submit"]:active {
 input[type="submit"]:hover:before,
 input[type="submit"]:focus:before, 
 input[type="submit"]:active:before {
-    left: 0;
-    right: 0;
+  left: 0;
+  right: 0;
 }
 
 .centered-content {
-    padding: 5em 0;
-    text-align: center;
+  padding: 5em 0;
+  text-align: center;
 }
 
 .divider {
-    display: block;
-    width: 100%;
-    margin: 30px 0;
-    border-bottom: 2px solid #a1c2d1;
+  display: block;
+  width: 100%;
+  margin: 30px 0;
+  border-bottom: 2px solid #a1c2d1;
 }
 
 #about-page,
 #contact-page,
 #reservation-page,
 #services-page {
-    padding: 80px 0;
+  padding: 80px 0;
 }
 
 /* Header */
 
 #header {
-    z-index: 999;
-    position: fixed;
-    width: 100%;
-    padding: 25px 0;
-    background: rgba(0, 0, 0, 0.4);
-    -webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	-ms-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -webkit-box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
-    box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  padding: 25px 0;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
 }
 
 #header.sticky {
-    background: rgba(36, 43, 46, 0.9);
-    padding: 15px 0;
+  background: rgba(36, 43, 46, 0.9);
+  padding: 15px 0;
 }
 
 /* Home Page */
 
 #home-page #home-banner {
-    height: auto;
-    padding: 12em 0;
-    background: url('../images/image-7.jpg') no-repeat top center;
-    background-attachment: fixed;
-    background-size: cover;
+  height: auto;
+  padding: 12em 0;
+  background: url('../images/image-7.jpg') no-repeat top center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 #home-page #home-banner #banner .entry-desc {
-    margin: 25px 0;
-    font-family: 'Cabrito', Arial, Helvetica, sans-serif;
-    font-size: 20px;
+  margin: 25px 0;
+  font-family: 'Cabrito', Arial, Helvetica, sans-serif;
+  font-size: 20px;
 }
 
 #home-page .client-quote {
-    padding: 8em 0;
+  padding: 8em 0;
 }
 
 #home-page .client-quote.parallax-bg {
-    height: auto;
-    background: url('../images/image-3.jpg') no-repeat top center;
-    background-attachment: fixed;
-    background-size: cover;
+  height: auto;
+  background: url('../images/image-3.jpg') no-repeat top center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 #home-page .client-quote .quotes {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #home-page .client-quote .quotes .client-avatar {
-    flex: 0 0 20%;
-    max-width: 20%;
+  flex: 0 0 20%;
+  max-width: 20%;
 }
 
 #home-page .client-quote .quotes .client-avatar .fa-user {
-    margin-right: 15px;
-    padding: 30px 30px;
-    background: #b29bc7;
-    border-radius:50%;
-    -webkit-border-radius:50%;
-    -moz-border-radius:50%;
-    -ms-border-radius:50%;
-    -o-border-radius:50%;
-    font-size: 30px;
-    color: #fff;
+  margin-right: 15px;
+  padding: 30px 30px;
+  background: #b29bc7;
+  border-radius:50%;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  -ms-border-radius:50%;
+  -o-border-radius:50%;
+  font-size: 30px;
+  color: #fff;
 }
 
 #home-page .client-quote .quotes blockquote {
-    flex: 0 0 80%;
-    max-width: 80%;
+  flex: 0 0 80%;
+  max-width: 80%;
 }
 
 #home-page .client-quote .quotes blockquote .client-name {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 #home-page #tasting-experience .tasting-food {
-    margin: 35px 0;
+  margin: 35px 0;
 }
 
 #home-page #tasting-experience .tasting-food img {
-    width: 75%;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+  width: 75%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 #home-page #tasting-experience .contact-us {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 #home-page #trademark-services .our-services {
-    margin: 35px 0;
+  margin: 35px 0;
 }
 
 #home-page #trademark-services .our-services a {
-    color: #fff;
+  color: #fff;
 }
 
 #home-page #trademark-services .our-services .service > img {
-    position: relative;
-    width: 100%;
-    filter: grayscale(1%);
-    -webkit-filter: grayscale(1%);
-    opacity: .9;
-    transition: all .3s ease;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    -o-transition: all .3s ease;
+  position: relative;
+  width: 100%;
+  filter: grayscale(1%);
+  -webkit-filter: grayscale(1%);
+  opacity: .9;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
 }
 
 #home-page #trademark-services .our-services .service:hover > img,
 #home-page #trademark-services .our-services .service:active > img,
 #home-page #trademark-services .our-services .service:focus > img {
-    filter: grayscale(0);
-    -webkit-filter: grayscale(0);
-    opacity: 1;
+  filter: grayscale(0);
+  -webkit-filter: grayscale(0);
+  opacity: 1;
 }
 
 #home-page #trademark-services .our-services .service h3 {
-    position: absolute;
-    width: 90%;
-    bottom: 1em;
-    text-shadow: 0 1px 2px #000;
+  position: absolute;
+  width: 90%;
+  bottom: 1em;
+  text-shadow: 0 1px 2px #000;
 }
 
 #home-page #our-story .about-us {
-    margin: 35px 0;
+  margin: 35px 0;
 }
 
 #home-page #our-story .about-us .fa-user {
-    margin-right: 15px;
-    padding: 50px 50px;
-    background: #b29bc7;
-    border-radius:50%;
-    -webkit-border-radius:50%;
-    -moz-border-radius:50%;
-    -ms-border-radius:50%;
-    -o-border-radius:50%;
-    font-size: 35px;
-    color: #fff;
+  margin-right: 15px;
+  padding: 50px 50px;
+  background: #b29bc7;
+  border-radius:50%;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  -ms-border-radius:50%;
+  -o-border-radius:50%;
+  font-size: 35px;
+  color: #fff;
 }
 
 /* Service Page */
 
 #services-page #services-banner #banner .entry-desc {
-    margin: 25px 0;
-    font-family: 'Cabrito', Arial, Helvetica, sans-serif;
-    font-size: 20px;
+  margin: 25px 0;
+  font-family: 'Cabrito', Arial, Helvetica, sans-serif;
+  font-size: 20px;
 }
 
 /* About Page */
 
 #about-page #about-us {
-    padding: 50px 0;
+  padding: 50px 0;
 }
 
 #about-page #about-us .who-we-are h3,
 #about-page #about-us #our-staff h3 {
-    margin-bottom: 0;
-    padding-bottom: 50px;
+  margin-bottom: 0;
+  padding-bottom: 50px;
 }
 
 #about-page #about-us .who-we-are {
-    padding-bottom: 50px;
-    border-bottom: 1px solid #292929;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #292929;
 }
 
 #about-page #about-us .who-we-are img {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 #about-page #about-us #our-staff {
-    padding: 50px 0;
+  padding: 50px 0;
 }
 
 #about-page #about-us #our-staff .row {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 #about-page #about-us #our-staff .row:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 #about-page #about-us #our-staff .row img {
-    width: 100%;
+  width: 100%;
 }
 
 /* Contact Page */
 
+#contact-page {
+  padding-bottom: 0;
+}
+
 #contact-page #contact-banner #banner .entry-desc {
-    margin: 25px 0;
-    font-family: 'Cabrito', Arial, Helvetica, sans-serif;
-    font-size: 20px;
+  margin: 25px 0;
+  font-family: 'Cabrito', Arial, Helvetica, sans-serif;
+  font-size: 20px;
 }
 
 #contact-page #contact-us .contact-food {
-    margin: 35px 0;
+  margin: 35px 0;
 }
 
 #contact-page #contact-us .contact-food img {
-    width: 75%;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+  width: 75%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 #contact-page #contact-us .contact-us {
-    margin-top: 30px;
+  margin-top: 30px;
+}
+
+#contact-page .default-parallax,
+#contact-page .parallax-1,
+#contact-page .parallax-2,
+#contact-page .parallax-3,
+#contact-page .parallax-4 {
+  padding: 8em 0;
+}
+
+#contact-page .flexslider {
+  margin: 0;
+  background: transparent;
+  border: none;
+}
+
+#contact-page #feedback-slider p.feedback-message {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  font-style: italic;
+  font-size: 20px;
+}
+
+#contact-page #feedback-slider p.feedback-name {
+  margin-top: 30px;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+#contact-page #feedback-slider p.feedback-message::before,
+#contact-page #feedback-slider p.feedback-message::after,
+#contact-page #feedback-slider p.feedback-name::before {
+  position: relative;
+  color: #16e0dd;
+  font-family: FontAwesome;
+  font-size: 25px;
+}
+
+#contact-page #feedback-slider p.feedback-message::before {
+  content: '\f10d';
+  top: -10px;
+  left: -10px;
+}
+
+#contact-page #feedback-slider p.feedback-message::after {
+  font-family: FontAwesome;
+  content: '\f10e';
+  right: -10px;
+  bottom: -10px;
+}
+
+#contact-page #feedback-slider p.feedback-name::before {
+  content: '\f075';
+  margin-right: 10px;
+  font-size: 20px;
+  font-style: normal;
+}
+
+/* Reservation Page */
+
+#reservation-page #terms-and-condition {
+  margin-bottom: 50px;
 }
 
 /* Footer */
 
 #footer {
-    padding: 80px 0;
-    -webkit-box-shadow: 0 -2px 10px 0 rgba(0,0,0,.1);
-    box-shadow: 0 -2px 10px 0 rgba(0,0,0,.1);
-    overflow: hidden;
+  padding: 80px 0;
+  -webkit-box-shadow: 0 -2px 10px 0 rgba(0,0,0,.1);
+  box-shadow: 0 -2px 10px 0 rgba(0,0,0,.1);
+  overflow: hidden;
 }
 
 #footer .google-map {
-    width: 100%;
-    height: 700px;
-    -webkit-box-shadow: 2px 0 10px 0 rgba(0,0,0,.2);
-    box-shadow: 2px 0 10px 0 rgba(0,0,0,.2);
+  width: 100%;
+  height: 700px;
+  -webkit-box-shadow: 2px 0 10px 0 rgba(0,0,0,.2);
+  box-shadow: 2px 0 10px 0 rgba(0,0,0,.2);
 }
 
 #footer .footer-container {
-    padding: 0;
+  padding: 0;
 }
 
 #footer .footer-row {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #footer .footer-row .footer-col {
-    flex: 0 0 50%;
-    max-width: 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 
 #footer .footer-row h3 {
-    font-family: 'Roboto';
-    font-size: 18px;
-    font-weight: 700;
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 700;
 }
 
 #footer .footer-row ul {
-    padding: 0;
+  padding: 0;
 }
 
 #footer .footer-row ul li {
-    list-style: none;
+  list-style: none;
 }
 
 #footer .footer-row .copyright {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 /* ==========================================================================
-   Helper classes
-   ========================================================================== */
+Helper classes
+========================================================================== */
 
 /*
- * Hide visually and from screen readers
- */
+* Hide visually and from screen readers
+*/
 
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 /*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
 
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    white-space: nowrap; /* 1 */
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
 }
 
 /*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
+* Extends the .visuallyhidden class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-    white-space: inherit;
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
 }
 
 /*
- * Hide visually and from screen readers, but maintain layout
- */
+* Hide visually and from screen readers, but maintain layout
+*/
 
 .invisible {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 /*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
 
 .clearfix::after,
 #header::after,
@@ -912,102 +989,102 @@ input[type="submit"]:active:before {
 #content::after,
 #footer::after,
 #home-page .client-quote .quotes::after {
-	content:    ".";
-	display:    block;
-	height:     0;
-	clear:      both;
-	visibility: hidden;
+  content:    ".";
+  display:    block;
+  height:     0;
+  clear:      both;
+  visibility: hidden;
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
+EXAMPLE Media Queries for Responsive Design.
+These examples override the primary ('mobile first') styles.
+Modify as content requires.
+========================================================================== */
 
 @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+  /* Style adjustments for viewports that meet the condition */
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
+Print styles.
+Inlined to avoid the additional HTTP request:
+https://www.phpied.com/delay-loading-your-print-css/
+========================================================================== */
 
 @media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster */
-        -webkit-box-shadow: none !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important; /* Black prints faster */
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
 
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
 
-    pre {
-        white-space: pre-wrap !important;
-    }
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
 
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
 
-    thead {
-        display: table-header-group;
-    }
+  thead {
+    display: table-header-group;
+  }
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }

@@ -1,17 +1,17 @@
 $(function () {
 
-    $("#datepicker").datepicker();
+  $("#datepicker").datepicker();
 
-    $(window).scroll(function () {
-      if ($(this).scrollTop() > 10) {
-        $('#header').addClass("sticky");
-      }
-      else {
-        $('#header').removeClass("sticky");
-      }
-    });
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 10) {
+      $('#header').addClass("sticky");
+    }
+    else {
+      $('#header').removeClass("sticky");
+    }
+  });
 
-    /** Preloader */
+  /** Preloader */
 
 	$(window).on('load', function () { // makes sure the whole site is loaded 
 		$('#status').fadeOut(); // will first fade out the loading animation 
@@ -19,9 +19,12 @@ $(function () {
 		$('body').delay(350).css({ 'overflow': 'visible' });
   })
     
-    $(window).load(function () {
-      $('.flexslider').flexslider({
-        animation: "slide"
-      });
-    });
+  $('#feedback-slider').flexslider({
+    animation: "slide",
+    animationLoop: true,
+    animationSpeed: 500,
+    smoothHeight: true,
+    pauseOnHover: true,
+  });
+
 });

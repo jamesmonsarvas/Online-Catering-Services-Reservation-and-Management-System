@@ -40,7 +40,7 @@
         $('#calendar').calendar({
           events: [
             <?php foreach ($reservations as $reservation) : ?>
-              <?php if ($reservation['status'] == 1) : ?>
+              <?php if ($reservation['status'] == 0) : ?>
                 { start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "Finished", mask: false},
               <?php else : ?>
                 { start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "Occupied", mask: true},
@@ -53,10 +53,28 @@
 
     <?php // echo validation_errors(); ?>
 
+    <div id="terms-and-condition">
+
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Terms and Condtions</h3>
+          <ul>
+            <li>Php 5,000 reservation fee to save the date</li>
+            <li>75% down payment 15 days before</li>
+            <li>25% balance before the event</li>
+            <li>Addtional 15% service charge</li>
+            <li>Customer agree to pay in case of loss or damage of property/items based on market value</li>
+          </ul>
+
+        </div><!-- .col-md-12 -->
+      </div><!-- .row -->
+
+    </div><!-- #terms-and-condition -->
+
     <?php echo form_open('reservation/create', 'id="reservation-form"'); ?>
       
       <div class="row">
-
+        
         <input type="hidden" name="id" value="<?php // echo $services['ID']; ?>">
 
         <div class="col-md-12">
@@ -68,8 +86,8 @@
                 <option value>1. What is you special occasion?</option>
                 <option value="Wedding">Wedding</option>
                 <option value="Debut">Debut</option>
-                <option value="Childrens Party">Children's Party</option>
-                <option value="Other Event">Other Event</option>
+                <option value="Birthday, Anniversary, Graduation, and Baptismal">Birthday, Anniversary, Graduation, and Baptismal</option>
+                <option value="Inauguration, Fiesta, Seminar, and Other Events">Inauguration, Fiesta, Seminar, and Other Events</option>
               </select>
             </div>
 
@@ -145,46 +163,42 @@
     <?php echo form_close(); ?>
 
     <script>
-      
-      $(document).ready(function () {
 
-        var event = document.getElementById('event');
-        var place = document.getElementById('place');
-        var people = document.getElementById('people');
-        var date = document.getElementById('datepicker');
-        var time = document.getElementById('time');
-        var email = document.getElementById('email');
-        var firstName = document.getElementById('first-name');
-        var lastName = document.getElementById('last-name');
-        var telephone = document.getElementById('telephone');
+      var flag = true;
 
-        var reservationForm = document.getElementById('reservation-form');
+      var reservationForm = document.getElementById('reservation-form');
 
-        var flag = true;
+      var r_event = document.getElementById('event');
+      var r_place = document.getElementById('place');
+      var r_people = document.getElementById('people');
+      var r_date = document.getElementById('datepicker');
+      var r_time = document.getElementById('time');
+      var r_email = document.getElementById('email');
+      var r_firstName = document.getElementById('first-name');
+      var r_lastName = document.getElementById('last-name');
+      var r_telephone = document.getElementById('telephone');
 
-        var data = [event, place, people, date, time, email, firstName, lastName, telephone];
+      var r_data = [r_event, r_place, r_people, r_date, r_time, r_email, r_firstName, r_lastName, r_telephone];
 
-        reservationForm.addEventListener('submit', function(e) {
+      reservationForm.addEventListener('submit', function(e) {
 
-          for (var index = 0; index < data.length; index++) {
-            if(data[index].value == "") {
-              data[index].style.borderColor = "red";
-              flag = true;
-            }
-            else {
-              data[index].style.borderColor = "#292929";
-              flag = false;
-            }
+        for (var r_index = 0; r_index < r_data.length; r_index++) {
+          if(r_data[r_index].value == "") {
+            r_data[r_index].style.borderColor = "red";
+            flag = true;
           }
-
-          if (flag == true) {
-            e.preventDefault();
+          else {
+            r_data[r_index].style.borderColor = "#292929";
+            flag = false;
           }
+        }
 
-        });
+        if (flag == true) {
+          e.preventDefault();
+        }
 
       });
-
+      
     </script>
     
   </div><!-- .container -->
