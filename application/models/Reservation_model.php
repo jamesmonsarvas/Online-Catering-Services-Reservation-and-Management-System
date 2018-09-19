@@ -16,6 +16,46 @@
 			// return $query->row_array();
 		}
 
+		public function get_reservations_where() {
+			$search = $this->input->post('search');
+			$searchFilter = $this->input->post('searchFilter');
+			$statusFilter = $this->input->post('statusFilter');
+
+			if ($search == "") {
+			  $this->db->select('*');    
+			  $this->db->from('reservation');
+
+			  $query = $this->db->get();
+			  return $query->result_array();
+			}
+			else {
+				if ($searchFilter == "name") {
+				  $this->db->select('*');    
+				  $this->db->from('reservation');
+				  $this->db->like('firstname', $search);
+				  $this->db->or_like('lastname', $search);
+				  $query = $this->db->get();
+				}
+				else if ($searchFilter == "type-of-event") {
+				  $this->db->select('*');    
+				  $this->db->from('reservation');
+				  $this->db->like('type_of_event', $search);
+				  $query = $this->db->get();
+				}
+				else if ($searchFilter == "any") {
+				  $this->db->select('*');    
+				  $this->db->from('reservation');
+				  $this->db->like('firstname', $search);
+				  $this->db->or_like('lastname', $search);
+				  $this->db->or_like('type_of_event', $search);
+				  $query = $this->db->get();
+				}
+				
+				return $query->result_array();
+
+			}
+		}
+
 		public function count_pending_reservation() {
 			$this->db->select('*');    
 			$this->db->from('reservation');

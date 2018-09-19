@@ -6,7 +6,7 @@
 			Price : <input type="text" name="price" value="<?php echo $package['price']; ?>"></input>
 			<br>
 			
-			<input type="hidden" name="id" value="<?php echo $menus[0]['package_id']; ?>">
+			<input type="text" name="id" value="<?php echo $package['package_id']; ?>">
 			<ul>
 
 			<?php $index = 0; ?>

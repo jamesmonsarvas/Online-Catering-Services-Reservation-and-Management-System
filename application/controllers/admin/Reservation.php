@@ -3,7 +3,7 @@
 
         public function index() {
 
-            $data['reservations'] = $this->Reservation_model->get_reservations();
+            $data['reservations'] = $this->Reservation_model->get_reservations_where();
             $data['packages'] = $this->Packages_model->get_packages();
             $this->load->view('templates/_parts/admin_master_header_view');
             $this->load->view('admin/reservation/index', $data);

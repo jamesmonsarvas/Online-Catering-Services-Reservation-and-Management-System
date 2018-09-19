@@ -40,9 +40,7 @@
         $('#calendar').calendar({
           events: [
             <?php foreach ($reservations as $reservation) : ?>
-              <?php if ($reservation['status'] == 0) : ?>
-                { start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "Finished", mask: false},
-              <?php else : ?>
+              <?php if ($reservation['status'] == 0 || $reservation['status'] == 1) : ?>
                 { start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "Occupied", mask: true},
               <?php endif; ?>
             <?php endforeach; ?>

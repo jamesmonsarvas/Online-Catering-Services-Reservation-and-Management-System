@@ -1,8 +1,9 @@
 <div class="card mb-3">
   <div class="card-header">
     <h3 class="cms-title">Feedback</h3>
-
-    <br><br>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
 
     <?php echo form_open('admin/feedback/index'); ?>
 
@@ -18,7 +19,7 @@
 
     <?php echo form_close(); ?>
 
-    <br><br>
+    <br>
 
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 

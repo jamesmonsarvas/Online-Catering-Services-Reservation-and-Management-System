@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 06, 2018 at 08:28 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Generation Time: Sep 19, 2018 at 04:01 PM
+-- Server version: 10.1.29-MariaDB
+-- PHP Version: 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,59 @@ SET time_zone = "+00:00";
 --
 -- Database: `cateringdb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `event`
+--
+
+CREATE TABLE `event` (
+  `event_id` int(11) NOT NULL,
+  `reservation_id` int(11) DEFAULT NULL,
+  `package_id` int(11) DEFAULT NULL,
+  `color_theme` varchar(20) DEFAULT NULL,
+  `comments` text,
+  `event_status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `event`
+--
+
+INSERT INTO `event` (`event_id`, `reservation_id`, `package_id`, `color_theme`, `comments`, `event_status`) VALUES
+(1, 13, 1, 'Blue', 'Remarks about the event. Special favors and others.', 0),
+(2, 16, 2, 'Red', 'Input your comment here.', 0),
+(3, 19, 4, 'Violet', 'Input your comment here.', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `feedback_id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone_number` varchar(14) NOT NULL,
+  `reason` varchar(25) NOT NULL,
+  `message` text NOT NULL,
+  `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `feature` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`feedback_id`, `name`, `email`, `phone_number`, `reason`, `message`, `date_added`, `feature`) VALUES
+(1, 'Gutlay', 'mharikgutlay@gmail.com', '09086655099', 'Wedding', 'This is my message for you about your wedding service.', '2018-09-18 09:19:15', 1),
+(4, 'Valdez', 'bjvldz@gmail.com', '09217436007', 'Debut', 'asdasdasd', '2018-09-18 07:50:46', 0),
+(8, 'James Monsarvas', 'jamez.monsarvas@gmail.com', '09352729624', 'Wedding', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat, ante eu elementum tincidunt, purus odio rutrum mauris, non tincidunt libero quam sit amet dolor. Nunc commodo interdum gravida. Mauris pretium leo mi, nec ultrices dui sodales sit amet. Aenean dignissim faucibus tortor, scelerisque condimentum sapien.', '2018-09-18 19:03:39', 1),
+(9, 'Edmark Fortuito', 'edmark4@yahoo.com', '09127635184', 'Debut', 'Donec at nunc non arcu efficitur finibus eu at lorem. Cras convallis rutrum nisi, a porta justo. Cras sit amet leo sit amet nulla dignissim pulvinar id vitae mi. Vivamus sed erat ante. Maecenas eget ipsum eu sapien malesuada pellentesque vitae vel diam. Duis porttitor arcu in lectus tempor, malesuada fringilla massa sagittis. Donec consectetur enim eleifend tempus gravida. Aliquam ligula eros, sagittis id urna in, interdum aliquam ex. Nulla vel lectus urna. Pellentesque eget ultricies nunc, id efficitur dolor.', '2018-09-18 20:04:26', 1),
+(10, 'Eduardo Dados', 'dadoseduardo10@yahoo.com', '09183726108', 'Corporate', 'Aliquam iaculis vel purus ac vestibulum. Suspendisse in tincidunt purus. Duis quis sagittis nibh. Etiam molestie eros massa, ac condimentum enim cursus pellentesque', '2018-09-18 20:04:21', 1),
+(11, 'John Carlo Plaza Gruy', 'JCPlazaGruy@yahoo.com', '09361728764', 'Good wedding service', 'Vestibulum eget odio quis lorem dignissim laoreet. Nulla suscipit tortor non orci ullamcorper, in tincidunt mauris congue.', '2018-09-19 05:55:04', 1);
 
 -- --------------------------------------------------------
 
@@ -139,40 +192,27 @@ CREATE TABLE `package_pc` (
 
 INSERT INTO `package_pc` (`package_id`, `package_content_id`) VALUES
 (1, 1),
-(1, 5),
-(1, 6),
+(1, 2),
 (2, 1),
 (2, 2),
-(2, 5),
-(2, 6),
+(2, 3),
+(2, 4),
 (3, 1),
 (3, 2),
 (3, 3),
+(3, 4),
 (3, 5),
-(3, 6),
 (4, 1),
 (4, 2),
 (4, 3),
 (4, 4),
 (4, 5),
-(4, 6),
-(1, 1),
+(1, 3),
+(NULL, NULL),
+(NULL, NULL),
 (1, 5),
-(1, 6),
-(2, 1),
-(2, 2),
-(2, 5),
-(2, 6),
-(3, 1),
-(3, 2),
-(3, 3),
-(3, 5),
-(3, 6),
-(4, 1),
-(4, 2),
-(4, 3),
-(4, 4),
-(4, 5),
+(0, 1),
+(0, 6),
 (4, 6);
 
 -- --------------------------------------------------------
@@ -184,7 +224,7 @@ INSERT INTO `package_pc` (`package_id`, `package_content_id`) VALUES
 CREATE TABLE `reservation` (
   `reservation_id` int(11) NOT NULL,
   `reference_no` int(255) NOT NULL,
-  `type_of_event` varchar(255) NOT NULL,
+  `type_of_event` int(11) NOT NULL,
   `place_of_event` varchar(255) NOT NULL,
   `exp_people_count` varchar(100) NOT NULL,
   `date_of_event` date NOT NULL,
@@ -202,8 +242,9 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`reservation_id`, `reference_no`, `type_of_event`, `place_of_event`, `exp_people_count`, `date_of_event`, `time_of_event`, `email_address`, `firstname`, `lastname`, `telephone`, `status`, `timestamp`) VALUES
-(9, 0, 'Debut', 'Cabuyao', '200-300', '2018-09-05', '2PM', 'jamez.monsarvas@gmail.com', 'James', 'Monsarvas', '09352729624', 0, '2018-09-04 10:11:13'),
-(10, 0, 'Wedding', 'Cabuyao', '300 and above', '2018-09-13', '2PM', 'jamez.monsarvas@gmail.com', 'Michael', 'Monsarvas', '09352729624', 0, '2018-09-04 14:00:01');
+(13, 0, 20, 'Alabang', 'Up to 100', '2018-09-26', '11AM', 'sampleemail@gmail.com', 'Michael', 'Monsarvas', '09992122244', 0, '2018-09-18 23:00:20'),
+(16, 0, 18, 'Calamba', 'Up to 100', '2018-09-30', '1PM', 'sheillacatalan@yahoo.com.ph', 'Bernardo', 'Valdez', '09431426431', 0, '2018-09-18 23:00:53'),
+(19, 0, 19, 'Pansol', '300 and above', '2018-09-28', '2PM', 'cmichael.reyes@gmail.com', 'Renaldo', 'Guzman', '09874521458', 0, '2018-09-18 23:20:55');
 
 -- --------------------------------------------------------
 
@@ -223,23 +264,10 @@ CREATE TABLE `services_cms` (
 --
 
 INSERT INTO `services_cms` (`ID`, `services_slug`, `services_title`, `services_desc`) VALUES
-(17, 'clown-mascot', 'Clown & Mascot', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><ul><li>Lorem</li><li>Ipsum</li><li>Dolor</li><li>Sit</li><li>Amet</li><li>Consectetur</li></ul><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>'),
-(18, 'ballons-flowers', 'Ballons & Flowers', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><ul><li>Lorem</li><li>Ipsum</li><li>Dolor</li><li>Sit</li><li>Amet</li><li>Consectetur</li></ul><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>'),
-(19, 'invitation', 'Invitation', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><ul><li>Lorem</li><li>Ipsum</li><li>Dolor</li><li>Sit</li><li>Amet</li><li>Consectetur</li></ul><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>'),
-(20, 'giveaways', 'Giveaways', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><ul><li>Lorem</li><li>Ipsum</li><li>Dolor</li><li>Sit</li><li>Amet</li><li>Consectetur</li></ul><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>'),
-(21, 'birthday-wedding-cake', 'Birthday & Wedding Cake', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><ul><li>Lorem</li><li>Ipsum</li><li>Dolor</li><li>Sit</li><li>Amet</li><li>Consectetur</li></ul><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `services_reservation`
---
-
-CREATE TABLE `services_reservation` (
-  `services_reservation_id` int(11) NOT NULL,
-  `service_id` int(11) DEFAULT NULL,
-  `reservation_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+(17, 'inauguration-fiesta-seminar-and-other-events', 'Inauguration, Fiesta, Seminar, and Other Events', '<p>(Update details) To make every kids birthday happier and jollier. We provide Clowns and Mascots that will entertain every kids and kids at heart.;</p><p>This service includes :</p><ul><li>Clown/Mascot</li><li>Magic Tricks</li><li>Magic Tools</li></ul>'),
+(18, 'birthday-anniversary-graduation-and-baptismal', 'Birthday, Anniversary, Graduation, and Baptismal', '<p>(Update details BJ) To make your event alive and pleasing to everyone\'s eyes.</p><p>Kirstian is here to provide balloons and flowers for your event. Different balloons and flowers color depends on what color you want.</p>'),
+(19, 'debut', 'Debut', '<p>We are here to make every girls once in a lifetime event wonderful and will last to their heart. You can choose your own color motif and leave the rest to us.&nbsp;</p><p>This service includes :</p><ul><li>Cake &amp; Buffet (100 pax)&nbsp;</li><li>Chairs with cover &amp; motif ribbon&nbsp;</li><li>Round table with cloth &amp; motif topping&nbsp;</li><li>Toast of Red Wine&nbsp;</li><li>Carpet with balloon arrangement&nbsp;</li><li>18 Roses &amp; Candles with motif ribbon&nbsp;</li><li>Waiter in uniform&nbsp;</li><li>Host / Emcee&nbsp;</li><li>Photo booths</li></ul>'),
+(20, 'wedding', 'Wedding', '<p>Wedding is a special event to a couples life, and we are here to make it an everlasting memory to cherish. You can choose what color motif you want.</p><p>This service includes :&nbsp;</p><ul><li>3 Layer Cake</li><li>Buffet &amp; Dessert (100 pax)</li><li>Tiffany Chairs w/ cover &amp; motif ribbon</li><li>Round Table w/ cloth &amp; motif topping</li><li>Catering equipments</li><li>Server in Uniform</li><li>Toast of Red Wine</li><li>Carpet w/ fresh rose petals</li><li>Couple of Dove in a cage</li><li>Host/Emcee</li></ul><p>&nbsp;</p>');
 
 -- --------------------------------------------------------
 
@@ -272,7 +300,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1536069546, 1, 'Admin', 'istrator', 'ADMIN', '0');
+(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1537362026, 1, 'Admin', 'istrator', 'ADMIN', '0');
 
 -- --------------------------------------------------------
 
@@ -297,6 +325,20 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `event`
+--
+ALTER TABLE `event`
+  ADD PRIMARY KEY (`event_id`),
+  ADD KEY `fk_event_package1_idx` (`package_id`),
+  ADD KEY `fk_event_reservation1_idx` (`reservation_id`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`feedback_id`);
 
 --
 -- Indexes for table `groups`
@@ -340,21 +382,14 @@ ALTER TABLE `package_pc`
 -- Indexes for table `reservation`
 --
 ALTER TABLE `reservation`
-  ADD PRIMARY KEY (`reservation_id`);
+  ADD PRIMARY KEY (`reservation_id`),
+  ADD KEY `fk_reservation_services_cms1_idx` (`type_of_event`);
 
 --
 -- Indexes for table `services_cms`
 --
 ALTER TABLE `services_cms`
   ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `services_reservation`
---
-ALTER TABLE `services_reservation`
-  ADD PRIMARY KEY (`services_reservation_id`),
-  ADD KEY `fk_services_reservation_services_cms1_idx` (`service_id`),
-  ADD KEY `fk_services_reservation_reservation1_idx` (`reservation_id`);
 
 --
 -- Indexes for table `users`
@@ -374,6 +409,18 @@ ALTER TABLE `users_groups`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `event`
+--
+ALTER TABLE `event`
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `groups`
@@ -397,19 +444,19 @@ ALTER TABLE `login_attempts`
 -- AUTO_INCREMENT for table `package`
 --
 ALTER TABLE `package`
-  MODIFY `package_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `package_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `services_cms`
 --
 ALTER TABLE `services_cms`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -428,11 +475,17 @@ ALTER TABLE `users_groups`
 --
 
 --
--- Constraints for table `services_reservation`
+-- Constraints for table `event`
 --
-ALTER TABLE `services_reservation`
-  ADD CONSTRAINT `fk_services_reservation_reservation1` FOREIGN KEY (`reservation_id`) REFERENCES `reservation` (`reservation_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_services_reservation_services_cms1` FOREIGN KEY (`service_id`) REFERENCES `services_cms` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `event`
+  ADD CONSTRAINT `fk_event_package1` FOREIGN KEY (`package_id`) REFERENCES `package` (`package_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_event_reservation1` FOREIGN KEY (`reservation_id`) REFERENCES `reservation` (`reservation_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `reservation`
+--
+ALTER TABLE `reservation`
+  ADD CONSTRAINT `fk_reservation_services_cms1` FOREIGN KEY (`type_of_event`) REFERENCES `services_cms` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `users_groups`

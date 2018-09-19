@@ -4,7 +4,7 @@
     <h3 class="cms-title">
       Menu
     </h3>
-    <a href="<?php echo site_url('admin/packages/create') ?>" class="btn btn-secondary">Add New</a>
+    <a href="<?php //echo site_url('admin/packages/create') ?>" class="btn btn-secondary">Add New</a>
   </div>
   <div class="card-body">
     <div class="table-responsive">

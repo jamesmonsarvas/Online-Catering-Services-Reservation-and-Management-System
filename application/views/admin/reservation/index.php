@@ -1,9 +1,34 @@
 <div class="card mb-3">
   <div class="card-header">
     <h2 class="cms-title">Reservation</h2>
+    <a href="<?php echo site_url('reservation') ?>" class="btn btn-secondary">Make Reservation</a>
   </div>
   <div class="card-body">
     <div class="table-responsive">
+      
+      <?php echo form_open('admin/reservation/index'); ?>
+
+        Search: <input type="text" id="search" name="search" value="">
+
+        Filter: <select id="searchFilter" name="searchFilter">
+          <option value="any" selected>Any</option>
+          <option value="name">Name</option>
+          <option value="type-of-event">Type of Event</option>
+        </select>
+
+        Status: <select id="statusFilter" name="statusFilter">
+          <option value="any" selected>Any</option>
+          <option value="pending">Pending</option>
+          <option value="approved">Approved</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+
+        <input type="submit" name="submit" value="GO">
+
+      <?php echo form_close(); ?>
+
+      <br>
+
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
         <thead>

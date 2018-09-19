@@ -64,20 +64,10 @@
                 <input type="text" class="form-control" name="price" placeholder="Price"></input>
               </div>
 
-              <input type="hidden" name="id" value="<?php // echo $packages_content[0]['package_id']; ?>">
+              <input type="hidden" name="id" value="<?php //echo $packages_content[0]['package_id']; ?>">
 
               <?php $index = 0; ?>
               
-              <?php //foreach ($all_package_content as $all_content): ?>
-                
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input type="checkbox" name="type_of_menu[]" class="form-check-input" checked value="">Option
-                  </label>
-                </div>
-
-              <?php //endforeach ?>
-
               <button type="submit" class="btn btn-default">Submit</button>
 
             <?php echo form_close(); ?>
@@ -117,16 +107,18 @@
               </td>
               <td class="package-no">
                 <ul class="package-menu">
-                  <?php foreach ($packages_content as $package_content): ?>
-                    <?php if ($package['package_id'] == $package_content['package_id']) : ?>
-                      <li>
-                        <?php echo form_open('admin/packages/delete_content/' . $package['package_id'] . "/" . $package_content['package_content_id']); ?>
-                            <label><?php echo $package_content['type_of_menu']; ?></label>
-                            <input type="submit" class="btn btn-danger delete-menu" value="X">
-                        <?php echo form_close(); ?>
-                      </li>
-                    <?php endif ?>
-                  <?php endforeach; ?>
+                  <?php if (isset($packages_content)) : ?>
+                    <?php foreach ($packages_content as $package_content): ?>
+                      <?php if ($package['package_id'] == $package_content['package_id']) : ?>
+                        <li>
+                          <?php echo form_open('admin/packages/delete_content/' . $package['package_id'] . "/" . $package_content['package_content_id']); ?>
+                              <label><?php echo $package_content['type_of_menu']; ?></label>
+                              <input type="submit" class="btn btn-danger delete-menu" value="X">
+                          <?php echo form_close(); ?>
+                        </li>
+                      <?php endif; ?>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
                 </ul>
               </td>
               <td><?php echo "&#8369;" . $package['price']; ?></td>
