@@ -9,28 +9,28 @@
       <div class="col-md-12">
         <div id="about-us">
           <div class="who-we-are">
-              <img src="<?php echo base_url(); ?>/assets/images/who-we-are-img.jpg" alt="">
+              <img class="about-img" src="<?php echo base_url(); ?>/assets/images/about/about_0.jpg" alt="">
               <h3>Who we are</h3>
               <p>
-                This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
+                We are Kirstian Event Needs and we are here to provide a high quality catering service. We do cater events like debut, wedding, birthdays, inaugurals, and fiestas. We are in this catering business industry since 1998 and we have catered a lot of events since then.
               </p>
               <p>
-                Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+                If you want to cater your event, you may reserve an event here in this website or you may contact us via our phone number (Globe: 0906-470-2286, Smart: 0921-402-4939, Telephone: (049)-544-2126) or visit our place at #83 J.P. Rizal St. Brgy. Sala, City of Cabuyao, Laguna
               </p>
           </div><!-- .who-we-are -->
 
           <div id="our-staff">
-              <h3>Our Staff</h3>
+              <h3>Photos</h3>
 
               <div class="row">
-                <div class="col-md-4"><img src="<?php echo base_url(); ?>assets/images/staff-image-1.jpg" alt=""></div>
-                <div class="col-md-4"><img src="<?php echo base_url(); ?>assets/images/staff-image-2.jpg" alt=""></div>
-                <div class="col-md-4"><img src="<?php echo base_url(); ?>assets/images/staff-image-3.jpg" alt=""></div>
+                <div class="col-md-4"><img src="<?php echo base_url(); ?>assets/images/about/about_1.jpg" alt=""></div>
+                <div class="col-md-4"><img src="<?php echo base_url(); ?>assets/images/about/about_2.jpg" alt=""></div>
+                <div class="col-md-4"><img src="<?php echo base_url(); ?>assets/images/about/about_3.jpg" alt=""></div>
               </div>
               <div class="row">
-                <div class="col-md-4"><img src="<?php echo base_url(); ?>assets/images/staff-image-3.jpg" alt=""></div>
-                <div class="col-md-4"><img src="<?php echo base_url(); ?>assets/images/staff-image-4.jpg" alt=""></div>
-                <div class="col-md-4"><img src="<?php echo base_url(); ?>assets/images/staff-image-1.jpg" alt=""></div>
+                <div class="col-md-4"><img src="<?php echo base_url(); ?>assets/images/about/about_4.jpg" alt=""></div>
+                <div class="col-md-4"><img src="<?php echo base_url(); ?>assets/images/about/about_5.jpg" alt=""></div>
+                <div class="col-md-4"><img src="<?php echo base_url(); ?>assets/images/about/about_6.jpg" alt=""></div>
               </div>
           </div><!-- #our-staff -->
         </div><!-- #about-us -->

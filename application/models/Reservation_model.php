@@ -16,6 +16,19 @@
 			// return $query->row_array();
 		}
 
+		public function get_pending_reservations() {
+			$this->db->order_by('status', 'DESC');
+			$this->db->select('*');    
+			$this->db->from('reservation');
+			$this->db->where('status', 1);
+
+			$query = $this->db->get();
+			return $query->result_array();
+
+			// $query = $this->db->get('reservation');
+			// return $query->row_array();
+		}
+
 		public function get_reservations_where() {
 			$search = $this->input->post('search');
 			$searchFilter = $this->input->post('searchFilter');
@@ -32,25 +45,42 @@
 				if ($searchFilter == "name") {
 				  $this->db->select('*');    
 				  $this->db->from('reservation');
-				  $this->db->like('firstname', $search);
-				  $this->db->or_like('lastname', $search);
-				  $query = $this->db->get();
+				  $this->db->group_start()
+				  				->like('firstname', $search)
+				  				->or_like('lastname', $search)
+				  				->group_end();
+				  
 				}
 				else if ($searchFilter == "type-of-event") {
 				  $this->db->select('*');    
 				  $this->db->from('reservation');
 				  $this->db->like('type_of_event', $search);
-				  $query = $this->db->get();
+				  
 				}
 				else if ($searchFilter == "any") {
 				  $this->db->select('*');    
 				  $this->db->from('reservation');
-				  $this->db->like('firstname', $search);
-				  $this->db->or_like('lastname', $search);
-				  $this->db->or_like('type_of_event', $search);
-				  $query = $this->db->get();
+				  $this->db->group_start()
+				  				->like('firstname', $search)
+				  				->or_like('lastname', $search)
+				  				->or_like('type_of_event', $search)
+				  				->group_end();
+				  
+				}
+				if ($statusFilter == "pending") {
+				  $this->db->where('status', 1);
+				  
+				}
+				else if ($statusFilter == "approved") {
+				   $this->db->where('status', 0);
+				  
+				}
+				else if ($statusFilter == "cancelled") {
+				   $this->db->where('status', 2);
+				  
 				}
 				
+				$query = $this->db->get();
 				return $query->result_array();
 
 			}
@@ -63,6 +93,107 @@
 
 			$query = $this->db->get();
 			return count($query->result());
+		}
+
+		public function count_reservation() {
+			$month = $this->input->post('selectMonth');
+
+			$this->db->select('*');    
+			$this->db->from('reservation');
+
+			if ($month == 0) {
+				
+			}
+			else if ($month == 1) {
+				$this->db->where('MONTH(date_of_event)', 1);
+			}
+			else if ($month == 2) {
+				$this->db->where('MONTH(date_of_event)', 2);
+			}
+			else if ($month == 3) {
+				$this->db->where('MONTH(date_of_event)', 3);
+			}
+			else if ($month == 4) {
+				$this->db->where('MONTH(date_of_event)', 4);
+			}
+			else if ($month == 5) {
+				$this->db->where('MONTH(date_of_event)', 5);
+			}
+			else if ($month == 6) {
+				$this->db->where('MONTH(date_of_event)', 6);
+			}
+			else if ($month == 7) {
+				$this->db->where('MONTH(date_of_event)', 7);
+			}
+			else if ($month == 8) {
+				$this->db->where('MONTH(date_of_event)', 8);
+			}
+			else if ($month == 9) {
+				$this->db->where('MONTH(date_of_event)', 9);
+			}
+			else if ($month == 10) {
+				$this->db->where('MONTH(date_of_event)', 10);
+			}
+			else if ($month == 11) {
+				$this->db->where('MONTH(date_of_event)', 11);
+			}
+			else if ($month == 12) {
+				$this->db->where('MONTH(date_of_event)', 12);
+			}
+
+			$query = $this->db->get();
+			return count($query->result());
+		}
+
+		public function report_reservation() {
+			$month = $this->input->post('selectMonth');
+
+			$this->db->select('*');    
+			$this->db->from('reservation');
+
+			if ($month == 0) {
+				
+			}
+			else if ($month == 1) {
+				$this->db->where('MONTH(date_of_event)', 1);
+			}
+			else if ($month == 2) {
+				$this->db->where('MONTH(date_of_event)', 2);
+			}
+			else if ($month == 3) {
+				$this->db->where('MONTH(date_of_event)', 3);
+			}
+			else if ($month == 4) {
+				$this->db->where('MONTH(date_of_event)', 4);
+			}
+			else if ($month == 5) {
+				$this->db->where('MONTH(date_of_event)', 5);
+			}
+			else if ($month == 6) {
+				$this->db->where('MONTH(date_of_event)', 6);
+			}
+			else if ($month == 7) {
+				$this->db->where('MONTH(date_of_event)', 7);
+			}
+			else if ($month == 8) {
+				$this->db->where('MONTH(date_of_event)', 8);
+			}
+			else if ($month == 9) {
+				$this->db->where('MONTH(date_of_event)', 9);
+			}
+			else if ($month == 10) {
+				$this->db->where('MONTH(date_of_event)', 10);
+			}
+			else if ($month == 11) {
+				$this->db->where('MONTH(date_of_event)', 11);
+			}
+			else if ($month == 12) {
+				$this->db->where('MONTH(date_of_event)', 12);
+			}
+
+			$query = $this->db->get();
+			//return count($query->result());
+			return $query->result_array();
 		}
 
 		public function create_reservation() {

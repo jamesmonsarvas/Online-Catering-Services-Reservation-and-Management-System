@@ -5,8 +5,8 @@
       <div class="col-md-12 centered-content">
         <h1 class="entry-title border-lr">Book a tasting Experience</h1>
         <p class="entry-desc">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br/>
-            Obcaecati cumque et aspernatur consequuntur tenetur.
+            Indulge your culinary senses by partaking in our exclusive tasting experience. <br>
+            Start by clicking below and filling out our form.
         </p>
         <a href="#reservation" class="default-btn">I want to reserve my slot!</a>
       </div><!-- .col-md-12 -->

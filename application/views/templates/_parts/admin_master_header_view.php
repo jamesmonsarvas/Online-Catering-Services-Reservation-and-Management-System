@@ -46,7 +46,7 @@
 
       <!-- Navbar Search -->
       <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-        <div class="input-group">
+        <div class="input-group" style="display: none;">
           <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
           <div class="input-group-append">
             <button class="btn btn-primary" type="button">
@@ -59,7 +59,8 @@
       <!-- Navbar -->
       <ul class="navbar-nav ml-auto ml-md-0">
         <li class="nav-item dropdown no-arrow">
-          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle float-right" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            PROFILE
             <i class="fas fa-user-circle fa-fw"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
@@ -101,7 +102,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                 <a class="dropdown-item" href="<?php echo site_url('admin/packages/index') ?>">All Package</a>
-                <a class="dropdown-item" href="<?php echo site_url('admin/packages/list_of_menu') ?>">List of Menus</a>
+                <!-- <a class="dropdown-item" href="<?php echo site_url('admin/packages/list_of_menu') ?>">List of Menus</a> -->
             </li>
 
             <li class="nav-item dropdown">
@@ -122,10 +123,16 @@
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Feedback</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Report</span></a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-fw fa-file"></i>
+                <span>Report</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                <a class="dropdown-item" href="<?php echo site_url('admin/report/index') ?>">Reservation</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/report/report_event') ?>">Event</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/report/report_feedback') ?>">Feedback</a>
+                <!-- <a class="dropdown-item" href="<?php echo site_url('admin/packages/list_of_menu') ?>">List of Menus</a> -->
             </li>
           </ul>
 

@@ -2,24 +2,51 @@
 	<div class="card-header">	
 		<h3 class="cms-title">Events</h3>
 		<a href="<?php echo site_url('admin/reservation/index') ?>" class="btn btn-secondary">Create Event</a>
+		<div class="float-right">
+			<b>DATE TODAY: </b><?php echo date("M. d, Y"); ?>
+		</div>
 	</div>
-		<div class="card-body">
-			<div class="table-responsive">
-				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+	<div class="card-body">
+		<div class="table-responsive">
 
-					<thead>
-						<tr>
-							<th>No.</th>
-							<th>Name</th>
-							<th>Type of Event</th>
-							<th>Date Added</th>
-							<th></th>
-						</tr>
-					</thead>
+			<?php echo form_open('admin/events/index'); ?>
 
-					<?php $num = 1; ?>
+			Search: <input type="text" id="search" name="search" value="">
 
-					<tbody>
+			Filter: <select id="searchFilter" name="searchFilter">
+				<option value="any" selected>Any</option>
+				<option value="name">Name</option>
+				<option value="type-of-event">Type of Event</option>
+			</select>
+
+			Status: <select id="statusFilter" name="statusFilter">
+				<option value="any" selected>Any</option>
+				<option value="ongoing">Ongoing</option>
+				<option value="finished">Finished</option>
+			</select>
+
+			<input type="submit" name="submit" value="GO">
+
+			<?php echo form_close(); ?>
+
+			<br>
+
+			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>Name</th>
+						<th>Type of Event</th>
+						<th>Status</th>
+						<th></th>
+					</tr>
+				</thead>
+
+				<?php $num = 1; ?>
+
+				<tbody>
+					<?php if (!empty($events)) : ?>
 						<?php foreach ($events as $event) : ?>
 							<tr>
 								<td>
@@ -153,6 +180,9 @@
 																>
 																<label for="no">Ongoing</label>
 															</p>
+															<p>
+																<b>Guest Count:</b> <?php echo $event['exp_people_count']; ?>
+															</p>
 														</div>
 													</div>
 													<div class="row">
@@ -228,43 +258,78 @@
 															</div>
 														</div>
 													</div>
+
+
 													<div class="row">
 														<div class="col-md-12">
-															<b>Comments: </b><br>
-															<textarea name="comments"><?php echo $event['comments']; ?></textarea>
+															<div class="form-group">
+																<label for="services-desc">Services Desc</label>
+																<textarea name="comments" class="form-control editor">
+																	<?php echo $event['comments']; ?>
+																</textarea>
+															</div>
 														</div>
 													</div>
+
+													<!-- Modal footer -->
+													<div class="modal-footer">
+														<a href="<?php echo site_url('admin/events/print/') . $event['event_id'] . "/" . $num; ?>" type="submit" class="btn btn-primary">Print</a>
+														<input type="submit" name="submit" class="btn btn-success">
+														<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+													</div>
+
+													<?php echo form_close(); ?>
+
 												</div>
-
-												<!-- Modal footer -->
-												<div class="modal-footer">
-													<input type="submit" name="submit" class="btn btn-success">
-													<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-												</div>
-
-												<?php echo form_close(); ?>
-
 											</div>
 										</div>
-									</div>
-								</td>
+									</td>
+								</tr>
+								<?php $num++; ?>
+							<?php endforeach; ?>
+							<?php else : ?>
+								<tr> 
+									<td colspan="6">
+										<center>
+											~ No records! ~
+										</center>  
+									</td>
+								</tr>
+							<?php endif; ?>
+						</tbody>
+
+						<tfoot>
+							<tr>
+								<th>No.</th>
+								<th>Name</th>
+								<th>Reason</th>
+								<th>Status</th>
+								<th></th>
 							</tr>
-							<?php $num++; ?>
-						<?php endforeach; ?>
-					</tbody>
-
-					<tfoot>
-						<tr>
-							<th>No.</th>
-							<th>Name</th>
-							<th>Reason</th>
-							<th>Date Added</th>
-							<th></th>
 						</tr>
-					</tr>
-				</tfoot>
+					</tfoot>
 
-			</table>
+				</table>
+			</div>
 		</div>
 	</div>
-</div>
+	<script>
+		ClassicEditor
+		.create( document.querySelector( '.editor' ), {
+			toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+			heading: {
+				options: [
+				{ model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+				{ model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+				{ model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+				{ model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+				{ model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+				{ model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+				{ model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' }
+				]
+			}
+		} )
+		.catch( error => {
+			console.log( error );
+		} );
+	</script>

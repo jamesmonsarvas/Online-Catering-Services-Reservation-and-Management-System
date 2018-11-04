@@ -10,29 +10,10 @@ class Reservation_output extends CI_Controller {
 
   }
 
-  public function create() {
-
-    // $this->form_validation->set_rules('event', 'Event', 'required');
-    // $this->form_validation->set_rules('place', 'Place', 'required');
-    // $this->form_validation->set_rules('people', 'Expected people', 'required');
-    // $this->form_validation->set_rules('date', 'Date of event', 'required');
-    // $this->form_validation->set_rules('time', 'Time of event', 'required');
-    // $this->form_validation->set_rules('email', 'Email', 'required');
-    // $this->form_validation->set_rules('first-name', 'First name', 'required');
-    // $this->form_validation->set_rules('last-name', 'Last name', 'required');
-    // $this->form_validation->set_rules('telephone', 'Phone number', 'required');
-
-    // if ($this->form_validation->run() === FALSE) {
-    //   $this->load->view('templates/header');
-    //   $this->load->view('reservation_output/view');
-    //   $this->load->view('templates/footer');
-    // } else {
-    //   $this->Reservation_model->create_reservation();
-    //   redirect('reservation');
-    // }
+  public function create() {    
     $this->Reservation_model->create_reservation();
     redirect('reservation');
-
+    echo "alert('Thank you for making a reservation at us! Please wait while we review your reservation and we will contact you. Have a nice day!');";
   }
 }
 

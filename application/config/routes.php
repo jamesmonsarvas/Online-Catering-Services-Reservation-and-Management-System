@@ -20,6 +20,7 @@ $route['reservation/create'] = 'reservation_output/create';
 
 $route['reservation/index'] = 'admin/reservation/approve_reservation';
 $route['reservation/index'] = 'admin/reservation/cancel_reservation';
+$route['reservation/index'] = 'admin/reservation/delete';
 
 $route['contact/create'] = 'pages/create';
 

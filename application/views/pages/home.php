@@ -84,28 +84,28 @@
                 <div class="col-md-3">
                   <a href="#" class="service">
                     <img src="<?php echo site_url('assets/images/services_image_1.jpg'); ?>" alt="">
-                    <h3>Services 1</h3>
+                    <h3>Wedding</h3>
                   </a>
                 </div><!-- .col-md-3 -->
 
                 <div class="col-md-3">
                   <a href="#" class="service">
                     <img src="<?php echo site_url('assets/images/services_image_2.jpg'); ?>" alt="">
-                    <h3>Services 2</h3>
+                    <h3>Debut</h3>
                   </a>
                 </div><!-- .col-md-3 -->
 
                 <div class="col-md-3">
                   <a href="#" class="service">
                     <img src="<?php echo site_url('assets/images/services_image_3.jpg'); ?>" alt="">
-                    <h3>Services 3</h3>
+                    <h3>Birthdays</h3>
                   </a>
                 </div><!-- .col-md-3 -->
 
                 <div class="col-md-3">
                   <a href="#" class="service">
                     <img src="<?php echo site_url('assets/images/services_image_4.jpg'); ?>" alt="">
-                    <h3>Services 4</h3>
+                    <h3>Children's Party</h3>
                   </a>
                 </div><!-- .col-md-3 -->
 
@@ -143,16 +143,10 @@
           <div class="container">
             <div class="row about-us">
 
-                <div class="col-md-4">
-                  <i class="fa fa-user"></i>
+                <div class="col-md-12">
+                  <img class="icons" src="<?php echo site_url('assets/images/icon_image_1.jpg'); ?>" alt="">
                 </div><!-- .col-md-4 -->
-                <div class="col-md-4">
-                  <i class="fa fa-user"></i>
-                </div><!-- .col-md-4 -->
-                <div class="col-md-4">
-                  <i class="fa fa-user"></i>
-                </div><!-- .col-md-4 -->
-
+                
             </div><!-- .about-us -->
           </div><!-- .container -->
 

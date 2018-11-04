@@ -5,25 +5,25 @@
   </div>
   <div class="card-body">
     <div class="table-responsive">
-      
+
       <?php echo form_open('admin/reservation/index'); ?>
 
-        Search: <input type="text" id="search" name="search" value="">
+      Search: <input type="text" id="search" name="search" value="">
 
-        Filter: <select id="searchFilter" name="searchFilter">
-          <option value="any" selected>Any</option>
-          <option value="name">Name</option>
-          <option value="type-of-event">Type of Event</option>
-        </select>
+      Filter: <select id="searchFilter" name="searchFilter">
+        <option value="any" selected>Any</option>
+        <option value="name">Name</option>
+        <option value="type-of-event">Type of Event</option>
+      </select>
 
-        Status: <select id="statusFilter" name="statusFilter">
-          <option value="any" selected>Any</option>
-          <option value="pending">Pending</option>
-          <option value="approved">Approved</option>
-          <option value="cancelled">Cancelled</option>
-        </select>
+      Status: <select id="statusFilter" name="statusFilter">
+        <option value="any" selected>Any</option>
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="cancelled">Cancelled</option>
+      </select>
 
-        <input type="submit" name="submit" value="GO">
+      <input type="submit" name="submit" value="GO">
 
       <?php echo form_close(); ?>
 
@@ -38,7 +38,6 @@
             <th>Venue</th>
             <th>Status</th>
             <th></th>
-            <th></th>
           </tr>
         </thead>
         <?php
@@ -47,40 +46,41 @@
         ?>
 
         <tbody>
-          <?php foreach($reservations as $reservation) : ?>
-            <tr>
-              <td><?php echo $reservation['firstname']." ".$reservation['lastname']; ?></td>
-              <td>
-                <?php
-                if ($reservation['type_of_event'] == 20) {
-                  echo "Wedding";
-                }
-                else if ($reservation['type_of_event'] == 19) {
-                  echo "Debut";
-                }
-                else if ($reservation['type_of_event'] == 18) {
-                  echo "Birthday, Anniversary, Graduation, and Baptismal";
-                }
-                else if ($reservation['type_of_event'] == 17) {
-                  echo "Inauguration, Fiesta, Seminar, and Other Events";
-                }
-                ?>
-                
-              </td>
-              <td><?php echo $reservation['place_of_event']; ?></td>
-              <td>
-                <?php if($reservation['status'] == 1)
+          <?php if (!empty($reservations)) : ?>
+            <?php foreach($reservations as $reservation) : ?>
+              <tr>
+                <td><?php echo $reservation['firstname']." ".$reservation['lastname']; ?></td>
+                <td>
+                  <?php
+                  if ($reservation['type_of_event'] == 20) {
+                    echo "Wedding";
+                  }
+                  else if ($reservation['type_of_event'] == 19) {
+                    echo "Debut";
+                  }
+                  else if ($reservation['type_of_event'] == 18) {
+                    echo "Birthday, Anniversary, Graduation, and Baptismal";
+                  }
+                  else if ($reservation['type_of_event'] == 17) {
+                    echo "Inauguration, Fiesta, Seminar, and Other Events";
+                  }
+                  ?>
+
+                </td>
+                <td><?php echo $reservation['place_of_event']; ?></td>
+                <td>
+                  <?php if($reservation['status'] == 1)
                   echo "Pending";
-                else if ($reservation['status'] == 0)
-                  echo "Approved";
-                else 
-                  echo "Cancelled";
-                ?>
-              </td>
-              <td>
-                <a href="#" class="btn default-btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $num; ?>">
+                  else if ($reservation['status'] == 0)
+                    echo "Approved";
+                  else 
+                    echo "Cancelled";
+                  ?>
+                </td>
+                <td>
+                  <a href="#" class="btn default-btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $num; ?>">
                     Manage
-              </a>
+                  </a>
 
                   <!-- The Modal -->
                   <div class="modal" id="myModal<?php echo $num; ?>">
@@ -145,11 +145,11 @@
                               <p>
                                 <b>Packages: </b>
                                 <select name="package_id">
-                                <?php foreach($packages as $package) : ?>
-                                  <option value="<?php echo $package['package_id']; ?>">
-                                    <?php echo $package['package_no']; ?>
-                                  </option>
-                                <?php endforeach; ?>
+                                  <?php foreach($packages as $package) : ?>
+                                    <option value="<?php echo $package['package_id']; ?>">
+                                      <?php echo $package['package_no']; ?>
+                                    </option>
+                                  <?php endforeach; ?>
                                 </select>
                               </p>
 
@@ -159,14 +159,14 @@
                             <div class="col-md-12">
                               <input type="hidden" name="id" value="<?php echo $reservation['reservation_id']; ?>">
                               <p><b>Status : </b>
-                              <?php
-                              if ($reservation['status'] == 1)
-                                echo "Pending";
-                              else if ($reservation['status'] == 0)
-                                echo "Approved";
-                              else
-                                echo "Cancelled";
-                              ?>
+                                <?php
+                                if ($reservation['status'] == 1)
+                                  echo "Pending";
+                                else if ($reservation['status'] == 0)
+                                  echo "Approved";
+                                else
+                                  echo "Cancelled";
+                                ?>
                               </p>
                               <?php if ($reservation['status'] == 1) : ?>
                                 <p><b>Manage: </b></p>
@@ -192,35 +192,40 @@
                       </div>
                     </div>
                   </div>
-              </td>
-              <td>
-                <a href="" class="btn default-btn btn-danger">Delete</a>
-              </td>
-              <?php
-              if ($reservation['timestamp'] >= $max) {
-                $max = $reservation['timestamp'];
-              }
-              ?>
+                </td>
+                <?php
+                if ($reservation['timestamp'] >= $max) {
+                  $max = $reservation['timestamp'];
+                }
+                ?>
+              </tr>
+              <?php $num++; ?>
+            <?php endforeach; ?>
+            <?php else : ?>
+              <tr> 
+                <td colspan="6">
+                  <center>
+                    ~ No records! ~
+                  </center>  
+                </td>
+              </tr>
+            <?php endif; ?>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <th>Name</th>
+              <th>Type of Event</th>
+              <th>Venue</th>
+              <th>Status</th>
+              <th></th>
             </tr>
-            <?php $num++; ?>
-          <?php endforeach; ?>
-        </tbody>
+          </tfoot>
 
-        <tfoot>
-          <tr>
-            <th>Name</th>
-            <th>Type of Event</th>
-            <th>Venue</th>
-            <th>Status</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </tfoot>
+        </table>
 
-      </table>
-
+      </div>
     </div>
+    <div class="card-footer small text-muted">Updated at <?php echo $max; ?> </div>
   </div>
-  <div class="card-footer small text-muted">Updated at <?php echo $max; ?> </div>
-</div>
 
