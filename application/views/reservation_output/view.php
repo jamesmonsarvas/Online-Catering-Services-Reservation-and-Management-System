@@ -60,7 +60,7 @@
             <li>Php 5,000 reservation fee to save the date</li>
             <li>75% down payment 15 days before</li>
             <li>25% balance before the event</li>
-            <li>Addtional 15% service charge</li>
+            <li>Additional 15% service charge</li>
             <li>Customer agree to pay in case of loss or damage of property/items based on market value</li>
           </ul>
 
@@ -161,6 +161,19 @@
     <?php echo form_close(); ?>
 
     <script>
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth() + 1; //January is 0!
+      var yyyy = today.getFullYear();
+
+      if(dd < 10) {
+          dd = '0' + dd
+      } 
+
+      if(mm < 10) {
+          mm = '0' + mm
+      } 
+      today = mm + '/' + dd + '/' + yyyy;
 
       var flag = true;
 
@@ -188,6 +201,14 @@
           else {
             r_data[r_index].style.borderColor = "#292929";
             flag = false;
+            if (r_date.value <= today) {
+              r_date.style.borderColor = "red";
+              flag = true;
+            }
+            else {
+              r_date.style.borderColor = "#292929";
+              flag = false;
+            }
           }
         }
 
@@ -202,3 +223,11 @@
   </div><!-- .container -->
 
 </div>
+
+<?php 
+  if (isset($_GET['msg'])) {
+    echo '<script>
+      alert("Thank you for making a reservation at us! Please wait while we review your reservation and we will contact you. Have a nice day!");
+    </script>';
+  }
+?>
