@@ -260,6 +260,15 @@
 			$this->db->where('reservation_id', $this->input->post('id'));
 			return $this->db->update('reservation', $data);
 		}
+
+		public function get_calendar_reservations() {
+			// SELECT date_of_event, COUNT(*) AS count_date FROM `reservation` GROUP BY date_of_event
+
+			$this->db->select('*, COUNT(*) AS count_date FROM `reservation` GROUP BY date_of_event');
+			$query = $this->db->get();
+			return $query->result_array();
+
+		}
 		
 	}
 ?>

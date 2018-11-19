@@ -8,7 +8,7 @@
             Indulge your culinary senses by partaking in our exclusive tasting experience. <br>
             Start by clicking below and filling out our form.
         </p>
-        <a href="#reservation" class="default-btn">I want to reserve my slot!</a>
+        <a href="#fill-up" class="default-btn">I want to reserve my slot!</a>
       </div><!-- .col-md-12 -->
 
     </div><!-- .row -->
@@ -39,9 +39,17 @@
       $(function () {
         $('#calendar').calendar({
           events: [
-            <?php foreach ($reservations as $reservation) : ?>
+            <?php 
+            $summary = "";
+            foreach ($reservations as $reservation) : ?>
+              <?php 
+                if($reservation['count_date'] == 1)
+                  $summary = "1 slot available";
+                else if ($reservation['count_date'] == 2)
+                  $summary = "Occupied";
+              ?>
               <?php if ($reservation['status'] == 0 || $reservation['status'] == 1) : ?>
-                { start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "<?php echo $reservation['date_of_event'].' '; ?>", mask: true},
+                { start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "<?php echo $summary; ?>", mask: true},
               <?php endif; ?>
             <?php endforeach; ?>
           ]
@@ -50,12 +58,15 @@
     </script>
 
     <?php // echo validation_errors(); ?>
+    <div id="fill-up">
+      <hr><br /><br /><br />
+    </div>
 
     <div id="terms-and-condition">
 
       <div class="row">
         <div class="col-md-12">
-          <h3>Terms and Condtions</h3>
+          <h3>Terms and Conditions</h3>
           <ul>
             <li>Php 5,000 reservation fee to save the date</li>
             <li>75% down payment 15 days before</li>
@@ -118,7 +129,7 @@
 
           <div class="row">
             <div class="form-group col-md-4">
-              <input type="text" id="datepicker" class="form-control" name="date" placeholder="4. Pick a date for tasting experience">
+              <input type="text" id="datepicker" class="form-control" name="date" placeholder="4. Pick a date for the tasting experience">
             </div>
 
             <div class="form-group col-md-4">
@@ -214,6 +225,7 @@
 
         if (flag == true) {
           e.preventDefault();
+          alert("Please complete the reservation form.");
         }
 
       });
