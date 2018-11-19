@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>SB Admin - Dashboard</title>
-
+    <link rel="icon" type="image/png" href="<?php echo site_url('assets/images/favicon.ico'); ?>">
     <!-- Bootstrap core CSS-->
     <link href="<?php echo site_url('assets/admin/css/bootstrap.min.css') ?>" rel="stylesheet">
 
