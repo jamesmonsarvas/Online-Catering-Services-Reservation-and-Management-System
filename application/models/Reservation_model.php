@@ -12,8 +12,6 @@
 			$query = $this->db->get();
 			return $query->result_array();
 
-			// $query = $this->db->get('reservation');
-			// return $query->row_array();
 		}
 
 		public function get_pending_reservations() {
@@ -25,8 +23,6 @@
 			$query = $this->db->get();
 			return $query->result_array();
 
-			// $query = $this->db->get('reservation');
-			// return $query->row_array();
 		}
 
 		public function get_reservations_where() {
@@ -198,39 +194,62 @@
 
 		public function create_reservation() {
 
-			$reference = url_title($this->input->post('reference-no'));
+			$this->db->select('*');    
+			$this->db->from('reservation');
+			$this->db->where('date_of_event', date('Y-m-d', strtotime(str_replace('-', '/', $this->input->post('date')))));
 
-			$event_type = $this->input->post('event');
-			$event_id = 0;
+			$query = $this->db->get();
 
-			if ($event_type == "Wedding") {
-				$event_id = 20;
+			$reference = "10000";
+			$this->db->select('*');    
+			$this->db->from('reservation');
+			$this->db->order_by('reservation_id', 'DESC')->limit(1);
+			$last_reference = $this->db->get()->row();
+			if (count($last_reference) <= 0) {
+				$reference += 1;
 			}
-			else if ($event_type == "Debut") {
-				$event_id = 19;
-			}
-			else if ($event_type == "Birthday, Anniversary, Graduation, and Baptismal") {
-				$event_id = 18;
-			}
-			else if ($event_type == "Inauguration, Fiesta, Seminar, and Other Events") {
-				$event_id = 17;
+			else {
+				$reference = $last_reference->reference_no + 1;
 			}
 
-			$data = array(
-				'reference_no' => $reference,
-				'type_of_event' => $event_id,
-				'place_of_event' => $this->input->post('place'),
-				'exp_people_count' => $this->input->post('people'),
-				'date_of_event' => date('Y-m-d', strtotime(str_replace('-', '/', $this->input->post('date')))),
-				'time_of_event' => $this->input->post('time'),
-				'email_address' => $this->input->post('email'),
-				'firstname' => $this->input->post('first-name'),
-				'lastname' => $this->input->post('last-name'),
-				'telephone' => $this->input->post('telephone'),
-				'status' => 1
-			);
+			if (count($query->result()) <= 1) {
+				$event_type = $this->input->post('event');
+				$event_id = 0;
 
-			return $this->db->insert('reservation', $data);
+				if ($event_type == "Wedding") {
+					$event_id = 20;
+				}
+				else if ($event_type == "Debut") {
+					$event_id = 19;
+				}
+				else if ($event_type == "Birthday, Anniversary, Graduation, and Baptismal") {
+					$event_id = 18;
+				}
+				else if ($event_type == "Inauguration, Fiesta, Seminar, and Other Events") {
+					$event_id = 17;
+				}
+
+				$data = array(
+					'reference_no' => $reference,
+					'type_of_event' => $event_id,
+					'place_of_event' => $this->input->post('place'),
+					'exp_people_count' => $this->input->post('people'),
+					'date_of_event' => date('Y-m-d', strtotime(str_replace('-', '/', $this->input->post('date')))),
+					'time_of_event' => $this->input->post('time'),
+					'email_address' => $this->input->post('email'),
+					'firstname' => $this->input->post('first-name'),
+					'lastname' => $this->input->post('last-name'),
+					'telephone' => $this->input->post('telephone'),
+					'status' => 1
+				);
+
+				$this->db->insert('reservation', $data);
+				
+				return "true";
+			}
+			else {
+				return "false";
+			}
 		}
 
 		public function update_reservations($value) {

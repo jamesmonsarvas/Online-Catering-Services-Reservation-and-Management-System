@@ -41,7 +41,7 @@
           events: [
             <?php foreach ($reservations as $reservation) : ?>
               <?php if ($reservation['status'] == 0 || $reservation['status'] == 1) : ?>
-                { start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "Occupied", mask: true},
+                { start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "<?php echo $reservation['date_of_event'].' '; ?>", mask: true},
               <?php endif; ?>
             <?php endforeach; ?>
           ]
@@ -225,9 +225,14 @@
 </div>
 
 <?php 
-  if (isset($_GET['msg'])) {
+  if (isset($_GET['msg']) && $_GET['msg'] == "true") {
     echo '<script>
       alert("Thank you for making a reservation at us! Please wait while we review your reservation and we will contact you. Have a nice day!");
+    </script>';
+  }
+  else if (isset($_GET['msg']) && $_GET['msg'] == "false") {
+    echo '<script>
+      alert("Sorry. The date you have submitted has already been reserved. Please try another date.");
     </script>';
   }
 ?>

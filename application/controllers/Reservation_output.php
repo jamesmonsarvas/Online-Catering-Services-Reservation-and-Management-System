@@ -11,9 +11,8 @@ class Reservation_output extends CI_Controller {
   }
 
   public function create() {    
-    $this->Reservation_model->create_reservation();
-    redirect('reservation?msg=OK');
-    echo "alert('Thank you for making a reservation at us! Please wait while we review your reservation and we will contact you. Have a nice day!');";
+    $msg = $this->Reservation_model->create_reservation();
+    redirect('reservation?msg=' . $msg);
   }
 }
 
