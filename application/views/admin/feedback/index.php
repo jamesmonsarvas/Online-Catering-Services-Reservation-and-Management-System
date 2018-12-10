@@ -21,7 +21,7 @@
 
     <br>
 
-    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <table class="table table-striped table-striped-inverse" id="dataTable" width="100%" cellspacing="0">
 
       <thead>
         <tr>

@@ -1,18 +1,29 @@
 <div class="card mb-3">
   <div class="card-header">
-    <h3 class="cms-title">Services</h3>
-    <a href="<?php echo site_url('admin/services/create') ?>" class="btn btn-secondary">Add New</a>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="cms-title">Services</h3>
+        <a href="<?php echo site_url('admin/services/create') ?>" class="btn btn-secondary btn-add">Add New</a>
+      </div>
+
+      <div class="col-md-6 search-bar">
+        <input type="text" id="search" name="search" value="" class="search-text">
+        <input type="submit" name="submit" value="Search" class="search-submit">
+      </div>
+    </div>
+    
   </div>
   <div class="card-body">
     <div class="table-responsive">
 
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <table class="table table-striped table-striped-inverse" id="dataTable" width="100%" cellspacing="0">
 
         <thead>
           <tr>
             <th>Services Title</th>
             <th>Services Description</th>
-            <th></th>
+            <th>Action</th>
           </tr>
         </thead>
 
@@ -26,7 +37,7 @@
               </td>
               <td><?php echo substr($service['services_desc'], 0, 100) . "..."; ?></td>
               <td>
-                <a href="<?php echo base_url(); ?>admin/services/edit/<?php echo $service['services_slug']; ?>" class="btn default-btn btn-info float-left">Edit</a>
+                <a href="<?php echo base_url(); ?>admin/services/edit/<?php echo $service['services_slug']; ?>" class="btn default-btn btn-info float-left"><i class="far fa-edit"></i></a>
               </td>
             </tr>
           <?php endforeach ?>
@@ -34,9 +45,9 @@
 
         <tfoot>
           <tr>
-            <th>Services Title</th>
+          <th>Services Title</th>
             <th>Services Description</th>
-            <th></th>
+            <th>Action</th>
           </tr>
         </tfoot>
 

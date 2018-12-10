@@ -13,10 +13,10 @@ class Events extends Admin_Controller {
     redirect('admin/events/index');
   }
 
-  public function print($id, $num) {
-    $data['print_event'] = $this->Event_model->get_events_to_print($id);
-    $this->load->view('admin/events/print_event', $data); 
-  }  
+  // public function print($id, $num) {
+  //   $data['print_event'] = $this->Event_model->get_events_to_print($id);
+  //   $this->load->view('admin/events/print_event', $data); 
+  // }  
 
 }
 ?>

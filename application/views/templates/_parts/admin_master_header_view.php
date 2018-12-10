@@ -20,6 +20,7 @@
     <!-- Page level plugin CSS-->
     <link href="<?php echo site_url('assets/admin/css/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
 
+    
     <!-- Custom styles for this template-->
     <link href="<?php echo site_url('assets/admin/css/sb-admin.min.css') ?>" rel="stylesheet">
     <link href="<?php echo site_url('assets/admin/css/style.css') ?>" rel="stylesheet">
@@ -63,7 +64,7 @@
             PROFILE
             <i class="fas fa-user-circle fa-fw"></i>
           </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-right-inverse" aria-labelledby="userDropdown">
             <a class="dropdown-item" href="<?php echo site_url('admin/user/profile');?>">Profile page</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="<?php echo site_url('admin/user/logout');?>">Logout</a>
@@ -75,69 +76,76 @@
 
     <div class="main-content">
 
-        <div id="wrapper">
+<div id="wrapper">
 
-          <!-- Sidebar -->
-          <ul class="sidebar navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="<?php echo site_url('/admin'); ?>">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-fw fa-file"></i>
-                <span>Services</span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                <a class="dropdown-item" href="<?php echo site_url('admin/services/index') ?>">All Services</a>
-              </div>
-            </li>
+  <!-- Sidebar -->
+  <ul class="sidebar navbar-nav">
+    <li class="nav-item active active-inverse">
+      <a class="nav-link" href="<?php echo site_url('/admin'); ?>">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item dropdown dropdown-inverse">
+      <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-fw fa-file"></i>
+        <span>Services</span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-inverse" aria-labelledby="pagesDropdown">
+        <a class="dropdown-item" href="<?php echo site_url('admin/services/index') ?>">All Services</a>
+        <a class="dropdown-item" href="<?php echo site_url('admin/services/create') ?>">Add New</a>
+      </div>
+    </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-fw fa-file"></i>
-                <span>Packages</span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                <a class="dropdown-item" href="<?php echo site_url('admin/packages/index') ?>">All Package</a>
-                <!-- <a class="dropdown-item" href="<?php echo site_url('admin/packages/list_of_menu') ?>">List of Menus</a> -->
-            </li>
+    <li class="nav-item dropdown dropdown-inverse">
+      <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-fw fa-file"></i>
+        <span>Packages</span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-inverse" aria-labelledby="pagesDropdown">
+        <a class="dropdown-item" href="<?php echo site_url('admin/packages/index') ?>">All Package</a>
+        <!-- <a class="dropdown-item" href="<?php echo site_url('admin/packages/list_of_menu') ?>">List of Menus</a> -->
+    </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-fw fa-file"></i>
-                <span>Reservation</span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                <a class="dropdown-item" href="<?php echo site_url('admin/reservation/index') ?>">All Reservation</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo site_url('admin/events/index') ?>">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Event</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo site_url('admin/feedback/index') ?>">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Feedback</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-fw fa-file"></i>
-                <span>Report</span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                <a class="dropdown-item" href="<?php echo site_url('admin/report/index') ?>">Reservation</a>
-                <a class="dropdown-item" href="<?php echo site_url('admin/report/report_event') ?>">Event</a>
-                <a class="dropdown-item" href="<?php echo site_url('admin/report/report_feedback') ?>">Feedback</a>
-                <!-- <a class="dropdown-item" href="<?php echo site_url('admin/packages/list_of_menu') ?>">List of Menus</a> -->
-            </li>
-          </ul>
+    <li class="nav-item dropdown dropdown-inverse">
+      <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-fw fa-file"></i>
+        <span>Reservation</span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-inverse" aria-labelledby="pagesDropdown">
+        <a class="dropdown-item" href="<?php echo site_url('admin/reservation/index') ?>">All Reservation</a>
+    </li>
+    <!-- <li class="nav-item dropdown dropdown-inverse">
+      <a class=nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="font-icon font-icon-calend"></i>
+          <a class="dropdown-item" href="<?php echo site_url('admin/calendar/index') ?>">Calendar</a>
+      </a>
+    </li> -->
+    <li class="nav-item dropdown dropdown-inverse">
+      <a class="nav-link nav-link-inverse" href="<?php echo site_url('admin/events/index') ?>">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Event</span></a>
+    </li>
+    <li class="nav-item dropdown dropdown-inverse">
+      <a class="nav-link nav-link-inverse" href="<?php echo site_url('admin/feedback/index') ?>">
+        <i class="fas fa-fw fa-chart-area"></i>
+        <span>Feedback</span></a>
+    </li>
+    <li class="nav-item dropdown dropdown-inverse">
+      <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-fw fa-file"></i>
+        <span>Report</span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-inverse" aria-labelledby="pagesDropdown">
+        <a class="dropdown-item" href="<?php echo site_url('admin/report/index') ?>">Reservation</a>
+        <a class="dropdown-item" href="<?php echo site_url('admin/report/report_event') ?>">Event</a>
+        <a class="dropdown-item" href="<?php echo site_url('admin/report/report_feedback') ?>">Feedback</a>
+        <!-- <a class="dropdown-item" href="<?php echo site_url('admin/packages/list_of_menu') ?>">List of Menus</a> -->
+    </li>
+  </ul>
 
-          <div id="content-wrapper">
+          <div id="content-wrapper" class="content-wrapper-inverse">
 
-            <div class="container-fluid">
+            <div class="container-fluid container-fluid-inverse">
     
                 <?php endif; ?>

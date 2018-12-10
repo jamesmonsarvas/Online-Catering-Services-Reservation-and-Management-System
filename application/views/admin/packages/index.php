@@ -38,7 +38,7 @@
   <div class="card-header">
     <h3 class="cms-title">Packages</h3>
     
-    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+    <button type="button" class="btn btn-secondary btn-add" data-toggle="modal" data-target="#myModal">
       Add New
     </button>
 
@@ -87,14 +87,14 @@
   <div class="card-body">
     <div class="table-responsive">
 
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <table class="table table-striped table-striped-inverse" id="dataTable" width="100%" cellspacing="0">
 
         <thead>
           <tr>
 						<th>Packages</th>
 						<th>Packages Menu</th>
             <th>Packages Price</th>
-            <th></th>
+            <th colspan="2"><center>Action</center></th>
             <th></th>
           </tr>
         </thead>
@@ -113,7 +113,7 @@
                         <li>
                           <?php echo form_open('admin/packages/delete_content/' . $package['package_id'] . "/" . $package_content['package_content_id']); ?>
                               <label><?php echo $package_content['type_of_menu']; ?></label>
-                              <input type="submit" class="btn btn-danger delete-menu" value="X">
+                              <button class="btn btn-danger delete-menu"><i class="far fa-trash-alt"></i></button>
                           <?php echo form_close(); ?>
                         </li>
                       <?php endif; ?>
@@ -140,7 +140,7 @@
             <th>Packages</th>
 						<th>Packages Menu</th>
             <th>Packages Price</th>
-            <th></th>
+            <th colspan="2"><center>Action</center></th>
             <th></th>
           </tr>
         </tfoot>
