@@ -13,8 +13,6 @@ class Reservation extends Admin_Controller {
     public function approve_reservation($rid) {
         $this->Reservation_model->update_reservations(0);
         $this->Event_model->create_event($rid);
-        echo "document.write('  ')";
-        echo "alert('Reservation Approved!')";
         redirect('admin/reservation/index');
     }
 
