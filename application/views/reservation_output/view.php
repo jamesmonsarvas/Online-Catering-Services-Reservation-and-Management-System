@@ -1,250 +1,268 @@
 <div class="parallax-2">
   <div class="container-fluid">
-    <div class="row">
+	<div class="row">
 
-      <div class="col-md-12 centered-content">
-        <h1 class="entry-title border-lr">Book a tasting Experience</h1>
-        <p class="entry-desc">
-            Indulge your culinary senses by partaking in our exclusive tasting experience. <br>
-            Start by clicking below and filling out our form.
-        </p>
-        <a href="#fill-up" class="default-btn">I want to reserve my slot!</a>
-      </div><!-- .col-md-12 -->
+	  <div class="col-md-12 centered-content">
+		<h1 class="entry-title border-lr">Book a tasting Experience</h1>
+		<p class="entry-desc">
+			Indulge your culinary senses by partaking in our exclusive tasting experience. <br>
+			Start by clicking below and filling out our form.
+		</p>
+		<a href="#fill-up" class="default-btn">I want to reserve my slot!</a>
+	  </div><!-- .col-md-12 -->
 
-    </div><!-- .row -->
+	</div><!-- .row -->
   </div><!-- .container-fluid -->
 </div><!-- .parallax-2 -->
 <div id="reservation-page">
 
   <div class="container">
 
-    <div class="centered-content">
+	<div class="centered-content">
 
-      <h2 class="border-lr">Book a Full-Course Tasting Experience</h2>
-      <p>
-        We use the form below to find out details about your upcoming event so that we can provide you with the most appropriate,
-        complimentary tasting experience. If you'd rather talk to a representative, you can <a href="<?php echo site_url('contact/#contact-us')?>">contact us</a> here.
-      </p>
+	  <h2 class="border-lr">Book a Full-Course Tasting Experience</h2>
+	  <p>
+		We use the form below to find out details about your upcoming event so that we can provide you with the most appropriate,
+		complimentary tasting experience. If you'd rather talk to a representative, you can <a href="<?php echo site_url('contact/#contact-us')?>">contact us</a> here.
+	  </p>
 
-      <p>
-        If you represent an organization that enjoys year-round events then register to taste our food today by simply
-        filling out the form below.
-      </p>
+	  <p>
+		If you represent an organization that enjoys year-round events then register to taste our food today by simply
+		filling out the form below.
+	  </p>
 
-    </div>
+	</div>
 
-    <div id="calendar"></div>
-    <script>
-    
-      $(function () {
-        $('#calendar').calendar({
-          events: [
-            <?php 
-            $summary = "";
-            foreach ($reservations as $reservation) : ?>
-              <?php 
-                if($reservation['count_date'] == 1)
-                  $summary = "1 slot available";
-                else if ($reservation['count_date'] == 2)
-                  $summary = "Occupied";
-              ?>
-              <?php if ($reservation['status'] == 0 || $reservation['status'] == 1) : ?>
-                { start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "<?php echo $summary; ?>", mask: true},
-              <?php endif; ?>
-            <?php endforeach; ?>
-          ]
-        });
-      });
-    </script>
+	<div class="row reservation-details">
+	  <div id="calendar" class="col-md-9"></div>
+	  <div class="col-md-3">
+		<h3>DETAILS</h3>
+		<div class="reservation-desc">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit.
+			Cumque aperiam officiis nobis debitis vitae tempora eaque veniam, 
+			illum culpa, quam doloremque fugit soluta quia cum corporis sint ad commodi iusto?
+		</div>
 
-    <?php // echo validation_errors(); ?>
-    <div id="fill-up">
-      <hr><br /><br /><br />
-    </div>
+		<h4>LEGENDS:</h4>
+		<ul>
+			<li>FULL SLOT</li>
+			<li>1 SLOT AVAILABLE</li>
+			<li>EMPTY</li>
+		</ul>
+	  </div>
+	</div>
 
-    <div id="terms-and-condition">
+	<script>
 
-      <div class="row">
-        <div class="col-md-12">
-          <h3>Terms and Conditions</h3>
-          <ul>
-            <li>Php 5,000 reservation fee to save the date</li>
-            <li>75% down payment 15 days before</li>
-            <li>25% balance before the event</li>
-            <li>Additional 15% service charge</li>
-            <li>Customer agree to pay in case of loss or damage of property/items based on market value</li>
-          </ul>
+	  $(function () {
+		$('#calendar').calendar({
+		  events: [
+			<?php
+			$summary = "";
+			foreach ($reservations as $reservation) : ?>
+			  <?php
+				if($reservation['count_date'] == 1)
+				  $summary = "1 slot available";
+				else if ($reservation['count_date'] == 2)
+				  $summary = "Occupied";
+			  ?>
+			  <?php if ($reservation['status'] == 0 || $reservation['status'] == 1) : ?>
+				{ start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "<?php echo $summary; ?>", mask: true},
+			  <?php endif; ?>
+			<?php endforeach; ?>
+		  ]
+		});
+	  });
+	</script>
 
-        </div><!-- .col-md-12 -->
-      </div><!-- .row -->
+	<?php // echo validation_errors(); ?>
+	<div id="fill-up">
+	  <hr><br /><br /><br />
+	</div>
 
-    </div><!-- #terms-and-condition -->
+	<div id="terms-and-condition">
 
-    <?php echo form_open('reservation/create', 'id="reservation-form"'); ?>
-      
-      <div class="row">
-        
-        <input type="hidden" name="id" value="<?php // echo $services['ID']; ?>">
+	  <div class="row">
+		<div class="col-md-6">
+		  <h3>Terms and Conditions</h3>
+		  <ul>
+			<li>Php 5,000 reservation fee to save the date</li>
+			<li>75% down payment 15 days before</li>
+			<li>25% balance before the event</li>
+			<li>Additional 15% service charge</li>
+			<li>Customer agree to pay in case of loss or damage of property/items based on market value</li>
+		  </ul>
 
-        <div class="col-md-12">
+		</div><!-- .col-md-12 -->
+	  </div><!-- .row -->
 
-          <div class="row">
+	</div><!-- #terms-and-condition -->
 
-            <div class="form-group col-md-4">
-              <select name="event" id="event">
-                <option value>1. What is you special occasion?</option>
-                <option value="Wedding">Wedding</option>
-                <option value="Debut">Debut</option>
-                <option value="Birthday, Anniversary, Graduation, and Baptismal">Birthday, Anniversary, Graduation, and Baptismal</option>
-                <option value="Inauguration, Fiesta, Seminar, and Other Events">Inauguration, Fiesta, Seminar, and Other Events</option>
-              </select>
-            </div>
+	<?php echo form_open('reservation/create', 'id="reservation-form"'); ?>
 
-            <div class="form-group col-md-4">
-              <select name="place" id="place">
-                <option value>2. Where will it be?</option>
-                <option value="Alabang">Alabang</option>
-                <option value="Cabuyao">Cabuyao</option>
-                <option value="Calamba">Calamba</option>
-                <option value="Pansol">Pansol</option>
-              </select>
-            </div>
+	  <div class="row">
 
-            <div class="form-group col-md-4">
-              <select name="people" id="people">
-                <option value>3. How many people do you expect?</option>
-                <option value="Up to 100">Up to 100</option>
-                <option value="100-200">100-200</option>
-                <option value="200-300">200-300</option>
-                <option value="300 and above">300 and above</option>
-              </select>
-            </div>
-          </div>
+		<input type="hidden" name="id" value="<?php // echo $services['ID']; ?>">
 
-        </div><!-- .col-md-12 -->
+		<div class="col-md-12">
 
-        <div class="divider"></div>
+		  <div class="row">
 
-        <div class="col-md-12">
+			<div class="form-group col-md-4">
+			  <select name="event" id="event">
+				<option value>1. What is you special occasion?</option>
+				<option value="Wedding">Wedding</option>
+				<option value="Debut">Debut</option>
+				<option value="Birthday, Anniversary, Graduation, and Baptismal">Birthday, Anniversary, Graduation, and Baptismal</option>
+				<option value="Inauguration, Fiesta, Seminar, and Other Events">Inauguration, Fiesta, Seminar, and Other Events</option>
+			  </select>
+			</div>
 
-          <div class="row">
-            <div class="form-group col-md-4">
-              <input type="text" id="datepicker" class="form-control" name="date" placeholder="4. Pick a date for the tasting experience">
-            </div>
+			<div class="form-group col-md-4">
+			  <select name="place" id="place">
+				<option value>2. Where will it be?</option>
+				<option value="Alabang">Alabang</option>
+				<option value="Cabuyao">Cabuyao</option>
+				<option value="Calamba">Calamba</option>
+				<option value="Pansol">Pansol</option>
+			  </select>
+			</div>
 
-            <div class="form-group col-md-4">
-              <select name="time" id="time">
-                <option value>5. Pick a time for the tasting experience</option>
-                <option value="11AM">11AM</option>
-                <option value="12PM">12PM</option>
-                <option value="1PM">1PM</option>
-                <option value="2PM">2PM</option>
-                <option value="3PM">3PM</option>
-                <option value="4PM">4PM</option>
-              </select>
-            </div>
+			<div class="form-group col-md-4">
+			  <select name="people" id="people">
+				<option value>3. How many people do you expect?</option>
+				<option value="Up to 100">Up to 100</option>
+				<option value="100-200">100-200</option>
+				<option value="200-300">200-300</option>
+				<option value="300 and above">300 and above</option>
+			  </select>
+			</div>
+		  </div>
 
-            <div class="form-group col-md-4">
-              <input type="email" class="form-control" id="email" name="email" placeholder="6. Your email address">
-            </div>
-          </div>
+		</div><!-- .col-md-12 -->
 
-          <div class="row">
-            <div class="form-group col-md-4">
-              <input type="text" class="form-control" id="first-name" name="first-name" placeholder="7. Your first name">
-            </div>
+		<div class="divider"></div>
 
-            <div class="form-group col-md-4">
-              <input type="text" class="form-control" id="last-name" name="last-name" placeholder="8. Your last name">
-            </div>
+		<div class="col-md-12">
 
-            <div class="form-group col-md-4">
-              <input type="text" class="form-control" id="telephone" name="telephone" placeholder="9. Your telephone">
-            </div>
-          </div>
+		  <div class="row">
+			<div class="form-group col-md-4">
+			  <input type="text" id="datepicker" class="form-control" name="date" placeholder="4. Pick a date for the tasting experience">
+			</div>
 
-        </div><!-- .col-md-12 -->
+			<div class="form-group col-md-4">
+			  <select name="time" id="time">
+				<option value>5. Pick a time for the tasting experience</option>
+				<option value="11AM">11AM</option>
+				<option value="12PM">12PM</option>
+				<option value="1PM">1PM</option>
+				<option value="2PM">2PM</option>
+				<option value="3PM">3PM</option>
+				<option value="4PM">4PM</option>
+			  </select>
+			</div>
 
-        <input type="submit" value="Reserve it">
+			<div class="form-group col-md-4">
+			  <input type="email" class="form-control" id="email" name="email" placeholder="6. Your email address">
+			</div>
+		  </div>
 
-      </div><!-- .row -->
+		  <div class="row">
+			<div class="form-group col-md-4">
+			  <input type="text" class="form-control" id="first-name" name="first-name" placeholder="7. Your first name">
+			</div>
 
-    <?php echo form_close(); ?>
+			<div class="form-group col-md-4">
+			  <input type="text" class="form-control" id="last-name" name="last-name" placeholder="8. Your last name">
+			</div>
 
-    <script>
-      var today = new Date();
-      var dd = today.getDate();
-      var mm = today.getMonth() + 1; //January is 0!
-      var yyyy = today.getFullYear();
+			<div class="form-group col-md-4">
+			  <input type="text" class="form-control" id="telephone" name="telephone" placeholder="9. Your telephone">
+			</div>
+		  </div>
 
-      if(dd < 10) {
-          dd = '0' + dd
-      } 
+		</div><!-- .col-md-12 -->
 
-      if(mm < 10) {
-          mm = '0' + mm
-      } 
-      today = mm + '/' + dd + '/' + yyyy;
+		<input type="submit" value="Reserve it">
 
-      var flag = true;
+	  </div><!-- .row -->
 
-      var reservationForm = document.getElementById('reservation-form');
+	<?php echo form_close(); ?>
 
-      var r_event = document.getElementById('event');
-      var r_place = document.getElementById('place');
-      var r_people = document.getElementById('people');
-      var r_date = document.getElementById('datepicker');
-      var r_time = document.getElementById('time');
-      var r_email = document.getElementById('email');
-      var r_firstName = document.getElementById('first-name');
-      var r_lastName = document.getElementById('last-name');
-      var r_telephone = document.getElementById('telephone');
+	<script>
+	  var today = new Date();
+	  var dd = today.getDate();
+	  var mm = today.getMonth() + 1; //January is 0!
+	  var yyyy = today.getFullYear();
 
-      var r_data = [r_event, r_place, r_people, r_date, r_time, r_email, r_firstName, r_lastName, r_telephone];
+	  if(dd < 10) {
+		  dd = '0' + dd
+	  }
 
-      reservationForm.addEventListener('submit', function(e) {
+	  if(mm < 10) {
+		  mm = '0' + mm
+	  }
+	  today = mm + '/' + dd + '/' + yyyy;
 
-        for (var r_index = 0; r_index < r_data.length; r_index++) {
-          if(r_data[r_index].value == "") {
-            r_data[r_index].style.borderColor = "red";
-            flag = true;
-          }
-          else {
-            r_data[r_index].style.borderColor = "#292929";
-            flag = false;
-            if (r_date.value <= today) {
-              r_date.style.borderColor = "red";
-              flag = true;
-            }
-            else {
-              r_date.style.borderColor = "#292929";
-              flag = false;
-            }
-          }
-        }
+	  var flag = true;
 
-        if (flag == true) {
-          e.preventDefault();
-          alert("Please complete the reservation form.");
-        }
+	  var reservationForm = document.getElementById('reservation-form');
 
-      });
-      
-    </script>
-    
+	  var r_event = document.getElementById('event');
+	  var r_place = document.getElementById('place');
+	  var r_people = document.getElementById('people');
+	  var r_date = document.getElementById('datepicker');
+	  var r_time = document.getElementById('time');
+	  var r_email = document.getElementById('email');
+	  var r_firstName = document.getElementById('first-name');
+	  var r_lastName = document.getElementById('last-name');
+	  var r_telephone = document.getElementById('telephone');
+
+	  var r_data = [r_event, r_place, r_people, r_date, r_time, r_email, r_firstName, r_lastName, r_telephone];
+
+	  reservationForm.addEventListener('submit', function(e) {
+
+		for (var r_index = 0; r_index < r_data.length; r_index++) {
+		  if(r_data[r_index].value == "") {
+			r_data[r_index].style.borderColor = "red";
+			flag = true;
+		  }
+		  else {
+			r_data[r_index].style.borderColor = "#292929";
+			flag = false;
+			if (r_date.value <= today) {
+			  r_date.style.borderColor = "red";
+			  flag = true;
+			}
+			else {
+			  r_date.style.borderColor = "#292929";
+			  flag = false;
+			}
+		  }
+		}
+
+		if (flag == true) {
+		  e.preventDefault();
+		  alert("Please complete the reservation form.");
+		}
+
+	  });
+
+	</script>
+
   </div><!-- .container -->
 
 </div>
 
-<?php 
+<?php
   if (isset($_GET['msg']) && $_GET['msg'] == "true") {
-    echo '<script>
-      alert("Thank you for making a reservation at us! Please wait while we review your reservation and we will contact you. Have a nice day!");
-    </script>';
+	echo '<script>
+	  alert("Thank you for making a reservation at us! Please wait while we review your reservation and we will contact you. Have a nice day!");
+	</script>';
   }
   else if (isset($_GET['msg']) && $_GET['msg'] == "false") {
-    echo '<script>
-      alert("Sorry. The date you have submitted has already been reserved. Please try another date.");
-    </script>';
+	echo '<script>
+	  alert("Sorry. The date you have submitted has already been reserved. Please try another date.");
+	</script>';
   }
 ?>

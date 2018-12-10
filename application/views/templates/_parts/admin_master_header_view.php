@@ -16,6 +16,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo site_url('assets/admin/css/all.css') ?>" rel="stylesheet">
+    
 
     <!-- Page level plugin CSS-->
     <link href="<?php echo site_url('assets/admin/css/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">

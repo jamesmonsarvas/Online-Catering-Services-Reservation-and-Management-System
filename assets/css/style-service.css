@@ -28,6 +28,25 @@
     margin: 20px auto;
     padding: 0;
 }
+.da-thumbs a {
+    transition: .3s ease-in;
+}
+.da-thumbs .service-desc {
+    display: none;
+    color: #ffffff;
+    background: rgba(0,0,0,0.7);
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    padding: 30% 20px;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+}
+
+.da-thumbs a:hover .service-desc {
+    display: block;
+    z-index: 10;
+}
 .foods .row .col {
     float: left;
     width: 30%;
@@ -49,3 +68,27 @@
     display: block;
     position: relative;
 }   
+
+/*
+Reservation
+*/
+.reservation-details ul {
+    list-style: none;
+}
+.reservation-details ul li:first-child:before,
+.reservation-details ul li:nth-child(2):before,
+.reservation-details ul li:last-child:before{
+    font-family: FontAwesome;
+    content: '\f0c8';
+    font-size: 20px;
+    padding-right: 8px;
+}
+.reservation-details ul li:first-child:before {
+    color: #ff1a1a;
+}
+.reservation-details ul li:nth-child(2):before {
+    color: #1a1aff;
+}
+.reservation-details ul li:last-child:before {
+    color: #00ff00;
+}

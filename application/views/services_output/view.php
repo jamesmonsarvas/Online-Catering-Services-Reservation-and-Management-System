@@ -26,73 +26,73 @@
                 <li class="col">
                     <a href="#">
                         <img src="<?php echo base_url(); ?>/assets/img-services/tokyo-tokyo.jpg" />
-                        <!-- <div>
+                        <div class="service-desc">
                             <span>
                                 New on the menu: Tokyo Tokyo's Donburi variants
                                 <br /><br />
                                 It's all TASTY and NEW at Tokyo Tokyo! Grab a bowl and try the newest Tofu Steak and Cheesy Pork Katsu today!
                             </span>
-                        </div> -->
+                        </div>
                     </a>
                 </li>
                 <li class="col">
                     <a href="#">
                         <img src="<?php echo base_url(); ?>/assets/img-services/bono-gelato.jpg" />
-                        <!-- <div>
+                        <div class="service-desc">
                             <span>
                                 New on the Menu: Bono Gelato's Brownie Waffle Sundae Waffle
                                 <br /><br />
                                 Fall in love with your choice of gelato sandwiched between two heart-shaped brownie waffles topped with whipped cream and drizzled with homemade chocolate and caramel sauce. Available at SM Aura Premier, SM Makati, SM Megamall, and The Podium.
                             </span>
-                        </div> -->
+                        </div>
                     </a>
                 </li>
                 <li class="col">
                     <a href="#">
                         <img src="<?php echo base_url(); ?>/assets/img-services/coffee-bean.jpg" />
-                        <!-- <div>
+                        <div class="service-desc">
                             <span>
                                 New on the Menu: Coffee Bean's Vanilla Almond
                                 <br /><br />
                                 Chill out with Coffee Bean's latest drink--the light and sweet Vanilla Almond, freshly roasted just for you!
                             </span>
-                        </div> -->
+                        </div>
                     </a>
                 </li>
                 <li class="col">
                     <a href="#">
                         <img src="<?php echo base_url(); ?>/assets/img-services/krispy-kreme.jpg" />
-                        <!-- <div>
+                        <div class="service-desc">
                             <span>
                                 Krispy Kreme's Special Edition Po Doughnut
                                 <br /><br />
                                 Don't let the month end without tasting Krispy Kreme's special edition Po Doughnut that's available until March 31 ONLY!
                             </span>
-                        </div> -->
+                        </div>
                     </a>
                 </li>
                 <li class="col">
                     <a href="#">
                         <img src="<?php echo base_url(); ?>/assets/img-services/kumori-cafe.jpg" />
-                        <!-- <div>
+                        <div class="service-desc">
                             <span>
                                 Kumori Cafe, Now Open at SM North EDSA
                                 <br /><br />
                                 Can you imagine tasting these sweet stuff all at once? Be the one of the firsts to try on Kumori Cafe's Milkshakes at the newly-opened branch at SM North Edsa!
                             </span>
-                        </div> -->
+                        </div>
                     </a>
                 </li>
                 <li class="col">
                     <a href="#">
                         <img src="<?php echo base_url(); ?>/assets/img-services/linguini.jpg" />
-                        <!-- <div>
+                        <div class="service-desc">
                             <span>
                                 New on the Menu: Linguini Fini's The Kingpin
                                 <br /><br />
                                 Trust us, you'll love Linguini Fini's new 18" NY Style Pizza! Feed your #hangry craving and try it today at SM Megamall!
                             </span>
-                        </div> -->
+                        </div>
                     </a>
                 </li>
             </ul>
@@ -104,6 +104,6 @@
 
 </div><!-- .foods -->
 
-  </div>
+</div>
 
 </div>
