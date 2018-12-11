@@ -21,6 +21,7 @@
     <!-- Page level plugin CSS-->
     <link href="<?php echo site_url('assets/admin/css/dataTables.bootstrap4.min.css') ?>" rel="stylesheet">
 
+    
     <!-- Custom styles for this template-->
     <link href="<?php echo site_url('assets/admin/css/sb-admin.min.css') ?>" rel="stylesheet">
     <link href="<?php echo site_url('assets/admin/css/style.css') ?>" rel="stylesheet">
@@ -64,7 +65,7 @@
             PROFILE
             <i class="fas fa-user-circle fa-fw"></i>
           </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-right-inverse" aria-labelledby="userDropdown">
             <a class="dropdown-item" href="<?php echo site_url('admin/user/profile');?>">Profile page</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="<?php echo site_url('admin/user/logout');?>">Logout</a>
@@ -76,6 +77,7 @@
 
     <div class="main-content">
 
+<<<<<<< HEAD
 <div id="wrapper">
 
   <!-- Sidebar -->
@@ -144,18 +146,74 @@
     </li>
   </ul>
 
-          
+          <div id="content-wrapper" class="content-wrapper-inverse">
 
+            <div class="container-fluid container-fluid-inverse">
+=======
+        <div id="wrapper">
 
-          <div id="content-wrapper">
+          <!-- Sidebar -->
+          <ul class="sidebar navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="<?php echo site_url('/admin'); ?>">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-fw fa-file"></i>
+                <span>Services</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                <a class="dropdown-item" href="<?php echo site_url('admin/services/index') ?>">All Services</a>
+              </div>
+            </li>
 
-            <div class="container-fluid">
-                <!-- <a class="dropdown-item" href="<?php echo site_url('admin/packages/list_of_menu') ?>">List of Menus</a> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-fw fa-file"></i>
+                <span>Packages</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                <a class="dropdown-item" href="<?php echo site_url('admin/packages/index') ?>">All Package</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-fw fa-file"></i>
+                <span>Reservation</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                <a class="dropdown-item" href="<?php echo site_url('admin/reservation/index') ?>">All Reservation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo site_url('admin/events/index') ?>">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Event</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo site_url('admin/feedback/index') ?>">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Feedback</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-fw fa-file"></i>
+                <span>Report</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                <a class="dropdown-item" href="<?php echo site_url('admin/report/index') ?>">Reservation</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/report/report_event') ?>">Event</a>
+                <a class="dropdown-item" href="<?php echo site_url('admin/report/report_feedback') ?>">Feedback</a>
             </li>
           </ul>
 
+
+
           <div id="content-wrapper">
 
             <div class="container-fluid">
+>>>>>>> 1fadd6c88b5df9dd7a08935669e1b05ebd66d9e0
     
                 <?php endif; ?>
