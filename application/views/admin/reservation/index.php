@@ -8,7 +8,7 @@
 
       <?php echo form_open('admin/reservation/index'); ?>
 
-      Search: <input type="text" id="search" name="search" value="" class="search-submit">
+      Search: <input type="text" id="search" name="search" value="">
 
       Filter: <select id="searchFilter" name="searchFilter">
         <option value="any" selected>Any</option>
@@ -17,7 +17,7 @@
       </select>
 
       Status: <select id="statusFilter" name="statusFilter">
-        <option value="any" class="search-submit" selected>Any</option>
+        <option value="any" selected>Any</option>
         <option value="pending">Pending</option>
         <option value="approved">Approved</option>
         <option value="cancelled">Cancelled</option>
@@ -29,7 +29,7 @@
 
       <br>
 
-      <table class="table table-striped table-striped-inverse" id="dataTable" width="100%" cellspacing="0">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
         <thead>
           <tr>

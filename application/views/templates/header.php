@@ -9,7 +9,6 @@
   <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/bootstrap.min.css'); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/fontawesome-all.css'); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/style.css'); ?>">
-  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/style-service.css'); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/flexslider.css'); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/jquery-ui.min.css'); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/calendar.css'); ?>">
