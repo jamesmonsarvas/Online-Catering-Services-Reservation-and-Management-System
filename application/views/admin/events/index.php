@@ -259,11 +259,11 @@
 														</div>
 													</div>
 
-
+													<br />
 													<div class="row">
 														<div class="col-md-12">
 															<div class="form-group">
-																<label for="services-desc">Services Desc</label>
+																<label for="services-desc">Service Description: </label>
 																<textarea name="comments" class="form-control editor">
 																	<?php echo $event['comments']; ?>
 																</textarea>
