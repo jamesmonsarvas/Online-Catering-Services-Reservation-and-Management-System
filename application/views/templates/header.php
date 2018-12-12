@@ -41,10 +41,10 @@
               <li <?php if($this->uri->segment(1)==""){echo 'class="active"';}?> >
                 <a href="<?php echo site_url('/'); ?>">Home</a>
               </li>
-              <li <?php if($this->uri->segment(1)=="services/index"){echo 'class="active"';}?> >
+              <li <?php if($this->uri->segment(1)=="services"){echo 'class="active"';}?> >
                 <a href="<?php echo site_url('services'); ?>">Services</a>
               </li>
-              <li <?php if($this->uri->segment(1)=="services/index"){echo 'class="active"';}?> >
+              <li <?php //if($this->uri->segment(1)=="services/index"){echo 'class="active"';}?> >
                 <a href="#">Photos</a>
               </li>
               <li <?php if($this->uri->segment(1)=="about"){echo 'class="active"';}?> >
@@ -54,7 +54,7 @@
                 <a href="<?php echo site_url('contact'); ?>">Contact</a>
               </li>
               <li>
-                <a class="default-btn" href="<?php echo site_url('reservation'); ?>">Book a tasting experience</a>
+                <a class="default-btn" href="<?php echo site_url('reservation'); ?>">Book an Event</a>
               </li>
             </ul><!-- #menu-primary-list -->
 

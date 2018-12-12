@@ -5,9 +5,12 @@
 		}
 
 		public function get_reservations() {
+			//SELECT * FROM `reservation`as `r` JOIN `services_cms` as `sc` ON `r`.`type_of_event` = `sc`.`ID` WHERE 1 
+
 			$this->db->order_by('status', 'DESC');
 			$this->db->select('*');    
 			$this->db->from('reservation');
+			$this->db->join('services_cms', 'reservation.type_of_event = services_cms.ID');
 
 			$query = $this->db->get();
 			return $query->result_array();

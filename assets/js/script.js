@@ -27,4 +27,16 @@ $(function () {
     pauseOnHover: true,
   });
 
+  $('#close-validation').click(function() {
+    $('.validation').css("display", "none");
+  });
+
+  $('.clickable').hover(function(){
+    $('.reservation-desc').html($(this).children('.event-details').html());
+  });
+
+  $('.clickable').mouseleave(function(){
+    $('.reservation-desc').html('');
+  });
+
 });

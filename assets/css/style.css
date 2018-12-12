@@ -1103,3 +1103,39 @@ https://www.phpied.com/delay-loading-your-print-css/
   }
 
 }
+
+
+.validation {
+  position: fixed;
+  font-size: 14px;
+  width: 500px;
+  height: 200px;
+  top: 95%;
+  left: 50%;
+  margin-top: -100px; /* Negative half of height. */
+  margin-left: -250px; /* Negative half of width. */
+  z-index: 999 !important;
+
+}
+
+.validation .validation-true {
+  border-radius: 10px;
+  background: green;
+  color: lightgreen;
+  padding: 10px;
+}
+
+.validation .validation-false {
+  border-radius: 10px;
+  background: #c10505;
+  color: #fff;
+  padding: 10px;
+}
+
+.reservation-desc {
+  height: 250px;
+}
+
+.event-details {
+  display: none;
+}

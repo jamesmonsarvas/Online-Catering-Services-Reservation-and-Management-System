@@ -5,7 +5,7 @@
     <div id="banner" class="row">
 
       <div class="col-md-12 centered-content">
-        <h1 class="entry-title border-lr">Contact Us</h1>
+        <h1 class="entry-title border-lr">System Feedback</h1>
       </div><!-- .col-md-12 -->
 
     </div><!-- .row -->

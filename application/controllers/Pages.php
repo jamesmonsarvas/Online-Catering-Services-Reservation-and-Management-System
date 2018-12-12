@@ -14,6 +14,18 @@ class Pages extends CI_Controller {
     $this->load->view('templates/footer');
   }
 
+  public function viewsystemfeedback() {
+    $this->load->view('templates/header');
+    $this->load->view('pages/systemfeedback');
+    $this->load->view('templates/footer');
+  }
+
+  public function viewservicefeedback() {
+    $this->load->view('templates/header', $data);
+    $this->load->view('pages/viewservicefeedback');
+    $this->load->view('templates/footer');
+  }
+
   public function create() {
     $this->Feedback_model->create_feedback();
     redirect('contact');
