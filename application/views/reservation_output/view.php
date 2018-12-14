@@ -75,12 +75,19 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 					events: [
 					<?php
 					$summary = "";
+					$event_title = "";
 					foreach ($reservations as $reservation) : ?>
 						<?php
 						// if($reservation['count_date'] == 1)
 						// 	$summary = "<div class='clickable'>1 slot available<div class='event-details'><p class='".$reservation['date_of_event']."'>".$reservation['date_of_event']."</p></div></div>";
 						// else if ($reservation['count_date'] == 2)
-							$summary = "<div class='clickable'>Occupied<div class='event-details'><p>Date of Event: ".$reservation['date_of_event']."</p><p>Name: ".$reservation['firstname']." ".$reservation['lastname']."</p><p>Type of Event: ".$reservation['services_title']."</p></div></div>";
+							if ($reservation['status'] == 0) {
+								$event_title = "Event";
+							}
+							else if ($reservation['status'] == 1) {
+								$event_title = "Reservation";
+							}
+							$summary = "<div class='clickable'>".$event_title."<div class='event-details'><p>Date of Event: ".$reservation['date_of_event']."</p><p>Name: ".$reservation['firstname']." ".$reservation['lastname']."</p><p>Type of Event: ".$reservation['services_title']."</p><p>Time of Event: ".$reservation['time_of_event']."</p><p>Venue: ".$reservation['place_of_event']."</p></div></div>";
 						?>
 						<?php if ($reservation['status'] == 0 || $reservation['status'] == 1) : ?>
 							{ start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "<?php echo $summary; ?>", mask: true},

@@ -17,6 +17,7 @@ $route['admin/services'] = 'admin/services/index';
 
 $route['reservation'] = 'reservation_output/view';
 $route['reservation/create'] = 'reservation_output/create';
+$route['reservation/view_reference'] = 'reservation_output/view_reference';
 
 $route['reservation/index'] = 'admin/reservation/approve_reservation';
 $route['reservation/index'] = 'admin/reservation/cancel_reservation';

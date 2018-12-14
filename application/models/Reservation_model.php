@@ -203,17 +203,31 @@
 
 			$query = $this->db->get();
 
-			$reference = "10000";
-			$this->db->select('*');    
-			$this->db->from('reservation');
-			$this->db->order_by('reservation_id', 'DESC')->limit(1);
-			$last_reference = $this->db->get()->row();
-			if (count($last_reference) <= 0) {
-				$reference += 1;
-			}
-			else {
-				$reference = $last_reference->reference_no + 1;
-			}
+			// $reference = "10000";
+			// $this->db->select('*');    
+			// $this->db->from('reservation');
+			// $this->db->order_by('reservation_id', 'DESC')->limit(1);
+			// $last_reference = $this->db->get()->row();
+			// if (count($last_reference) <= 0) {
+			// 	$reference += 1;
+			// }
+			// else {
+			// 	$reference = $last_reference->reference_no + 1;
+			// }
+			$reference = "";
+			do {
+				$rand_num1 = sprintf('%04d', rand(1, 9999));
+				$rand_num2 = sprintf('%05d', rand(1, 99999));
+				$rand_num3 = sprintf('%04d', rand(1, 9999));
+				$reference = "1-".$rand_num1."-".$rand_num2."-".$rand_num3;
+				$this->db->select('*');    
+				$this->db->from('reservation');
+				$this->db->where('reference_no', $reference);
+
+				$query2 = $this->db->get();
+			} while (count($query2->result()) >= 1);
+
+
 
 			if (count($query->result()) <= 1) {
 				$event_type = $this->input->post('event');
@@ -246,9 +260,10 @@
 					'status' => 1
 				);
 
+
 				$this->db->insert('reservation', $data);
 				
-				return "true";
+				return $reference;
 			}
 			else {
 				return "false";

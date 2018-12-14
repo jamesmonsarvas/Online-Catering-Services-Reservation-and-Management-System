@@ -80,6 +80,14 @@ class Event_model extends CI_Model {
 				$this->db->where('event.event_status', 1);
 
 			}
+			else if ($statusFilter == "inprogress") {
+				$this->db->where('event.event_status', 2);
+
+			}
+			else if ($statusFilter == "cancelled") {
+				$this->db->where('event.event_status', 3);
+
+			}
 
 			$query = $this->db->get();
 			return $query->result_array();

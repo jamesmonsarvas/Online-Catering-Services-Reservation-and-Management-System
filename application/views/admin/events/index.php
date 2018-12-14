@@ -23,6 +23,8 @@
 				<option value="any" selected>Any</option>
 				<option value="ongoing">Ongoing</option>
 				<option value="finished">Finished</option>
+				<option value="inprogress">In-progress</option>
+				<option value="cancelled">Cancelled</option>
 			</select>
 
 			<input type="submit" name="submit" value="GO">
@@ -78,6 +80,12 @@
 									}
 									else if ($event['event_status'] == 1) {
 										echo "Finished";
+									}
+									else if ($event['event_status'] == 2) {
+										echo "In-progress";
+									}
+									else if ($event['event_status'] == 3) {
+										echo "Cancelled";
 									}
 									?>
 								</td>
@@ -161,7 +169,7 @@
 																<?php echo form_open("admin/events/update_event/$num", "class='event_status$num'" ); ?>
 																<input type="hidden" name="id" value="<?php echo $event['event_id']; ?>">
 																<b>Status</b>
-																<input type="radio" id="yes" name="event_status<?php echo $num; ?>" value="1"
+																<input type="radio" id="finished" name="event_status<?php echo $num; ?>" value="1"
 																<?php
 																if ($event['event_status'] == 1)
 																{
@@ -170,7 +178,7 @@
 																?>
 																>
 																<label for="yes">Finished</label>
-																<input type="radio" id="no" name="event_status<?php echo $num; ?>" value="0"
+																<input type="radio" id="ongoing" name="event_status<?php echo $num; ?>" value="0"
 																<?php
 																if ($event['event_status'] == 0)
 																{
@@ -179,6 +187,25 @@
 																?>
 																>
 																<label for="no">Ongoing</label>
+																<br />
+																<input type="radio" id="in-progress" name="event_status<?php echo $num; ?>" value="2"
+																<?php
+																if ($event['event_status'] == 2)
+																{
+																	echo "checked";
+																}
+																?>
+																>
+																<label for="no">In-progress</label>
+																<input type="radio" id="cancelled" name="event_status<?php echo $num; ?>" value="3"
+																<?php
+																if ($event['event_status'] == 3)
+																{
+																	echo "checked";
+																}
+																?>
+																>
+																<label for="no">Cancelled</label>
 															</p>
 															<p>
 																<b>Guest Count:</b> <?php echo $event['exp_people_count']; ?>

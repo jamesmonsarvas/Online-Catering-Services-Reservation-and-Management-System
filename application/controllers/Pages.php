@@ -27,7 +27,17 @@ class Pages extends CI_Controller {
   }
 
   public function create() {
-    $this->Feedback_model->create_feedback();
+    $this->Feedback_model->create_feedback(0);
+    redirect('contact');
+  }
+
+  public function createsystemfeedback() {
+    $this->Feedback_model->create_feedback(1);
+    redirect('contact');
+  }
+
+  public function createservicefeedback() {
+    $this->Feedback_model->create_feedback(2);
     redirect('contact');
   }
 }

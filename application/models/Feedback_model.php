@@ -173,13 +173,25 @@ class Feedback_model extends CI_Model {
 
   }
 
-  public function create_feedback() {
+  public function create_feedback($feedback_type) {
+    $data = array(
+      'feedback_type' => $feedback_type,
+      'q1' => $this->input->post('question-1'),
+      'q2' => $this->input->post('question-2'),
+      'q3' => $this->input->post('question-3'),
+      'q4' => $this->input->post('question-4'),
+      'q5' => $this->input->post('question-5'),
+      'suggestion' => $this->input->post('message'),
+    );
+
+    $this->db->insert('feedback_scores', $data);
+    $fs_id = $this->db->insert_id();
+
     $data = array(
       'name' => $this->input->post('name'),
       'email' => $this->input->post('email'),
       'phone_number' => $this->input->post('phone-number'),
-      'reason' => $this->input->post('reason'),
-      'message' => $this->input->post('message'),
+      'fs_id' => $fs_id,
     );
 
     return $this->db->insert('feedback', $data);

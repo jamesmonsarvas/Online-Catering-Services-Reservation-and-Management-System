@@ -1139,3 +1139,17 @@ https://www.phpied.com/delay-loading-your-print-css/
 .event-details {
   display: none;
 }
+
+.reference-no {
+  color: green;
+  font-family: Calibri, Verdana, sans-serif;
+  font-size: 48px;
+}
+
+.feedback-score {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
