@@ -21,7 +21,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 		<div class="row">
 
 			<div class="col-md-12 centered-content">
-				<h1 class="entry-title border-lr">Book a tasting Experience</h1>
+				<h1 class="entry-title border-lr">Book a Full-Course Event</h1>
 				<p class="entry-desc">
 					Indulge your culinary senses by partaking in our exclusive tasting experience. <br>
 					Start by clicking below and filling out our form.
@@ -38,7 +38,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 
 		<div class="centered-content">
 
-			<h2 class="border-lr">Book a Full-Course Tasting Experience</h2>
+			<h2 class="border-lr">Book a Full-Course Service Experience</h2>
 			<p>
 				We use the form below to find out details about your upcoming event so that we can provide you with the most appropriate,
 				complimentary tasting experience. If you'd rather talk to a representative, you can <a href="<?php echo site_url('contact/#contact-us')?>">contact us</a> here.
@@ -54,17 +54,19 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 		<div class="row reservation-details">
 			<div id="calendar" class="col-md-9"></div>
 			<div class="col-md-3">
-				<h3>DETAILS</h3>
-				<div class="reservation-desc">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Cumque aperiam officiis nobis debitis vitae tempora eaque veniam, 
-					illum culpa, quam doloremque fugit soluta quia cum corporis sint ad commodi iusto?
+				<div class="reservation-content">
+					<h3>DETAILS</h3>
+					<div class="reservation-desc">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Cumque aperiam officiis nobis debitis vitae tempora eaque veniam, 
+						illum culpa, quam doloremque fugit soluta quia cum corporis sint ad commodi iusto?
+					</div>
 				</div>
 
 				<h4>LEGENDS:</h4>
 				<ul>
 					<li>FULL SLOT</li>
-					<li>1 SLOT AVAILABLE</li>
+					<li>CURRENT DATE</li>
 					<li>EMPTY</li>
 				</ul>
 			</div>
@@ -115,6 +117,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 						<li>25% balance before the event</li>
 						<li>Additional 15% service charge</li>
 						<li>Customer agree to pay in case of loss or damage of property/items based on market value</li>
+						<li>Just two events that differ from time of event can be reserved on a date.</li>
 					</ul>
 
 				</div><!-- .col-md-12 -->
