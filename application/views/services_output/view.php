@@ -14,7 +14,7 @@
 
         <div id="foods" class="foods">
             <div class="container">
-                <h1 class="entry-header">Everything's Here For The FOOD Lover</h1>
+                <h1 class="entry-header">We Look Forward To Serving You!</h1>
 
                 <div id="da-thumbs" class="da-thumbs">
                     <div class="row no-gutters">

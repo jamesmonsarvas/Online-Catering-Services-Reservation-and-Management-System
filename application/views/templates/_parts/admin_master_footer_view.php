@@ -12,6 +12,8 @@
       <i class="fas fa-angle-up"></i>
     </a>
 
+    
+
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -49,8 +51,7 @@
     <script src="<?php echo site_url('assets/admin/js/script.js') ?>"></script>
 
     <!-- Demo scripts for this page-->
-    <!-- <script src="js/demo/datatables-demo.js"></script>
-    <script src="js/demo/chart-area-demo.js"></script> -->
+    <script src="<?php echo site_url('assets/admin/js/report_reservation_charts.js') ?>"></script>
   </body>
 
 </html>

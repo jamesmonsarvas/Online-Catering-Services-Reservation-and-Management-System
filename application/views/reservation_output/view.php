@@ -38,7 +38,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 
 		<div class="centered-content">
 
-			<h2 class="border-lr">Book a Full-Course Service Experience</h2>
+			<h2 class="border-lr">Full Service Event Planning & Catering</h2>
 			<p>
 				We use the form below to find out details about your upcoming event so that we can provide you with the most appropriate,
 				complimentary tasting experience. If you'd rather talk to a representative, you can <a href="<?php echo site_url('contact/#contact-us')?>">contact us</a> here.

@@ -97,7 +97,7 @@
 
             <?php echo form_close(); ?>
 
-            <script>
+            <!-- <script>
 
               var flag = true;
 
@@ -129,7 +129,7 @@
                 }
 
               });
-            </script>
+            </script> -->
 
           </div><!-- .container -->
 
@@ -146,7 +146,7 @@
         <div class="row">
           <div class="col-md-12">
 
-            <div class="flexslider" id="feedback-slider">
+            <!-- <div class="flexslider" id="feedback-slider">
               <ul class="slides">
                 <?php foreach ($feedbacks as $feedback) : ?>
                   <?php if( $feedback['feature'] == 1 ) : ?>
@@ -157,7 +157,7 @@
                   <?php endif; ?>
                 <?php endforeach; ?>
               </ul>
-            </div>
+            </div> -->
 
           </div>
         </div>

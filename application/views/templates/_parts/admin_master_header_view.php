@@ -142,7 +142,6 @@
             <a class="dropdown-item" href="<?php echo site_url('admin/report/index') ?>">Reservation</a>
             <a class="dropdown-item" href="<?php echo site_url('admin/report/report_event') ?>">Event</a>
             <a class="dropdown-item" href="<?php echo site_url('admin/report/report_feedback') ?>">Feedback</a>
-            <!-- <a class="dropdown-item" href="<?php echo site_url('admin/packages/list_of_menu') ?>">List of Menus</a> -->
           </li>
         </ul>
 

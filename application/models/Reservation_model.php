@@ -287,6 +287,17 @@
 			return $query->result_array();
 
 		}
+
+		public function reservation_chart() {
+			//SELECT MONTH(date_of_event) MONTH, COUNT(*) COUNT FROM reservation WHERE YEAR(date_of_event) = '2018' GROUP BY MONTH(date_of_event)
+
+			$this->db->select('MONTHNAME(date_of_event) MONTH, COUNT(*) COUNT');
+			$this->db->from('reservation');
+			$this->db->where("YEAR(date_of_event) = 2018 GROUP BY MONTH(date_of_event)");
+
+			$query = $this->db->get();
+			return $query->result_array();
+		}
 		
 	}
 ?>
