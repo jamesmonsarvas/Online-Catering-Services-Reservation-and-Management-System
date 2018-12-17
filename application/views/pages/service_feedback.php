@@ -24,6 +24,14 @@
 
           <h2 class="entry-title border-lr">Enter your information here</h2>
 
+          <p class="entry-desc">
+            <div class="reference-info">
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis alias debitis culpa minima laudantium voluptatibus possimus illum deleniti aut atque voluptatum voluptate provident vitae quam vel.
+              </p>
+            </div>
+          </p>
+
           <div class="container">
             <?php echo form_open('pages/createservicefeedback', 'class="row contact-food" id="contact-form"'); ?>
             <div class="col-md-12">
@@ -35,6 +43,13 @@
 
           <h2 class="entry-title border-lr">Feedback Questions</h2>
 
+          <p class="entry-desc">
+            <div class="reference-info">
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis alias debitis culpa minima laudantium voluptatibus possimus illum deleniti aut atque voluptatum voluptate provident vitae quam vel.
+              </p>
+            </div>
+          </p>
 
           <div class="container">
             <div class="col-md-12">
@@ -83,10 +98,16 @@
           </div>
 
           <h2 class="entry-title border-lr">Suggestion</h2>
+
+          <p class="entry-desc">
+            <div class="reference-info">
+              <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis alias debitis culpa minima laudantium voluptatibus possimus illum deleniti aut atque voluptatum voluptate provident vitae quam vel.
+              </p>
+            </div>
+          </p>
           
           <div class="container">
-
-
 
             <div class="col-md-12">
               <textarea id="message" name="message" placeholder="Message (Optional)"></textarea>
@@ -96,7 +117,7 @@
 
             <?php echo form_close(); ?>
 
-            <!-- <script>
+            <script>
 
               var flag = true;
 
@@ -104,31 +125,34 @@
 
               var c_name = document.getElementById('name');
               var c_email = document.getElementById('email');
-              var c_phoneNumber = document.getElementById('phone-number');
-              var c_reason = document.getElementById('reason');
-              var c_message = document.getElementById('message');
 
-              var c_data = [c_name, c_email, c_phoneNumber, c_reason, c_message];
+              var c_data = [c_name, c_email];
+              var c_valid = new Array(2);
 
               contactForm.addEventListener('submit', function(e) {
-
                 for (var c_index = 0; c_index < c_data.length; c_index++) {
                   if(c_data[c_index].value == "") {
                     c_data[c_index].style.borderColor = "red";
                     flag = true;
+                    c_valid[c_index] = true;
                   }
                   else {
                     c_data[c_index].style.borderColor = "#292929";
                     flag = false;
+                    c_valid[c_index] = false;
                   }
                 }
 
-                if (flag == true) {
-                  e.preventDefault();
+                for (var c_index = 0; c_index < c_valid.length; c_index++) {
+                  if (c_valid[c_index] == true) {
+                    e.preventDefault();
+                    alert("Please complete the form");
+                    break;
+                  }
                 }
 
               });
-            </script> -->
+            </script>
 
           </div><!-- .container -->
 
