@@ -1,9 +1,5 @@
 $(function () {
 
-  $(document).ready(function(){
-    $('#error-msg').css('display', 'none');
-  });
-
   $("#datepicker").datepicker();
 
   $(window).scroll(function () {

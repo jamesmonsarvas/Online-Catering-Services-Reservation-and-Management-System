@@ -57,9 +57,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 				<div class="reservation-content">
 					<h3>DETAILS</h3>
 					<div class="reservation-desc">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Cumque aperiam officiis nobis debitis vitae tempora eaque veniam, 
-						illum culpa, quam doloremque fugit soluta quia cum corporis sint ad commodi iusto?
+						Click an event on the calendar to view its details here.
 					</div>
 				</div>
 

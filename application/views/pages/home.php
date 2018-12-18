@@ -48,7 +48,7 @@
                 because recipes are passed down to different generation of Leynes.
               </p>
 
-              <a href="#" class="default-btn">Schedule Tasting now</a>
+              
 
               <div class="contact-us">
                 <p>Or call us at</p>
@@ -118,7 +118,7 @@
               from birthday parties, wedding, debuts and even fiesta.
             </p>
 
-            <a href="#" class="default-btn">See all our Services</a>
+            <a href="<?php echo site_url('/services'); ?>" class="default-btn">See all our Services</a>
 
           </div>
 
