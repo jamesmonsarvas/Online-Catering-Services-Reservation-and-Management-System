@@ -1,6 +1,8 @@
 (function($) {
   "use strict"; // Start of use strict
 
+  $("#dataTable").DataTable();
+
   // Toggle the side navigation
   /*$("#sidebarToggle").click(function(e) {
     e.preventDefault();
