@@ -879,6 +879,14 @@ input[type="submit"]:active:before {
   margin-bottom: 50px;
 }
 
+#reservation-page #error-msg {
+  background: #ff7c7c;
+  color: #ba0000;
+  margin-bottom: 50px;
+  border: 5px solid red;
+  padding: 10px;
+}
+
 /* Footer */
 
 #footer {
@@ -1110,7 +1118,7 @@ https://www.phpied.com/delay-loading-your-print-css/
   font-size: 14px;
   width: 500px;
   height: 200px;
-  top: 95%;
+  top: 50%;
   left: 50%;
   margin-top: -100px; /* Negative half of height. */
   margin-left: -250px; /* Negative half of width. */
@@ -1153,3 +1161,4 @@ https://www.phpied.com/delay-loading-your-print-css/
   display: flex;
   justify-content: space-between;
 }
+

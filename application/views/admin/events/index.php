@@ -1,3 +1,10 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="<?php echo site_url('/admin') ?>">Dashboard</a>
+  </li>
+  <li class="breadcrumb-item active">Event</li>
+</ol>
+
 <div class="card mb-3">
 	<div class="card-header">	
 		<h3 class="cms-title">Events</h3>

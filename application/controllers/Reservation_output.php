@@ -14,8 +14,13 @@ class Reservation_output extends CI_Controller {
     $this->load->library('mg_encryption');
     $msg = $this->Reservation_model->create_reservation();
     $reference_no = $this->mg_encryption->safe_b64encode($msg);
-    echo $reference_no;
-    redirect('reservation/view_reference?rn='.$reference_no);
+    
+    if ($msg) {
+      redirect('reservation?msg='.$msg);
+    }
+    else {
+      redirect('reservation/view_reference?rn='.$reference_no);
+    }
   }
 
   public function view_reference() {

@@ -1,7 +1,20 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="<?php echo site_url('/admin') ?>">Dashboard</a>
+  </li>
+  <li class="breadcrumb-item active">Create New Service</li>
+</ol>
 
 <?php echo validation_errors(); ?>
 
 <?php echo form_open('admin/services/create'); ?>
+
+<div class="card mb-3">
+  <div class="card-header">
+    <h3 class="cms-title">Services</h3>
+    <a href="<?php echo site_url('admin/services/create') ?>" class="btn btn-secondary">Add New</a>
+  </div>
+  <div class="card-body">
 
 	<div class="form-group">
 		<label for="services-title">Services Title</label>
@@ -36,4 +49,6 @@
         console.log( error );
       } );
 </script>
+
+</div></div>
 

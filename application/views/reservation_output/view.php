@@ -1,17 +1,17 @@
 <?php 
 if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 	echo '<div class="validation">
-		<div class="validation-true">
-		Thank you for making a reservation at us! <button id="close-validation">X</button><br />
-		Please wait while we review your reservation and we will contact you. Have a nice day!
-		</div>
+	<div class="validation-true">
+	Thank you for making a reservation at us! <button id="close-validation">X</button><br />
+	Please wait while we review your reservation and we will contact you. Have a nice day!
+	</div>
 	</div>';
 } else if (isset($_GET['msg']) && $_GET['msg'] == "false") {
 	echo '<div class="validation">
-		<div class="validation-false">
-		<button id="close-validation">X</button>
-		Sorry. The date you have submitted has already been reserved. Please try another date.
-		</div>
+	<div class="validation-false">
+	<button id="close-validation">X</button>
+	Sorry. The date you have submitted has already been reserved. Please try another date.
+	</div>
 	</div>';
 }
 ?>
@@ -83,13 +83,13 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 						// if($reservation['count_date'] == 1)
 						// 	$summary = "<div class='clickable'>1 slot available<div class='event-details'><p class='".$reservation['date_of_event']."'>".$reservation['date_of_event']."</p></div></div>";
 						// else if ($reservation['count_date'] == 2)
-							if ($reservation['status'] == 0) {
-								$event_title = "Event";
-							}
-							else if ($reservation['status'] == 1) {
-								$event_title = "Reservation";
-							}
-							$summary = "<div class='clickable'>".$event_title."<div class='event-details'><p>Date of Event: ".$reservation['date_of_event']."</p><p>Name: ".$reservation['firstname']." ".$reservation['lastname']."</p><p>Type of Event: ".$reservation['services_title']."</p><p>Time of Event: ".$reservation['time_of_event']."</p><p>Venue: ".$reservation['place_of_event']."</p></div></div>";
+						if ($reservation['status'] == 0) {
+							$event_title = "Event";
+						}
+						else if ($reservation['status'] == 1) {
+							$event_title = "Reservation";
+						}
+						$summary = "<div class='clickable'>".$event_title."<div class='event-details'><p>Date of Event: ".$reservation['date_of_event']."</p><p>Name: ".$reservation['firstname']." ".$reservation['lastname']."</p><p>Type of Event: ".$reservation['services_title']."</p><p>Time of Event: ".$reservation['time_of_event']."</p><p>Venue: ".$reservation['place_of_event']."</p></div></div>";
 						?>
 						<?php if ($reservation['status'] == 0 || $reservation['status'] == 1) : ?>
 							{ start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "<?php echo $summary; ?>", mask: true},
@@ -109,7 +109,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 		<div id="terms-and-condition">
 
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-8">
 					<h3>Terms and Conditions</h3>
 					<ul>
 						<li>Php 5,000 reservation fee to save the date</li>
@@ -120,10 +120,21 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 						<li>Just two events that differ from time of event can be reserved on a date.</li>
 					</ul>
 
-				</div><!-- .col-md-12 -->
+				</div><!-- .col-md-6 -->
 			</div><!-- .row -->
 
 		</div><!-- #terms-and-condition -->
+
+		<div id="error-msg" style="display: none;">
+			<div class="row">
+				<div class="col-md-8">
+					<h4>Oops! It looks like you have an error in your form!</h4>
+					<ul id="error-items">
+
+					</ul>
+				</div><!-- .col-md-6 -->
+			</div><!-- .row -->
+		</div><!-- #error-msg -->
 
 		<?php echo form_open('reservation/create', 'id="reservation-form"'); ?>
 
@@ -221,89 +232,89 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 		<?php echo form_close(); ?>
 
 		<script>
-			var today = new Date();
-			var dd = today.getDate();
-	  var mm = today.getMonth() + 1; //January is 0!
-	  var yyyy = today.getFullYear();
+			$(function () {	
+				var today = new Date();
+				var dd = today.getDate();
+			  var mm = today.getMonth() + 1; //January is 0!
+			  var yyyy = today.getFullYear();
 
-	  if(dd < 10) {
-	  	dd = '0' + dd
-	  }
+			  if(dd < 10) {
+			  	dd = '0' + dd
+			  }
 
-	  if(mm < 10) {
-	  	mm = '0' + mm
-	  }
-	  today = mm + '/' + dd + '/' + yyyy;
+			  if(mm < 10) {
+			  	mm = '0' + mm
+			  }
+			  today = mm + '/' + dd + '/' + yyyy;
 
-	  var flag = true;
-	  var beforeDateFlag = true
+			  var flag = true;
+			  var beforeDateFlag = true
 
-	  var reservationForm = document.getElementById('reservation-form');
+			  var reservationForm = document.getElementById('reservation-form');
 
-	  var r_event = document.getElementById('event');
-	  var r_place = document.getElementById('place');
-	  var r_people = document.getElementById('people');
-	  var r_date = document.getElementById('datepicker');
-	  var r_time = document.getElementById('time');
-	  var r_email = document.getElementById('email');
-	  var r_firstName = document.getElementById('first-name');
-	  var r_lastName = document.getElementById('last-name');
-	  var r_telephone = document.getElementById('telephone');
-	  var r_checkbox = document.getElementById('tac-checkbox');
+			  var r_event = document.getElementById('event');
+			  var r_place = document.getElementById('place');
+			  var r_people = document.getElementById('people');
+			  var r_date = document.getElementById('datepicker');
+			  var r_time = document.getElementById('time');
+			  var r_email = document.getElementById('email');
+			  var r_firstName = document.getElementById('first-name');
+			  var r_lastName = document.getElementById('last-name');
+			  var r_telephone = document.getElementById('telephone');
+			  var r_checkbox = document.getElementById('tac-checkbox');
 
-	  var r_data = [r_event, r_place, r_people, r_date, r_time, r_email, r_firstName, r_lastName, r_telephone];
-	  var r_valid = new Array(9);
+			  var r_data = [r_event, r_place, r_people, r_date, r_time, r_email, r_firstName, r_lastName, r_telephone];
+			  var r_valid = new Array(9);
 
-	  reservationForm.addEventListener('submit', function(e) {
+			  reservationForm.addEventListener('submit', function(e) {
+			  	$('#error-items').empty();
+			  	for (var r_index = 0; r_index < r_data.length; r_index++) {
+			  		if(r_data[r_index].value == "") {
+			  			r_data[r_index].style.borderColor = "red";
+			  			flag = true;
+			  			r_valid[r_index] = true;
+			  		}
+			  		else {
+			  			r_data[r_index].style.borderColor = "#292929";
+			  			flag = false;
+			  			r_valid[r_index] = false;
+			  		}
+			  	}
 
-	  	for (var r_index = 0; r_index < r_data.length; r_index++) {
-	  		if(r_data[r_index].value == "") {
-	  			r_data[r_index].style.borderColor = "red";
-	  			flag = true;
-	  			r_valid[r_index] = true;
-	  		}
-	  		else {
-	  			r_data[r_index].style.borderColor = "#292929";
-	  			flag = false;
-	  			r_valid[r_index] = false;
-	  		}
-	  	}
+			  	if (r_date.value <= today) {
+			  		r_date.style.borderColor = "red";
+			  		beforeDateFlag = true;
+			  	}
+			  	else {
+			  		r_date.style.borderColor = "#292929";
+			  		beforeDateFlag = false;
+			  	}
+			  	if (beforeDateFlag == true && r_date.value != "")
+			  	{
+			  		e.preventDefault();
+			  		$('#error-items').append("<li>Date picked has passed. Cannot create reservation.</li>");
+			  		$('#error-msg').css("display", "block");
+			  	}
 
-	  	if (r_date.value <= today) {
-	  		r_date.style.borderColor = "red";
-	  		beforeDateFlag = true;
-	  	}
-	  	else {
-	  		r_date.style.borderColor = "#292929";
-	  		beforeDateFlag = false;
-	  	}
+			  	for (var r_index = 0; r_index < r_valid.length; r_index++) {
+			  		if (r_valid[r_index] == true) {
+			  			e.preventDefault();
+			  			$('#error-items').append("<li>Please complete the reservation form.</li>");
+			  			$('#error-msg').css("display", "block");
+			  			break;
+			  		}
+			  	}
 
-	  	// if (flag == true) {
-	  	// 	e.preventDefault();
-	  	// 	alert("Please complete the reservation form.");
-	  	// }
-	  	if (beforeDateFlag == true && r_date.value != "")
-	  	{
-	  		e.preventDefault();
-	  		alert("Date picked has passed. Cannot create reservation.");
-	  	}
+			  	if (r_checkbox.checked == false) {
+			  		e.preventDefault();
+			  		$('#error-items').append("<li>Please read the TERMS AND CONDITIONS</li>");
+			  		$('#error-msg').css("display", "block");
+			  	}
+			  });
+			});
 
-	  	for (var r_index = 0; r_index < r_valid.length; r_index++) {
-	  		if (r_valid[r_index] == true) {
-	  			e.preventDefault();
-				alert("Please complete the reservation form.");
-				break;
-	  		}
-	  	}
+		</script>
 
-	  	if (r_checkbox.checked == false) {
-  			e.preventDefault();
-			alert("Please read the TERMS AND CONDITIONS");
-	  	}
-	  });
-
-	</script>
-
-</div><!-- .container -->
+	</div><!-- .container -->
 
 </div>

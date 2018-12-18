@@ -1,5 +1,9 @@
 $(function () {
 
+  $(document).ready(function(){
+    $('#error-msg').css('display', 'none');
+  });
+
   $("#datepicker").datepicker();
 
   $(window).scroll(function () {
@@ -26,6 +30,8 @@ $(function () {
     smoothHeight: true,
     pauseOnHover: true,
   });
+
+
 
   $('#close-validation').click(function() {
     $('.validation').css("display", "none");

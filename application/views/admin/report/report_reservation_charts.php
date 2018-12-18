@@ -4,7 +4,10 @@
   <li class="breadcrumb-item">
     <a href="<?php echo site_url('/admin') ?>">Dashboard</a>
   </li>
-  <li class="breadcrumb-item active">Overview</li>
+  <li class="breadcrumb-item">
+    <a href="<?php echo site_url('/admin/report/index') ?>">Reservation Report</a>
+  </li>
+  <li class="breadcrumb-item active">Charts & Graphs</li>
 </ol>
 
 <!-- Area Chart Example-->
