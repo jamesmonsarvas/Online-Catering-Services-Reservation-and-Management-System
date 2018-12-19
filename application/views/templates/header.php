@@ -44,9 +44,9 @@
               <li <?php if($this->uri->segment(1)=="services"){echo 'class="active"';}?> >
                 <a href="<?php echo site_url('services'); ?>">Services</a>
               </li>
-              <li <?php if($this->uri->segment(1)=="photos"){echo 'class="active"';}?> >
+              <!-- <li <?php if($this->uri->segment(1)=="photos"){echo 'class="active"';}?> >
                 <a href="<?php echo site_url('photos'); ?>">Photos</a>
-              </li>
+              </li> -->
               <li <?php if($this->uri->segment(1)=="about"){echo 'class="active"';}?> >
                 <a href="<?php echo site_url('about'); ?>">About</a>
               </li>

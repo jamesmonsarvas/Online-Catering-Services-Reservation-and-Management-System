@@ -40,7 +40,7 @@
 
         <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-          <a class="navbar-brand mr-1" href="<?php echo site_url(); ?>">Kirstian Event</a>
+          <a class="navbar-brand mr-1" href="<?php echo site_url(); ?>">Kirstian Event Needs</a>
 
           <!-- <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
             <i class="fas fa-bars"></i>
@@ -82,13 +82,13 @@
 
             <!-- Sidebar -->
             <ul class="sidebar navbar-nav toggled"">
-              <li class="nav-item active active-inverse">
+              <li class="nav-item <?php if($this->uri->segment(1)=="admin" && $this->uri->segment(2)==""){echo 'active';}?> active-inverse">
                 <a class="nav-link" href="<?php echo site_url('/admin'); ?>">
                   <i class="fas fa-fw fa-tachometer-alt"></i>
                   <span>Dashboard</span>
                 </a>
               </li>
-              <li class="nav-item dropdown dropdown-inverse">
+              <li class="nav-item <?php if($this->uri->segment(2)=="services"){echo 'active';}?> dropdown dropdown-inverse">
                 <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-fw fa-file"></i>
                   <span>Services</span>
@@ -99,7 +99,7 @@
                 </div>
               </li>
 
-              <li class="nav-item dropdown dropdown-inverse">
+              <li class="nav-item <?php if($this->uri->segment(2)=="packages"){echo 'active';}?> dropdown dropdown-inverse">
                 <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-fw fa-file"></i>
                   <span>Packages</span>
@@ -109,7 +109,7 @@
                   <!-- <a class="dropdown-item" href="<?php echo site_url('admin/packages/list_of_menu') ?>">List of Menus</a> -->
                 </li>
 
-                <li class="nav-item dropdown dropdown-inverse">
+                <li class="nav-item <?php if($this->uri->segment(2)=="reservation"){echo 'active';}?> dropdown dropdown-inverse">
                   <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-fw fa-file"></i>
                     <span>Reservation</span>
@@ -123,17 +123,17 @@
           <a class="dropdown-item" href="<?php echo site_url('admin/calendar/index') ?>">Calendar</a>
       </a>
     </li> -->
-    <li class="nav-item dropdown dropdown-inverse">
+    <li class="nav-item <?php if($this->uri->segment(2)=="events"){echo 'active';}?> dropdown dropdown-inverse">
       <a class="nav-link nav-link-inverse" href="<?php echo site_url('admin/events/index') ?>">
         <i class="fas fa-fw fa-chart-area"></i>
         <span>Event</span></a>
       </li>
-      <li class="nav-item dropdown dropdown-inverse">
+      <li class="nav-item <?php if($this->uri->segment(2)=="feedback"){echo 'active';}?> dropdown dropdown-inverse">
         <a class="nav-link nav-link-inverse" href="<?php echo site_url('admin/feedback/index') ?>">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Feedback</span></a>
         </li>
-        <li class="nav-item dropdown dropdown-inverse">
+        <li class="nav-item <?php if($this->uri->segment(2)=="report"){echo 'active';}?> dropdown dropdown-inverse">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-file"></i>
             <span>Report</span>
