@@ -48,8 +48,10 @@
     }
 
     public function report_feedback_charts() {
+      $data['report_chart'] = $this->Feedback_model->feedback_charts(1);
+      $data['report_chart2'] = $this->Feedback_model->feedback_charts(2);
       $this->load->view('templates/_parts/admin_master_header_view');
-      $this->load->view('admin/report/report_feedback_charts');
+      $this->load->view('admin/report/report_feedback_charts', $data);
       $this->load->view('templates/_parts/admin_master_footer_view');
     }
 

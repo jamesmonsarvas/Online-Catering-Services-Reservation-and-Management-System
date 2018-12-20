@@ -190,5 +190,16 @@
     $this->db->where('feedback_id', $this->input->post('id'));
     return $this->db->update('feedback', $data);
   }
+
+  public function feedback_charts($feedback_type) {
+      //SELECT AVG(q1), AVG(q2), AVG(q3), AVG(q4), AVG(q5) FROM `feedback_full` WHERE 1
+
+    $this->db->select('AVG(q1), AVG(q2), AVG(q3), AVG(q4), AVG(q5)');
+    $this->db->from('feedback_full');
+    $this->db->where("feedback_type", $feedback_type);
+
+    $query = $this->db->get();
+    return $query->result_array();
+  }
 }
 ?>

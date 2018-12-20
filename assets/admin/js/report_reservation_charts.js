@@ -9,15 +9,17 @@ $(function () {
   var monthsData = [];
   var i = 0; 
   
-  months.forEach((month, index) => {
-    if (myObject[i][0] == month) {
-      monthsData.push(myObject[i][1]);
-      i += 1;
-    }
-    else {
-      monthsData.push(0);
-    }
-  }); 
+  if (myObject !== undefined && myObject !== null) {
+    months.forEach((month, index) => {
+      if (myObject[i][0] == month) {
+        monthsData.push(myObject[i][1]);
+        i += 1;
+      }
+      else {
+        monthsData.push(0);
+      }
+    }); 
+  }
   
   var ctx = document.getElementById("myBarChart");
   var myLineChart = new Chart(ctx, {
