@@ -1,8 +1,8 @@
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">
-    <a href="<?php echo site_url('/admin') ?>">Dashboard</a>
-  </li>
-  <li class="breadcrumb-item active">Reservation Report</li>
+	<li class="breadcrumb-item">
+		<a href="<?php echo site_url('/admin') ?>">Dashboard</a>
+	</li>
+	<li class="breadcrumb-item active">Reservation Report</li>
 </ol>
 
 <div class="card mb-3">
@@ -19,19 +19,19 @@
 			<a href="<?php echo site_url('admin/report/report_reservation_charts') ?>" class="btn btn-secondary">View Charts & Graphs</a>
 			<p>
 				Reservations for the month of : <select name="selectMonth" id="selectMonth">
-					<option value="0">All</option>
-					<option value="1">January</option>
-					<option value="2">February</option>
-					<option value="3">March</option>
-					<option value="4">April</option>
-					<option value="5">May</option>
-					<option value="6">June</option>
-					<option value="7">July</option>
-					<option value="8">August</option>
-					<option value="9">September</option>
-					<option value="10">October</option>
-					<option value="11">November</option>
-					<option value="12">December</option>
+					<option value="0" <?php if ($month == "0") { echo 'selected'; } ?>>All</option>
+					<option value="1" <?php if ($month == "1") { echo 'selected'; } ?>>January</option>
+					<option value="2" <?php if ($month == "2") { echo 'selected'; } ?>>February</option>
+					<option value="3" <?php if ($month == "3") { echo 'selected'; } ?>>March</option>
+					<option value="4" <?php if ($month == "4") { echo 'selected'; } ?>>April</option>
+					<option value="5" <?php if ($month == "5") { echo 'selected'; } ?>>May</option>
+					<option value="6" <?php if ($month == "6") { echo 'selected'; } ?>>June</option>
+					<option value="7" <?php if ($month == "7") { echo 'selected'; } ?>>July</option>
+					<option value="8" <?php if ($month == "8") { echo 'selected'; } ?>>August</option>
+					<option value="9" <?php if ($month == "9") { echo 'selected'; } ?>>September</option>
+					<option value="10" <?php if ($month == "10") { echo 'selected'; } ?>>October</option>
+					<option value="11" <?php if ($month == "11") { echo 'selected'; } ?>>November</option>
+					<option value="12" <?php if ($month == "12") { echo 'selected'; } ?>>December</option>
 				</select>
 				<input type="submit" name="submit" value="GO">
 			</p>

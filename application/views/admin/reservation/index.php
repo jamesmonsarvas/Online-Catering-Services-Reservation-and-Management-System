@@ -15,22 +15,10 @@
 
       <?php echo form_open('admin/reservation/index'); ?>
 
-      Search: <input type="text" id="search" name="search" value="">
-
-      Filter: <select id="searchFilter" name="searchFilter">
-        <option value="any" selected>Any</option>
-        <option value="name">Name</option>
-        <option value="type-of-event">Type of Event</option>
-      </select>
-
-      Status: <select id="statusFilter" name="statusFilter">
-        <option value="any" selected>Any</option>
-        <option value="pending">Pending</option>
-        <option value="approved">Approved</option>
-        <option value="cancelled">Cancelled</option>
-      </select>
-
-      <input type="submit" name="submit" value="GO">
+      <input type="submit" name="submit" value="All"> |
+      <input type="submit" name="submit" value="Pending"> |
+      <input type="submit" name="submit" value="Approved"> |
+      <input type="submit" name="submit" value="Cancelled">
 
       <?php echo form_close(); ?>
 

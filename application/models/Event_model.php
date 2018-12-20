@@ -30,69 +30,30 @@ class Event_model extends CI_Model {
 	}
 
 	public function get_events_where() {
-		$search = $this->input->post('search');
-		$searchFilter = $this->input->post('searchFilter');
-		$statusFilter = $this->input->post('statusFilter');
+		$search = $this->input->post('submit');
 
-		if ($search == "") {
-			$this->db->select('*');    
-			$this->db->from('event');
-			$this->db->join('reservation', 'event.reservation_id = reservation.reservation_id');
-			$this->db->where('reservation.status', 0);
+		$this->db->select('*');
+		$this->db->from('event');
+		$this->db->join('reservation', 'event.reservation_id = reservation.reservation_id');
 
-			$query = $this->db->get();
-			return $query->result_array();
+		if ($search == "Ongoing") {
+			$this->db->where('event_status', 0);
 		}
-		else {
-			if ($searchFilter == "name") {
-				$this->db->select('*'); 
-				$this->db->from('event');   
-				$this->db->join('reservation', 'event.reservation_id = reservation.reservation_id');
-				$this->db->group_start()
-				->like('reservation.firstname', $search)
-				->or_like('reservation.lastname', $search)
-				->group_end();
-
-			}
-			else if ($searchFilter == "type-of-event") {
-				$this->db->select('*');    
-				$this->db->from('event');   
-				$this->db->join('reservation', 'event.reservation_id = reservation.reservation_id');
-				$this->db->like('reservation.type_of_event', $search);
-
-			}
-			else if ($searchFilter == "any") {
-				$this->db->select('*');    
-				$this->db->from('event');   
-				$this->db->join('reservation', 'event.reservation_id = reservation.reservation_id');
-				$this->db->group_start()
-				->like('reservation.firstname', $search)
-				->or_like('reservation.lastname', $search)
-				->or_like('reservation.type_of_event', $search)
-				->group_end();
-
-			}
-			if ($statusFilter == "ongoing") {
-				$this->db->where('event.event_status', 0);
-
-			}
-			else if ($statusFilter == "finished") {
-				$this->db->where('event.event_status', 1);
-
-			}
-			else if ($statusFilter == "inprogress") {
-				$this->db->where('event.event_status', 2);
-
-			}
-			else if ($statusFilter == "cancelled") {
-				$this->db->where('event.event_status', 3);
-
-			}
-
-			$query = $this->db->get();
-			return $query->result_array();
+		else if ($search == "Finished") {
+			$this->db->where('event_status', 1);
+		}
+		else if ($search == "In-progress") {
+			$this->db->where('event_status', 2);
+		}
+		else if ($search == "Cancelled") {
+			$this->db->where('event_status', 3);
+		}
+		else if ($search == "All") {
 
 		}
+
+		$query = $this->db->get();
+		return $query->result_array();
 	}
 
 	public function count_unfinished_events() {

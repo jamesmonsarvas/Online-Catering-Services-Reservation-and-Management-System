@@ -18,8 +18,9 @@
         <thead>
           <tr>
             <th>Services Title</th>
+            <th>Services Summary</th>
             <th>Services Description</th>
-            <th></th>
+            <th>Action</th>
           </tr>
         </thead>
 
@@ -31,6 +32,7 @@
                     <?php echo $service['services_title']; ?>
                 </a>
               </td>
+              <td><?php echo substr($service['service_summary'], 0, 100) . "..."; ?></td>
               <td><?php echo substr($service['services_desc'], 0, 100) . "..."; ?></td>
               <td>
                 <a href="<?php echo base_url(); ?>admin/services/edit/<?php echo $service['services_slug']; ?>" class="btn default-btn btn-info float-left">Edit</a>
@@ -42,8 +44,9 @@
         <tfoot>
           <tr>
             <th>Services Title</th>
+            <th>Services Summary</th>
             <th>Services Description</th>
-            <th></th>
+            <th>Action</th>
           </tr>
         </tfoot>
 

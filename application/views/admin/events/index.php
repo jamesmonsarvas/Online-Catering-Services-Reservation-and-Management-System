@@ -1,8 +1,8 @@
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">
-    <a href="<?php echo site_url('/admin') ?>">Dashboard</a>
-  </li>
-  <li class="breadcrumb-item active">Event</li>
+	<li class="breadcrumb-item">
+		<a href="<?php echo site_url('/admin') ?>">Dashboard</a>
+	</li>
+	<li class="breadcrumb-item active">Event</li>
 </ol>
 
 <div class="card mb-3">
@@ -18,23 +18,11 @@
 
 			<?php echo form_open('admin/events/index'); ?>
 
-			Search: <input type="text" id="search" name="search" value="">
-
-			Filter: <select id="searchFilter" name="searchFilter">
-				<option value="any" selected>Any</option>
-				<option value="name">Name</option>
-				<option value="type-of-event">Type of Event</option>
-			</select>
-
-			Status: <select id="statusFilter" name="statusFilter">
-				<option value="any" selected>Any</option>
-				<option value="ongoing">Ongoing</option>
-				<option value="finished">Finished</option>
-				<option value="inprogress">In-progress</option>
-				<option value="cancelled">Cancelled</option>
-			</select>
-
-			<input type="submit" name="submit" value="GO">
+			<input type="submit" name="submit" value="All"> |
+			<input type="submit" name="submit" value="Ongoing"> |
+			<input type="submit" name="submit" value="Finished"> |
+			<input type="submit" name="submit" value="In-progress"> |
+			<input type="submit" name="submit" value="Cancelled">
 
 			<?php echo form_close(); ?>
 

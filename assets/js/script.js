@@ -27,8 +27,6 @@ $(function () {
     pauseOnHover: true,
   });
 
-
-
   $('#close-validation').click(function() {
     $('.validation').css("display", "none");
   });

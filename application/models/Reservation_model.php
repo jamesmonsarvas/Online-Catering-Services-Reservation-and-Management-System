@@ -29,60 +29,26 @@
 		}
 
 		public function get_reservations_where() {
-			$search = $this->input->post('search');
-			$searchFilter = $this->input->post('searchFilter');
-			$statusFilter = $this->input->post('statusFilter');
+			$search = $this->input->post('submit');
 
-			if ($search == "") {
-			  $this->db->select('*');    
-			  $this->db->from('reservation');
+			$this->db->select('*');
+			$this->db->from('reservation');
 
-			  $query = $this->db->get();
-			  return $query->result_array();
+			if ($search == "Pending"){
+				$this->db->where('status', 1);
+			}
+			else if ($search == "Approved") {
+				$this->db->where('status', 0);
+			}
+			else if ($search == "Cancelled") {
+				$this->db->where('status', 2);
 			}
 			else {
-				if ($searchFilter == "name") {
-				  $this->db->select('*');    
-				  $this->db->from('reservation');
-				  $this->db->group_start()
-				  				->like('firstname', $search)
-				  				->or_like('lastname', $search)
-				  				->group_end();
-				  
-				}
-				else if ($searchFilter == "type-of-event") {
-				  $this->db->select('*');    
-				  $this->db->from('reservation');
-				  $this->db->like('type_of_event', $search);
-				  
-				}
-				else if ($searchFilter == "any") {
-				  $this->db->select('*');    
-				  $this->db->from('reservation');
-				  $this->db->group_start()
-				  				->like('firstname', $search)
-				  				->or_like('lastname', $search)
-				  				->or_like('type_of_event', $search)
-				  				->group_end();
-				  
-				}
-				if ($statusFilter == "pending") {
-				  $this->db->where('status', 1);
-				  
-				}
-				else if ($statusFilter == "approved") {
-				   $this->db->where('status', 0);
-				  
-				}
-				else if ($statusFilter == "cancelled") {
-				   $this->db->where('status', 2);
-				  
-				}
-				
-				$query = $this->db->get();
-				return $query->result_array();
 
 			}
+
+			$query = $this->db->get();
+			return $query->result_array();
 		}
 
 		public function count_pending_reservation() {

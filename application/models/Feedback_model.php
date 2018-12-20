@@ -1,5 +1,4 @@
-<?php
-class Feedback_model extends CI_Model {
+<?php class Feedback_model extends CI_Model {
 
   public function __construct(){
     $this->load->database();
@@ -28,7 +27,7 @@ class Feedback_model extends CI_Model {
 
   public function get_latest_feedback() {
     $this->db->select('*');    
-    $this->db->from('feedback');
+    $this->db->from('feedback_full');
     $this->db->like('date_added', date("Y-m-d"));
 
     $query = $this->db->get();
@@ -39,7 +38,7 @@ class Feedback_model extends CI_Model {
       $month = $this->input->post('selectMonth');
 
       $this->db->select('*');    
-      $this->db->from('feedback');
+      $this->db->from('feedback_full');
 
       if ($month == 0) {
         
@@ -89,7 +88,7 @@ class Feedback_model extends CI_Model {
       $month = $this->input->post('selectMonth');
 
       $this->db->select('*');    
-      $this->db->from('feedback');
+      $this->db->from('feedback_full');
 
       if ($month == 0) {
         
@@ -137,43 +136,18 @@ class Feedback_model extends CI_Model {
     }
 
   public function get_feedbacks_where() {
-    $search = $this->input->post('search');
-    $filter = $this->input->post('filter');
-
-    if ($search == "") {
-      $this->db->select('*');    
-      $this->db->from('feedback');
-
-      $query = $this->db->get();
-      return $query->result_array();
-    }
-    else {
-      if ($filter == "name") {
-        $this->db->select('*');    
-        $this->db->from('feedback');
-        $this->db->like('name', $search);
-        $query = $this->db->get();
-      }
-      else if ($filter == "reason") {
-        $this->db->select('*');    
-        $this->db->from('feedback');
-        $this->db->like('reason', $search);
-        $query = $this->db->get();
-      }
-      else if ($filter == "any") {
-        $this->db->select('*');    
-        $this->db->from('feedback');
-        $this->db->like('name', $search);
-        $this->db->or_like('reason', $search);
-        $query = $this->db->get();
-      }
-
-      return $query->result_array();
-    }
-
+    $this->db->select('*');
+    $this->db->from('feedback_full');
+    $query = $this->db->get();
+    return $query->result_array();
   }
 
   public function create_feedback($feedback_type) {
+
+    $message = $this->input->post('message');
+    if ($message == "") {
+      $message = "None given";
+    }
     $data = array(
       'feedback_type' => $feedback_type,
       'q1' => $this->input->post('question-1'),
@@ -181,16 +155,27 @@ class Feedback_model extends CI_Model {
       'q3' => $this->input->post('question-3'),
       'q4' => $this->input->post('question-4'),
       'q5' => $this->input->post('question-5'),
-      'suggestion' => $this->input->post('message'),
+      'suggestion' => $message,
     );
 
     $this->db->insert('feedback_scores', $data);
     $fs_id = $this->db->insert_id();
 
+    $name = $this->input->post('name');
+    $email = $this->input->post('email');
+    $phone_number = $this->input->post('phone-number');
+
+    if ($this->input->post('name') == "")
+      $name = "Anonymous";
+    if ($this->input->post('email') == "")
+      $email = "None given";
+    if ($this->input->post('phone-number') == "")
+      $phone_number = "None given";
+
     $data = array(
-      'name' => $this->input->post('name'),
-      'email' => $this->input->post('email'),
-      'phone_number' => $this->input->post('phone-number'),
+      'name' => $name,
+      'email' => $email,
+      'phone_number' => $phone_number,
       'fs_id' => $fs_id,
     );
 
