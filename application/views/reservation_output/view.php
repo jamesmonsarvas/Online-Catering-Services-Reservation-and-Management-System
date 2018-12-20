@@ -2,15 +2,21 @@
 if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 	echo '<div class="validation">
 	<div class="validation-true">
-	Thank you for making a reservation at us! <button id="close-validation">X</button><br />
-	Please wait while we review your reservation and we will contact you. Have a nice day!
+	<div class="true-content">
+		<p>Thank you for making a reservation at us!</p>
+		<p>Please wait while we review your reservation and we will contact you. Have a nice day!</p>
+	</div>
+	<center><button id="close-validation">Dismiss</button></center>
 	</div>
 	</div>';
 } else if (isset($_GET['msg']) && $_GET['msg'] == "false") {
 	echo '<div class="validation">
 	<div class="validation-false">
-	<button id="close-validation">X</button>
-	Sorry. The date you have submitted has already been reserved. Please try another date.
+		<div class="false-content">
+			<p>Ooops!</p>
+			<p>The date you have submitted has already been reserved. Please try another date.</p>
+		</div>
+		<center><button id="close-validation">Dismiss</button></center>
 	</div>
 	</div>';
 }
@@ -125,7 +131,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 
 		<div id="error-msg" style="display: none;">
 			<div class="row">
-				<div class="col-md-8">
+				<div class="col-md-12 error-msg">
 					<h4>Oops! It looks like you have an error in your form!</h4>
 					<ul id="error-items">
 

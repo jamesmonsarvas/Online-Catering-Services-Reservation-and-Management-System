@@ -1,3 +1,5 @@
+
+
 .foods {
     width: 100%;
     margin: 0 auto;
@@ -157,4 +159,30 @@ Reservation
 
 .reference-info {
     padding: 0 150px;
+}
+#error-items {
+    margin: 0;
+}
+.error-msg {
+    width: 100%;
+    padding: 0;
+}
+.error-msg h4 {
+    font-weight: 700;
+}
+.error-msg h4:before {
+    font-family: FontAwesome;
+    content: '\f071';
+    margin: 0 15px 0 20px;
+}
+.error-msg ul li {
+    list-style: none;
+}
+.error-msg li {
+    padding-left: 30px;
+}
+.error-msg li:before {
+    font-family: FontAwesome;
+    content: '\f105';
+    margin-right: 10px;
 }
