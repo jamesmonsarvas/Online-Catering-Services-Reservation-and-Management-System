@@ -16,7 +16,7 @@
 			<p>
 				Number of Reservations: <?php echo $count_reservations; ?> 
 			</p>
-			<a href="<?php echo site_url('admin/report/report_reservation_charts') ?>" class="btn btn-secondary">View Charts & Graphs</a>
+			<a href="<?php echo site_url('admin/report/report_reservation_charts') ?>" class="btn btn-secondary btn-add">View Charts & Graphs</a>
 			<p>
 				Reservations for the month of : <select name="selectMonth" id="selectMonth">
 					<option value="0" <?php if ($month == "0") { echo 'selected'; } ?>>All</option>
@@ -33,7 +33,7 @@
 					<option value="11" <?php if ($month == "11") { echo 'selected'; } ?>>November</option>
 					<option value="12" <?php if ($month == "12") { echo 'selected'; } ?>>December</option>
 				</select>
-				<input type="submit" name="submit" value="GO">
+				<input class="btn-add" type="submit" name="submit" value="GO" class="btn-add">
 			</p>
 			<?php echo form_close(); ?>
 
@@ -46,7 +46,7 @@
 						<th>Name</th>
 						<th>Venue</th>
 						<th>Status</th>
-						<th></th>
+						<th>Action</th>
 					</tr>
 				</thead>
 
@@ -84,9 +84,7 @@
 									?>
 								</td>
 								<td>
-									<a href="#" class="btn default-btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $num; ?>">
-										View
-									</a>
+									<a href="#" class="btn default-btn btn-primary far fa-eye" data-toggle="modal" data-target="#myModal<?php echo $num; ?>" title="View"></a>
 
 									<!-- The Modal -->
 									<div class="modal" id="myModal<?php echo $num; ?>">

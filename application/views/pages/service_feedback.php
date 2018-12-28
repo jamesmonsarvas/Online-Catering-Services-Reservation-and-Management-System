@@ -27,7 +27,8 @@
           <p class="entry-desc">
             <div class="reference-info">
               <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis alias debitis culpa minima laudantium voluptatibus possimus illum deleniti aut atque voluptatum voluptate provident vitae quam vel.
+              Please fill up the required fields needed in order for us to know how we did well. <br />
+              Required*
               </p>
             </div>
           </p>
@@ -46,7 +47,7 @@
           <p class="entry-desc">
             <div class="reference-info">
               <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis alias debitis culpa minima laudantium voluptatibus possimus illum deleniti aut atque voluptatum voluptate provident vitae quam vel.
+              These questions help us determine the overall statistics of our services. Please rate the following based on what the question describes and learn more on how can we improve our services more.
               </p>
             </div>
           </p>
@@ -102,7 +103,7 @@
           <p class="entry-desc">
             <div class="reference-info">
               <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis alias debitis culpa minima laudantium voluptatibus possimus illum deleniti aut atque voluptatum voluptate provident vitae quam vel.
+              Please let us know if you have any suggestions on how can we make our site better. We are welcoming your opinion and ideas.
               </p>
             </div>
           </p>

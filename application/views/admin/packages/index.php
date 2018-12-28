@@ -43,7 +43,7 @@
   <div class="card-header">
     <h3 class="cms-title">Packages</h3>
     
-    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+    <button type="button" class="btn btn-secondary btn-add" data-toggle="modal" data-target="#myModal">
       Add New
     </button>
 
@@ -99,8 +99,7 @@
 						<th>Packages</th>
 						<th>Packages Menu</th>
             <th>Packages Price</th>
-            <th></th>
-            <th></th>
+            <th colspan="2"><center>Action</center></th>
           </tr>
         </thead>
 
@@ -118,7 +117,7 @@
                         <li>
                           <?php echo form_open('admin/packages/delete_content/' . $package['package_id'] . "/" . $package_content['package_content_id']); ?>
                               <label><?php echo $package_content['type_of_menu']; ?></label>
-                              <input type="submit" class="btn btn-danger delete-menu" value="X">
+                              <button class="btn btn-danger delete-menu" title="Delete"><i class="far fa-trash-alt"></i></button>
                           <?php echo form_close(); ?>
                         </li>
                       <?php endif; ?>
@@ -128,11 +127,12 @@
               </td>
               <td><?php echo "&#8369;" . $package['price']; ?></td>
               <td>
-                <a href="<?php echo site_url('admin/packages/add_content/') . $package['package_id']; ?>" class="btn default-btn btn-primary">Update</a>
+                <a href="<?php echo site_url('admin/packages/add_content/') . $package['package_id']; ?>" class="btn default-btn btn-primary btn-inverse" title="Edit"><i class="far fa-edit"></i></a>
               </td>
               <td>
                 <?php echo form_open('admin/packages/delete/' . $package['package_id']); ?>
-                    <input type="submit" class="btn default-btn btn-danger" value="Delete">
+                    <button class="btn default-btn btn-danger btn-inverse" value="Delete" title="Delete"><i class="far fa-trash-alt"></i></button>
+                    <!-- <input type="submit" class="btn default-btn btn-danger btn-inverse" value="Delete"> -->
                 <?php echo form_close(); ?>
               </td>
             </tr>
@@ -143,10 +143,9 @@
 				<tfoot>
           <tr>
             <th>Packages</th>
-						<th>Packages Menu</th>
+            <th>Packages Menu</th>
             <th>Packages Price</th>
-            <th></th>
-            <th></th>
+            <th colspan="2"><center>Action</center></th>
           </tr>
         </tfoot>
 

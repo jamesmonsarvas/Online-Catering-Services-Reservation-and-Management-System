@@ -20,7 +20,7 @@
             <th>Name</th>
             <th>Feedback Type</th>
             <th>Date Added</th>
-            <th></th>
+            <th>Action</th>
           </tr>
         </thead>
 
@@ -53,12 +53,10 @@
                   ?>
                 </td>
                 <td>
-                  <a href="#" class="btn default-btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $num; ?>">
-                    View
-                  </a>
+                  <a href="#" class="btn default-btn btn-primary far fa-eye" data-toggle="modal" data-target="#myModal<?php echo $num; ?>" title="View"></a>
 
                   <!-- The Modal -->
-                  <div class="modal" id="myModal<?php echo $num; ?>">
+                  <div class="modal modal-inverse" id="myModal<?php echo $num; ?>">
                     <div class="modal-dialog">
                       <div class="modal-content">
 

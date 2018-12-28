@@ -129,7 +129,7 @@
                       else 
                         echo "Cancelled";
                       ?></td>
-                      <td><a href="#" class="btn default-btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $num; ?>">Manage</a></td>
+                      <td><a href="#" class="btn default-btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $num; ?>" title="Manage"><i class="far fa-edit"></i></a></td>
                     </tr>
                     <!-- The Modal -->
                     <div class="modal" id="myModal<?php echo $num; ?>">

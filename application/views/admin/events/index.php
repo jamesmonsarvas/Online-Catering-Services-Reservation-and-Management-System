@@ -8,7 +8,7 @@
 <div class="card mb-3">
 	<div class="card-header">	
 		<h3 class="cms-title">Events</h3>
-		<a href="<?php echo site_url('admin/reservation/index') ?>" class="btn btn-secondary">Create Event</a>
+		<a href="<?php echo site_url('admin/reservation/index') ?>" class="btn btn-secondary btn-add">Create Event</a>
 		<div class="float-right">
 			<b>DATE TODAY: </b><?php echo date("M. d, Y"); ?>
 		</div>
@@ -18,11 +18,11 @@
 
 			<?php echo form_open('admin/events/index'); ?>
 
-			<input type="submit" name="submit" value="All"> |
-			<input type="submit" name="submit" value="Ongoing"> |
-			<input type="submit" name="submit" value="Finished"> |
-			<input type="submit" name="submit" value="In-progress"> |
-			<input type="submit" name="submit" value="Cancelled">
+			<input type="submit" name="submit" value="All" class="btn-add btn-add-inverse" > |
+			<input type="submit" name="submit" value="Ongoing" class="btn-add btn-add-inverse"> |
+			<input type="submit" name="submit" value="Finished" class="btn-add btn-add-inverse"> |
+			<input type="submit" name="submit" value="In-progress" class="btn-add btn-add-inverse"> |
+			<input type="submit" name="submit" value="Cancelled" class="btn-add btn-add-inverse">
 
 			<?php echo form_close(); ?>
 
@@ -36,7 +36,7 @@
 						<th>Name</th>
 						<th>Type of Event</th>
 						<th>Status</th>
-						<th></th>
+						<th>Action</th>
 					</tr>
 				</thead>
 
@@ -85,9 +85,7 @@
 									?>
 								</td>
 								<td>
-									<a href="#" class="btn default-btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $num; ?>">
-										View
-									</a>
+									<a href="#" class="btn default-btn btn-primary far fa-eye" data-toggle="modal" data-target="#myModal<?php echo $num; ?>" title="View"></a>
 
 									<!-- The Modal -->
 									<div class="modal event-modal" id="myModal<?php echo $num; ?>">
@@ -295,7 +293,7 @@
 
 													<!-- Modal footer -->
 													<div class="modal-footer">
-														<a href="<?php echo site_url('admin/events/print/') . $event['event_id'] . "/" . $num; ?>" type="submit" class="btn btn-primary">Print</a>
+														<a href="<?php echo site_url('admin/events/print_contract/') . $event['event_id'] . "/" . $num; ?>" type="submit" class="btn btn-primary">Print</a>
 														<input type="submit" name="submit" class="btn btn-success">
 														<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 													</div>

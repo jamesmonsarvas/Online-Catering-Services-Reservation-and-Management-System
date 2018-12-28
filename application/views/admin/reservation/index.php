@@ -8,17 +8,17 @@
 <div class="card mb-3">
   <div class="card-header">
     <h2 class="cms-title">Reservation</h2>
-    <a href="<?php echo site_url('reservation') ?>" class="btn btn-secondary">Make Reservation</a>
+    <a href="<?php echo site_url('reservation') ?>" class="btn btn-secondary btn-add">Make Reservation</a>
   </div>
   <div class="card-body">
     <div class="table-responsive">
 
       <?php echo form_open('admin/reservation/index'); ?>
 
-      <input type="submit" name="submit" value="All"> |
-      <input type="submit" name="submit" value="Pending"> |
-      <input type="submit" name="submit" value="Approved"> |
-      <input type="submit" name="submit" value="Cancelled">
+      <input type="submit" name="submit" value="All" class="btn-add btn-add-inverse" > |
+      <input type="submit" name="submit" value="Pending" class="btn-add btn-add-inverse"> |
+      <input type="submit" name="submit" value="Approved" class="btn-add btn-add-inverse"> |
+      <input type="submit" name="submit" value="Cancelled" class="btn-add btn-add-inverse">
 
       <?php echo form_close(); ?>
 
@@ -32,7 +32,7 @@
             <th>Type of Event</th>
             <th>Venue</th>
             <th>Status</th>
-            <th></th>
+            <th>Action</th>
           </tr>
         </thead>
         <?php
@@ -73,12 +73,10 @@
                   ?>
                 </td>
                 <td>
-                  <a href="#" class="btn default-btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $num; ?>">
-                    Manage
-                  </a>
+                  <a href="#" class="btn default-btn btn-primary far fa-edit" data-toggle="modal" data-target="#myModal<?php echo $num; ?>" title="Edit">  </a>
 
                   <!-- The Modal -->
-                  <div class="modal" id="myModal<?php echo $num; ?>">
+                  <div class="modal modal-inverse" id="myModal<?php echo $num; ?>">
                     <div class="modal-dialog">
                       <div class="modal-content">
 
@@ -165,15 +163,20 @@
                               </p>
                               <?php if ($reservation['status'] == 1) : ?>
                                 <p><b>Manage: </b></p>
-                                
-                                <input type="hidden" name="id" value="<?php echo $reservation['reservation_id']; ?>">
-                                <input type='submit' class='btn btn-success' value='Approve'>
-                                <?php echo form_close(); ?>
+                                <div class="row row-inverse">
+                                  <div class="col-md-2">
+                                    <input type="hidden" name="id" value="<?php echo $reservation['reservation_id']; ?>">
+                                    <input type='submit' class='btn btn-success' value='Approve'>
+                                    <?php echo form_close(); ?>
+                                  </div>
 
-                                <?php echo form_open('admin/reservation/cancel_reservation/'); ?>
-                                <input type="hidden" name="id" value="<?php echo $reservation['reservation_id']; ?>">
-                                <input type='submit' class='btn btn-danger' value='Cancel'>
-                                <?php echo form_close(); ?>
+                                  <div class="col-md-2">
+                                    <?php echo form_open('admin/reservation/cancel_reservation/'); ?>
+                                    <input type="hidden" name="id" value="<?php echo $reservation['reservation_id']; ?>">
+                                    <input type='submit' class='btn btn-danger' value='Cancel'>
+                                    <?php echo form_close(); ?>
+                                  </div>
+                                </div>
                               <?php endif; ?>
                             </div>
                           </div>
