@@ -38,7 +38,7 @@
             <div class="col-md-12">
               <input type="text" name="name" id="name" placeholder="Full name*"></input>
               <input type="text" name="email" id="email" placeholder="Email address*"></input>
-              <input type="text" name="phone-number" id="phone-number" placeholder="Telephone number*"></input>
+              <input type="text" name="phone-number" id="phone-number" placeholder="Telephone number"></input>
             </div>
           </div>
 
@@ -111,7 +111,7 @@
           <div class="container">
 
             <div class="col-md-12">
-              <textarea id="message" name="message" placeholder="Message (Optional)"></textarea>
+              <textarea id="message" name="message" placeholder="Message"></textarea>
             </div>
 
             <input type="submit" value="submit" class="default-btn">
@@ -126,9 +126,22 @@
 
               var c_name = document.getElementById('name');
               var c_email = document.getElementById('email');
+              var c_telephone = document.getElementById('phone-number');
 
               var c_data = [c_name, c_email];
               var c_valid = new Array(2);
+
+              c_telephone.addEventListener('keypress', function(e) {
+                if (c_telephone.value.length > 10) {
+                  e.preventDefault();
+                }
+                var charCode = (e.which) ? e.which : e.keyCode
+                if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                  e.preventDefault();
+                }
+
+                return true;
+              });
 
               contactForm.addEventListener('submit', function(e) {
                 for (var c_index = 0; c_index < c_data.length; c_index++) {

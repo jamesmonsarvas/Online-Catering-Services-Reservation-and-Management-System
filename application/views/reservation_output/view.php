@@ -3,8 +3,8 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 	echo '<div class="validation">
 	<div class="validation-true">
 	<div class="true-content">
-		<p>Thank you for making a reservation at us!</p>
-		<p>Please wait while we review your reservation and we will contact you. Have a nice day!</p>
+	<p>Thank you for making a reservation at us!</p>
+	<p>Please wait while we review your reservation and we will contact you. Have a nice day!</p>
 	</div>
 	<center><button id="close-validation">Dismiss</button></center>
 	</div>
@@ -12,11 +12,11 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 } else if (isset($_GET['msg']) && $_GET['msg'] == "false") {
 	echo '<div class="validation">
 	<div class="validation-false">
-		<div class="false-content">
-			<p>Ooops!</p>
-			<p>The date you have submitted has already been reserved. Please try another date.</p>
-		</div>
-		<center><button id="close-validation">Dismiss</button></center>
+	<div class="false-content">
+	<p>Ooops!</p>
+	<p>The date you have submitted has already been reserved. Please try another date.</p>
+	</div>
+	<center><button id="close-validation">Dismiss</button></center>
 	</div>
 	</div>';
 }
@@ -56,9 +56,17 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 			</p>
 
 		</div>
-
+		<div class="row">
+			<div class="col-sm-12">
+				<button id="prev"><</button>
+				<button id="next">></button>
+			</div>
+		</div>
 		<div class="row reservation-details">
-			<div id="calendar" class="col-md-9"></div>
+			
+			<div id="calendar" class="col-md-9">
+				
+			</div>
 			<div class="col-md-3">
 				<div class="reservation-content">
 					<h3>DETAILS</h3>
@@ -77,31 +85,71 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 		</div>		
 		<script>
 			$(function () {
-				$('#calendar').calendar({
-					events: [
-					<?php
-					$summary = "";
-					$event_title = "";
-					foreach ($reservations as $reservation) : ?>
-						<?php
-						// if($reservation['count_date'] == 1)
-						// 	$summary = "<div class='clickable'>1 slot available<div class='event-details'><p class='".$reservation['date_of_event']."'>".$reservation['date_of_event']."</p></div></div>";
-						// else if ($reservation['count_date'] == 2)
-						if ($reservation['status'] == 0) {
-							$event_title = "Event";
-						}
-						else if ($reservation['status'] == 1) {
-							$event_title = "Reservation";
-						}
-						$summary = "<div class='clickable'>".$event_title."<div class='event-details'><p>Date of Event: ".$reservation['date_of_event']."</p><p>Name: ".$reservation['firstname']." ".$reservation['lastname']."</p><p>Type of Event: ".$reservation['services_title']."</p><p>Time of Event: ".$reservation['time_of_event']."</p><p>Venue: ".$reservation['place_of_event']."</p></div></div>";
-						?>
-						<?php if ($reservation['status'] == 0 || $reservation['status'] == 1) : ?>
-							{ start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "<?php echo $summary; ?>", mask: true},
-						<?php endif; ?>
-					<?php endforeach; ?>
-					],
+				var dateToday = new Date();
+				var dd = dateToday.getDate();
+			  var mm = dateToday.getMonth() + 1; //January is 0!
+			  var yyyy = dateToday.getFullYear();
 
-				});
+			  if(dd < 10) {
+			  	dd = '0' + dd;
+			  }
+
+			  if(mm < 10) {
+			  	mm = '0' + mm;
+			  }
+			  dateToday = mm + '/' + dd + '/' + yyyy;
+
+			  $('#next').click(function(){
+			  	mm = mm + 1;
+			  	if (mm > 12){
+			  		mm = 1;
+			  		yyyy = yyyy + 1;
+			  	}
+			  	dd = 1;
+			  	dateToday = mm + '/' + dd + '/' + yyyy;
+			  	getEvents();
+			  });
+
+			  $('#prev').click(function(){
+			  	mm = mm - 1;
+			  	if (mm < 1){
+			  		mm = 12;
+			  		yyyy = yyyy - 1;
+			  	}
+			  	dd = 1;
+			  	dateToday = mm + '/' + dd + '/' + yyyy;
+			  	getEvents();
+			  });
+
+			  getEvents();
+
+			  function getEvents() {
+					$('#calendar').calendar({
+						date: dateToday,
+						events: [
+						<?php
+						$summary = "";
+						$event_title = "";
+						foreach ($reservations as $reservation) : ?>
+							<?php
+							// if($reservation['count_date'] == 1)
+							// 	$summary = "<div class='clickable'>1 slot available<div class='event-details'><p class='".$reservation['date_of_event']."'>".$reservation['date_of_event']."</p></div></div>";
+							// else if ($reservation['count_date'] == 2)
+							if ($reservation['status'] == 0) {
+								$event_title = "Event";
+							}
+							else if ($reservation['status'] == 1) {
+								$event_title = "Reservation";
+							}
+							$summary = "<div class='clickable'>".$event_title."<div class='event-details'><p>Date of Event: ".$reservation['date_of_event']."</p><p>Name: ".$reservation['firstname']." ".$reservation['lastname']."</p><p>Type of Event: ".$reservation['services_title']."</p><p>Time of Event: ".$reservation['time_of_event']."</p><p>Venue: ".$reservation['place_of_event']."</p></div></div>";
+							?>
+							<?php if ($reservation['status'] == 0 || $reservation['status'] == 1) : ?>
+								{ start: '<?php echo $reservation['date_of_event']; ?>', end: '<?php echo $reservation['date_of_event']; ?>', summary: "<?php echo $summary; ?>", mask: true},
+							<?php endif; ?>
+						<?php endforeach; ?>
+						],
+					});
+				}
 			});
 		</script>
 
@@ -243,16 +291,17 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 			  var yyyy = today.getFullYear();
 
 			  if(dd < 10) {
-			  	dd = '0' + dd
+			  	dd = '0' + dd;
 			  }
 
 			  if(mm < 10) {
-			  	mm = '0' + mm
+			  	mm = '0' + mm;
 			  }
 			  today = mm + '/' + dd + '/' + yyyy;
 
 			  var flag = true;
-			  var beforeDateFlag = true
+			  var beforeDateFlag = true;
+			  var numbers = "1234567890";
 
 			  var reservationForm = document.getElementById('reservation-form');
 
@@ -270,6 +319,18 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 			  var r_data = [r_event, r_place, r_people, r_date, r_time, r_email, r_firstName, r_lastName, r_telephone];
 			  var r_valid = new Array(9);
 
+			  r_telephone.addEventListener('keypress', function(e) {
+			  	if (r_telephone.value.length > 10) {
+			  		e.preventDefault();
+			  	}
+			  	var charCode = (e.which) ? e.which : e.keyCode
+			  	if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+			  		e.preventDefault();
+			  	}
+
+			  	return true;
+			  });
+
 			  reservationForm.addEventListener('submit', function(e) {
 			  	$('#error-items').empty();
 			  	for (var r_index = 0; r_index < r_data.length; r_index++) {
@@ -285,7 +346,10 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 			  		}
 			  	}
 
-			  	if (r_date.value <= today) {
+			  	var date_int = Date.parse(r_date.value);			  	
+			  	var today_int = Date.parse(today);
+
+			  	if (date_int <= today_int) {
 			  		r_date.style.borderColor = "red";
 			  		beforeDateFlag = true;
 			  	}

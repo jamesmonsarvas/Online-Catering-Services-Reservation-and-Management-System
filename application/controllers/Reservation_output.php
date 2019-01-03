@@ -15,7 +15,7 @@ class Reservation_output extends CI_Controller {
     $msg = $this->Reservation_model->create_reservation();
     $reference_no = $this->mg_encryption->safe_b64encode($msg);
     
-    if ($msg) {
+    if (gettype($msg) == boolean) {
       redirect('reservation?msg='.$msg);
     }
     else {
