@@ -50,6 +50,39 @@ body#login {
   height: 30px;
   line-height: 0;
 }
+.packages-item-left fieldset{
+  height: 222px;
+}
+fieldset {
+  display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-top: 0.35em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 1px groove;
+}
+.packages-only {
+  width: 16%;
+}
+.packages-item-legend {
+  width: 27%;
+}
+
+.services-summary-legend {
+  width: 22%;
+}
+.services-desc-legend {
+  width: 25%;
+}
+.services-img-legend {
+  width: 75%;
+}
+.service-button-row {
+  margin-top: 20px;
+  float: right;
+}
 
 .btn-add {
   background-color: #ffffff !important;

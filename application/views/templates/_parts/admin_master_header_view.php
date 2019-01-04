@@ -95,7 +95,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-inverse" aria-labelledby="pagesDropdown">
                   <a class="dropdown-item" href="<?php echo site_url('admin/services/index') ?>">All Services</a>
-                  <a class="dropdown-item" href="<?php echo site_url('admin/services/create') ?>">Add New</a>
+                  <a class="dropdown-item" href="<?php echo site_url('admin/services/create') ?>">Add New Service</a>
                 </div>
               </li>
 
@@ -107,6 +107,7 @@
                 <div class="dropdown-menu dropdown-menu-inverse" aria-labelledby="pagesDropdown">
                   <a class="dropdown-item" href="<?php echo site_url('admin/packages/index') ?>">All Package</a>
                   <!-- <a class="dropdown-item" href="<?php echo site_url('admin/packages/list_of_menu') ?>">List of Menus</a> -->
+                  
                 </li>
 
                 <li class="nav-item <?php if($this->uri->segment(2)=="reservation"){echo 'active';}?> dropdown dropdown-inverse">
