@@ -52,6 +52,7 @@
 
     <!-- Demo scripts for this page-->
     <script src="<?php echo site_url('assets/admin/js/report_reservation_charts.js') ?>"></script>
+    <script src="<?php echo site_url('assets/admin/js/report_event_charts.js') ?>"></script>
     <script src="<?php echo site_url('assets/admin/js/report_feedback_charts.js') ?>"></script>
   </body>
 
