@@ -21,26 +21,39 @@
   </div>
 </div>
 
+<button class="btn-add">Service Summary</button> | <button class="btn-add">Service Description</button>
+
 <div class="row">
-  <div class="col-sm-8">
-    <label for="services-summary">Service Summary</label>
-    <textarea name="service-summary" class="form-control editor">
-      <?php echo $services['service_summary']; ?>
-    </textarea>
-    <label for="services-desc">Service Description</label>
-    <textarea name="services-desc" class="form-control editor2">
-     <?php echo $services['services_desc']; ?>
-   </textarea>
-   <button type="submit" class="btn btn-default">Submit</button>
+  <div class="col-sm-9">
+
+    <fieldset class="fieldset-summary">
+      <legend for="services-summary" class="services-summary-legend">Service Summary</legend>
+      <textarea name="service-summary" class="form-control editor">
+        <?php echo $services['service_summary']; ?>
+      </textarea>
+    </fieldset>
+
+    <fieldset class="fieldset-desc">
+      <legend for="services-desc" class="services-desc-legend">Service Description</legend>
+      <textarea name="services-desc" class="form-control editor2">
+        <?php echo $services['services_desc']; ?>
+      </textarea>
+    </fieldset>
+
+   <div class="service-button-row">
+     <button type="submit" class="btn btn-default btn-add">Submit</button>
+   </div>
    </form>
  </div>
- <div class="col-sm-4">
-  <label for="services-img">Image Displayed</label><br />
-  <img src="<?php echo site_url().$services['img_src']; ?>" alt="" style="width: 360px; height: 250px;">
-  <?php echo form_open_multipart('admin/services/do_upload', "id='upload-image'");?>
-  <input type="hidden" name="id" value="<?php echo $services['ID']; ?>">
-  <input type="hidden" name="services-slug" value="<?php echo $services['services_slug']; ?>">
-  <input type="file" id="services-img" name="services-img">
+ <div class="col-sm-3">
+    <fieldset>
+      <legend for="services-img" class="services-img-legend">Image Displayed</legend>
+      <img src="<?php echo site_url().$services['img_src']; ?>" alt="" style="width: 100%; height: 100%;">
+      <?php echo form_open_multipart('admin/services/do_upload', "id='upload-image'");?>
+      <input type="hidden" name="id" value="<?php echo $services['ID']; ?>">
+      <input type="hidden" name="services-slug" value="<?php echo $services['services_slug']; ?>">
+      <input type="file" id="services-img" name="services-img">
+    </fieldset>
   <?php echo form_close(); ?>
 
 </div>

@@ -32,6 +32,6 @@
   {
     $array[] = array($rp['MONTH'], $rp['COUNT']);
   }
-  echo "<script>var eventObject = ".json_encode($array)."</script>";
+  echo "<script>var myObject = ".json_encode($array)."</script>";
 ?>
 
