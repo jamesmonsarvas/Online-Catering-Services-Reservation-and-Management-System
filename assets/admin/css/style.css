@@ -253,7 +253,3 @@ a.dropdown-item {
 .row-inverse .col-md-2:nth-child(2) {
   padding: 0;
 }
-
-.ui-datepicker-calendar {
-  display: none;
-}

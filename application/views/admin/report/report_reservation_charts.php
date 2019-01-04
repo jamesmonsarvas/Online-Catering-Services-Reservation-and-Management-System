@@ -17,9 +17,7 @@
   <div class="card mb-3">
     <div class="card-header">
       <i class="fas fa-chart-bar"></i>
-      Number of Reservations Per Month
-      <input type="text" id="datepicker1"/>
-    </div>
+    Number of Reservations Per Month</div>
     <div class="card-body">
       <canvas id="myBarChart" width="100%" height="50"></canvas>
     </div>
@@ -28,16 +26,12 @@
 </div>
 
 <?php 
-$array = array();
-$month = "";
-
-foreach($report_chart as $rp) 
-{
-  $array[] = array($rp['MONTH'], $rp['COUNT'], $rp['YEAR']);
-}
-
-echo "<script>
-var myObject = ".json_encode($array)."
-</script>";
+  $array = array();
+  $month = "";
+  foreach($report_chart as $rp) 
+  {
+    $array[] = array($rp['MONTH'], $rp['COUNT']);
+  }
+  echo "<script>var myObject = ".json_encode($array)."</script>";
 ?>
 

@@ -47,22 +47,7 @@
 				'price' => $this->input->post('price')
 			);
 
-			$this->db->insert('package', $data);
-
-			$insertId = $this->db->insert_id();
-
-			$raw_data = $this->input->post('type_of_menu');
-
-			foreach($raw_data as $rd) {
-				$data = array(
-					'package_id' => $insertId,
-					'package_content_id' => $rd,
-				);
-
-				$this->db->insert('package_pc', $data);
-			}
-
-			return true;
+			return $this->db->insert('package', $data);
 		}
 
 		public function delete_packages($id)
