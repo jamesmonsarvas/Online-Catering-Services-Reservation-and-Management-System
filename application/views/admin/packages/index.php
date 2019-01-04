@@ -60,7 +60,7 @@
 
           <!-- Modal body -->
           <div class="modal-body">
-            <?php echo form_open('admin/packages/insert_content'); ?>
+              <?php echo form_open('admin/packages/create'); ?>
 
               <div class="form-group">
                 <input type="text" class="form-control" name="package-no" placeholder="Package No">
@@ -71,8 +71,16 @@
 
               <input type="hidden" name="id" value="<?php //echo $packages_content[0]['package_id']; ?>">
 
-              <?php $index = 0; ?>
-              
+              <ul>
+                <?php foreach($all_package_content as $apc) : ?>
+                  <li>
+                    <label class="form-check-label">
+                      <input type="checkbox" name="type_of_menu[]" class="form-check-input" value="<?php echo $apc['package_content_id']; ?>"><?php echo $apc['type_of_menu']; ?>
+                    </label>
+                  </li>
+                <?php endforeach; ?>
+              </ul>
+                            
               <button type="submit" class="btn btn-default">Submit</button>
 
             <?php echo form_close(); ?>

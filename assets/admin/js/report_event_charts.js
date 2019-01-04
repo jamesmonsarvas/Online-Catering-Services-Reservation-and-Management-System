@@ -7,28 +7,24 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 $(function () {
   var months = ['January', 'Febraury', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var monthsData = [];
-  var indexNo = 0;
-
-  var newObject = [];
-
-  myObject.forEach(function(element) {
-    if (element[2] == 2018) {
-      newObject.push(element);
-      //console.log(element);
-    }
-  });
-
-  months.forEach((month, index) => {
-    if (newObject[indexNo] !== undefined) {
-      if (newObject[indexNo][0] == month) {
-        monthsData.push(newObject[indexNo][1]);
+  var indexNo = 0; 
+    
+  if (eventObject !== undefined && eventObject !== null) {
+    months.forEach((month, index) => {
+      if (eventObject[indexNo][0] == month) {
+        monthsData.push(eventObject[indexNo][1]);
         indexNo += 1;
       }
       else {
         monthsData.push(0);
       }
+    }); 
+  }
+  else {
+    for (var a = 0; a < 12; a++) {
+      monthsData.push(0);
     }
-  }); 
+  }
   
   var ctx = document.getElementById("myBarChart");
   var myLineChart = new Chart(ctx, {

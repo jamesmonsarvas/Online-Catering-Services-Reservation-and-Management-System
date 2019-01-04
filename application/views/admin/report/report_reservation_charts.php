@@ -26,12 +26,16 @@
 </div>
 
 <?php 
-  $array = array();
-  $month = "";
-  foreach($report_chart as $rp) 
-  {
-    $array[] = array($rp['MONTH'], $rp['COUNT']);
-  }
-  echo "<script>var myObject = ".json_encode($array)."</script>";
+$array = array();
+$month = "";
+
+foreach($report_chart as $rp) 
+{
+  $array[] = array($rp['MONTH'], $rp['COUNT'], $rp['YEAR']);
+}
+
+echo "<script>
+var myObject = ".json_encode($array)."
+</script>";
 ?>
 
