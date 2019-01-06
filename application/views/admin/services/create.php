@@ -24,22 +24,35 @@
     </div>
   </div>
 
+  <button class="btn-add">Service Summary</button> | <button class="btn-add">Service Description</button>
+
   <div class="row">
-    <div class="col-sm-8">
-      <label for="services-summary">Service Summary</label>
-      <textarea name="service-summary" class="form-control editor">
-      </textarea>
-      <label for="services-desc">Service Description</label>
-      <textarea name="services-desc" class="form-control editor2">
-      </textarea>    
+    <div class="col-sm-9">
+
+      <fieldset class="fieldset-summary">
+        <legend for="services-summary" class="services-summary-legend">Service Summary</legend>
+        <textarea name="service-summary" class="form-control editor">
+        </textarea>
+      </fieldset>
+
+
+      <fieldset class="fieldset-desc">
+        <legend for="services-desc" class="services-desc-legend">Service Description</legend>
+        <textarea name="services-desc" class="form-control editor2">
+        </textarea>
+      </fieldset>
   </div>
-  <div class="col-sm-4">
-    <label for="services-img">Choose Image To Be Displayed</label><br />
-    <input type="file" class="form-control" name="new-img">
+  <div class="col-sm-3">
+    <fieldset>
+      <legend for="services-img" class="services-img-legend1">Choose Image To Be Displayed</legend>
+      <input type="file" class="form-control" name="new-img">
+    </fieldset>
   </div>
 </div>
 
-<button type="submit" class="btn btn-default">Submit</button>
+   <div class="service-button-row">
+     <button type="submit" class="btn btn-default btn-add">Submit</button>
+   </div>
 
 <?php echo form_close(); ?>
 

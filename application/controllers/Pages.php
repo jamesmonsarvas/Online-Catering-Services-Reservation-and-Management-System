@@ -25,7 +25,7 @@ class Pages extends CI_Controller {
     $this->load->view('pages/viewservicefeedback');
     $this->load->view('templates/footer');
   }
-
+  
   public function create() {
     $this->Feedback_model->create_feedback(0);
     redirect('contact');
