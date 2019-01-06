@@ -39,22 +39,22 @@
 
             <ul id="menu-primary-list">
               <li <?php if($this->uri->segment(1)==""){echo 'class="active"';}?> >
-                <a href="<?php echo site_url('/'); ?>">Home</a>
+                <a href="<?php echo base_url(); ?>">Home</a>
               </li>
               <li <?php if($this->uri->segment(1)=="services"){echo 'class="active"';}?> >
-                <a href="<?php echo site_url('services'); ?>">Services</a>
+                <a href="<?php echo base_url(); ?>services">Services</a>
               </li>
               <!-- <li <?php if($this->uri->segment(1)=="photos"){echo 'class="active"';}?> >
-                <a href="<?php echo site_url('photos'); ?>">Photos</a>
+                <a href="<?php echo base_url(); ?>photos">Photos</a>
               </li> -->
               <li <?php if($this->uri->segment(1)=="about"){echo 'class="active"';}?> >
-                <a href="<?php echo site_url('about'); ?>">About</a>
+                <a href="<?php echo base_url(); ?>about">About</a>
               </li>
               <li <?php if($this->uri->segment(1)=="contact"){echo 'class="active"';}?> >
-                <a href="<?php echo site_url('contact'); ?>">Contact</a>
+                <a href="<?php echo base_url(); ?>contact">Contact</a>
               </li>
               <li>
-                <a class="default-btn" href="<?php echo site_url('reservation'); ?>">Book an Event</a>
+                <a class="default-btn" href="<?php echo base_url(); ?>reservation">Book an Event</a>
               </li>
             </ul><!-- #menu-primary-list -->
 
