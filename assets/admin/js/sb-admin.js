@@ -1,14 +1,7 @@
 (function($) {
   "use strict"; // Start of use strict
 
-  $("#dataTable").DataTable({
-    "columnDefs" : [
-      {
-        "targets": 0,
-        "searchable": false
-      }
-    ]
-  });
+  $("#dataTable").DataTable();
 
   // Toggle the side navigation
   /*$("#sidebarToggle").click(function(e) {

@@ -191,10 +191,10 @@ class Event_model extends CI_Model {
 	}
 
 	public function event_chart() {
-		$this->db->select('MONTHNAME(date_of_event) MONTH, COUNT(*) COUNT');
+		$this->db->select('MONTHNAME(date_of_event) MONTH, COUNT(*) COUNT, YEAR(date_of_event) AS YEAR');
 		$this->db->from('reservation');
 		$this->db->where('status = 0');
-		$this->db->where("YEAR(date_of_event) = 2018 GROUP BY MONTH(date_of_event)");
+		$this->db->group_by('MONTH(date_of_event) DESC');
 
 		$query = $this->db->get();
 		return $query->result_array();

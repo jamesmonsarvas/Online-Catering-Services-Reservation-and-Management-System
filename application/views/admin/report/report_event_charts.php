@@ -17,7 +17,13 @@
   <div class="card mb-3">
     <div class="card-header">
       <i class="fas fa-chart-bar"></i>
-    Number of Events Per Month</div>
+      Number of Events Per Month
+      <select name="eventyear" id="eventyear">
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+      </select>
+    </div>
     <div class="card-body">
       <canvas id="myBarChart" width="100%" height="50"></canvas>
     </div>
@@ -26,12 +32,12 @@
 </div>
 
 <?php 
-  $array = array();
-  $month = "";
-  foreach($report_chart as $rp) 
-  {
-    $array[] = array($rp['MONTH'], $rp['COUNT']);
-  }
-  echo "<script>var eventObject = ".json_encode($array)."</script>";
+$array = array();
+$month = "";
+foreach($report_chart as $rp) 
+{
+  $array[] = array($rp['MONTH'], $rp['COUNT'], $rp['YEAR']);
+}
+echo "<script>var eventObject = ".json_encode($array)."</script>";
 ?>
 

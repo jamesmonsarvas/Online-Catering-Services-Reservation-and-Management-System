@@ -17,7 +17,13 @@
   <div class="card mb-3">
     <div class="card-header">
       <i class="fas fa-chart-bar"></i>
-    Number of Reservations Per Month</div>
+      Number of Reservations Per Month
+      <select name="reservationyear" id="reservationyear">
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+      </select>
+    </div>
     <div class="card-body">
       <canvas id="myBarChart" width="100%" height="50"></canvas>
     </div>

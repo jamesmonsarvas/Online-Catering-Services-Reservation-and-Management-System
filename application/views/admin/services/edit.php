@@ -21,7 +21,9 @@
   </div>
 </div>
 
-<button class="btn-add">Service Summary</button> | <button class="btn-add">Service Description</button>
+<input type="button" name="service-summary-btn" value="Edit Service Summary" id="service-summary-btn" class="btn-add" /> 
+| 
+<input type="button" name="service-desc-btn" value="Edit Service Description" id="service-desc-btn" class="btn-add" />
 
 <div class="row">
   <div class="col-sm-9">
