@@ -31,8 +31,8 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 			<div class="row">
 				
 					<?php foreach ($packages as $package): ?>
-						<div class="col-sm-6">
-						<b><u><?php echo $package['package_no']; ?></u></b>
+						<div class="col-sm-3 packages-list">
+						<b><u"><?php echo $package['package_no']; ?></u></b>
 						<?php if (isset($packages_content)) : ?>
 							<?php foreach ($packages_content as $package_content): ?>
 								<?php if ($package['package_id'] == $package_content['package_id']) : ?>
