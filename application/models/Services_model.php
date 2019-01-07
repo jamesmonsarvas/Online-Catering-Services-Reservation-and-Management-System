@@ -1,10 +1,5 @@
 <?php
-<<<<<<< HEAD
-	class Services_model extends CI_Model {
-		
-		public function __construct(){
-			$this->load->database();
-=======
+
 class Services_model extends CI_Model {
 	public function __construct(){
 		$this->load->database();
@@ -17,7 +12,7 @@ class Services_model extends CI_Model {
 			$this->db->order_by('ID', 'DESC');
 			$query = $this->db->get('services_cms');
 			return $query->result_array();
->>>>>>> bb6f60ac8ad9f9ac3bb41eb005fa5e448ab4baa3
+
 		}
 
 		$query = $this->db->get_where('services_cms', array('services_slug' => $slug));

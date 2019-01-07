@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+
   class Reservation extends Admin_Controller {
 
     public function index() {
@@ -19,7 +19,7 @@
     public function cancel_reservation() {
       $this->Reservation_model->update_reservations(2);
       redirect('admin/reservation/index');
-=======
+
 class Reservation extends Admin_Controller {
 
     public function index() {
@@ -40,7 +40,7 @@ class Reservation extends Admin_Controller {
     public function cancel_reservation() {
         $this->Reservation_model->update_reservations(2);
         redirect('admin/reservation/index');
->>>>>>> bb6f60ac8ad9f9ac3bb41eb005fa5e448ab4baa3
+
     }
   }
 
