@@ -1,25 +1,49 @@
+<ol class="breadcrumb">
+	<li class="breadcrumb-item">
+		<a href="<?php echo site_url('/admin') ?>">Dashboard</a>
+	</li>
+	<li class="breadcrumb-item active">Event</li>
+</ol>
+
 <div class="card mb-3">
 	<div class="card-header">	
 		<h3 class="cms-title">Events</h3>
-		<a href="<?php echo site_url('admin/reservation/index') ?>" class="btn btn-secondary">Create Event</a>
+		<a href="<?php echo site_url('admin/reservation/index') ?>" class="btn btn-secondary btn-add">Create Event</a>
+		<div class="float-right">
+			<b>DATE TODAY: </b><?php echo date("M. d, Y"); ?>
+		</div>
 	</div>
-		<div class="card-body">
-			<div class="table-responsive">
-				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+	<div class="card-body">
+		<div class="table-responsive">
 
-					<thead>
-						<tr>
-							<th>No.</th>
-							<th>Name</th>
-							<th>Type of Event</th>
-							<th>Date Added</th>
-							<th></th>
-						</tr>
-					</thead>
+			<?php echo form_open('admin/events/index'); ?>
 
-					<?php $num = 1; ?>
+			<input type="submit" name="submit" value="All" class="btn-add btn-add-inverse" > |
+			<input type="submit" name="submit" value="Ongoing" class="btn-add btn-add-inverse"> |
+			<input type="submit" name="submit" value="Finished" class="btn-add btn-add-inverse"> |
+			<input type="submit" name="submit" value="In-progress" class="btn-add btn-add-inverse"> |
+			<input type="submit" name="submit" value="Cancelled" class="btn-add btn-add-inverse">
 
-					<tbody>
+			<?php echo form_close(); ?>
+
+			<br>
+
+			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>Name</th>
+						<th>Type of Event</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+
+				<?php $num = 1; ?>
+
+				<tbody>
+					<?php if (!empty($events)) : ?>
 						<?php foreach ($events as $event) : ?>
 							<tr>
 								<td>
@@ -52,12 +76,16 @@
 									else if ($event['event_status'] == 1) {
 										echo "Finished";
 									}
+									else if ($event['event_status'] == 2) {
+										echo "In-progress";
+									}
+									else if ($event['event_status'] == 3) {
+										echo "Cancelled";
+									}
 									?>
 								</td>
 								<td>
-									<a href="#" class="btn default-btn btn-primary" data-toggle="modal" data-target="#myModal<?php echo $num; ?>">
-										View
-									</a>
+									<a href="#" class="btn default-btn btn-primary far fa-eye" data-toggle="modal" data-target="#myModal<?php echo $num; ?>" title="View"></a>
 
 									<!-- The Modal -->
 									<div class="modal event-modal" id="myModal<?php echo $num; ?>">
@@ -134,7 +162,7 @@
 																<?php echo form_open("admin/events/update_event/$num", "class='event_status$num'" ); ?>
 																<input type="hidden" name="id" value="<?php echo $event['event_id']; ?>">
 																<b>Status</b>
-																<input type="radio" id="yes" name="event_status<?php echo $num; ?>" value="1"
+																<input type="radio" id="finished" name="event_status<?php echo $num; ?>" value="1"
 																<?php
 																if ($event['event_status'] == 1)
 																{
@@ -143,7 +171,7 @@
 																?>
 																>
 																<label for="yes">Finished</label>
-																<input type="radio" id="no" name="event_status<?php echo $num; ?>" value="0"
+																<input type="radio" id="ongoing" name="event_status<?php echo $num; ?>" value="0"
 																<?php
 																if ($event['event_status'] == 0)
 																{
@@ -152,6 +180,28 @@
 																?>
 																>
 																<label for="no">Ongoing</label>
+																<br />
+																<input type="radio" id="in-progress" name="event_status<?php echo $num; ?>" value="2"
+																<?php
+																if ($event['event_status'] == 2)
+																{
+																	echo "checked";
+																}
+																?>
+																>
+																<label for="no">In-progress</label>
+																<input type="radio" id="cancelled" name="event_status<?php echo $num; ?>" value="3"
+																<?php
+																if ($event['event_status'] == 3)
+																{
+																	echo "checked";
+																}
+																?>
+																>
+																<label for="no">Cancelled</label>
+															</p>
+															<p>
+																<b>Guest Count:</b> <?php echo $event['exp_people_count']; ?>
 															</p>
 														</div>
 													</div>
@@ -228,43 +278,78 @@
 															</div>
 														</div>
 													</div>
+
+													<br />
 													<div class="row">
 														<div class="col-md-12">
-															<b>Comments: </b><br>
-															<textarea name="comments"><?php echo $event['comments']; ?></textarea>
+															<div class="form-group">
+																<label for="services-desc">Service Description: </label>
+																<textarea name="comments" class="form-control editor">
+																	<?php echo $event['comments']; ?>
+																</textarea>
+															</div>
 														</div>
 													</div>
+
+													<!-- Modal footer -->
+													<div class="modal-footer">
+														<a href="<?php echo site_url('admin/events/print_contract/') . $event['event_id'] . "/" . $num; ?>" type="submit" class="btn btn-primary">Print</a>
+														<input type="submit" name="submit" class="btn btn-success">
+														<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+													</div>
+
+													<?php echo form_close(); ?>
+
 												</div>
-
-												<!-- Modal footer -->
-												<div class="modal-footer">
-													<input type="submit" name="submit" class="btn btn-success">
-													<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-												</div>
-
-												<?php echo form_close(); ?>
-
 											</div>
 										</div>
-									</div>
-								</td>
+									</td>
+								</tr>
+								<?php $num++; ?>
+							<?php endforeach; ?>
+							<?php else : ?>
+								<tr> 
+									<td colspan="6">
+										<center>
+											~ No records! ~
+										</center>  
+									</td>
+								</tr>
+							<?php endif; ?>
+						</tbody>
+
+						<tfoot>
+							<tr>
+								<th>No.</th>
+								<th>Name</th>
+								<th>Reason</th>
+								<th>Status</th>
+								<th></th>
 							</tr>
-							<?php $num++; ?>
-						<?php endforeach; ?>
-					</tbody>
-
-					<tfoot>
-						<tr>
-							<th>No.</th>
-							<th>Name</th>
-							<th>Reason</th>
-							<th>Date Added</th>
-							<th></th>
 						</tr>
-					</tr>
-				</tfoot>
+					</tfoot>
 
-			</table>
+				</table>
+			</div>
 		</div>
 	</div>
-</div>
+	<script>
+		ClassicEditor
+		.create( document.querySelector( '.editor' ), {
+			toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+			heading: {
+				options: [
+				{ model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+				{ model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+				{ model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+				{ model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+				{ model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+				{ model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+				{ model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' }
+				]
+			}
+		} )
+		.catch( error => {
+			console.log( error );
+		} );
+	</script>

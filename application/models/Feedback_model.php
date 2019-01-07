@@ -1,5 +1,4 @@
-<?php
-class Feedback_model extends CI_Model {
+<?php class Feedback_model extends CI_Model {
 
   public function __construct(){
     $this->load->database();
@@ -26,50 +25,163 @@ class Feedback_model extends CI_Model {
     return count($query->result());
   }
 
-  public function get_feedbacks_where() {
-    $search = $this->input->post('search');
-    $filter = $this->input->post('filter');
+  public function get_latest_feedback() {
+    /*SELECT feedback.feedback_id, feedback.name, feedback.email, feedback.phone_number, feedback.date_added, feedback.feature, feedback_scores.feedback_type, feedback_scores.q1, feedback_scores.q2, feedback_scores.q3, feedback_scores.q4, feedback_scores.q5, feedback_scores.suggestion FROM feedback JOIN feedback_scores ON feedback.fs_id = feedback_scores.fs_id */
+    $this->db->select('feedback.feedback_id, feedback.name, feedback.email, feedback.phone_number, feedback.date_added, feedback.feature, feedback_scores.feedback_type, feedback_scores.q1, feedback_scores.q2, feedback_scores.q3, feedback_scores.q4, feedback_scores.q5, feedback_scores.suggestion');    
+    $this->db->from('feedback');
+    $this->db->join('feedback_scores', 'feedback.fs_id = feedback_scores.fs_id');
+    $this->db->like('date_added', date("Y-m-d"));
 
-    if ($search == "") {
-      $this->db->select('*');    
-      $this->db->from('feedback');
-
-      $query = $this->db->get();
-      return $query->result_array();
-    }
-    else {
-      if ($filter == "name") {
-        $this->db->select('*');    
-        $this->db->from('feedback');
-        $this->db->like('name', $search);
-        $query = $this->db->get();
-      }
-      else if ($filter == "reason") {
-        $this->db->select('*');    
-        $this->db->from('feedback');
-        $this->db->like('reason', $search);
-        $query = $this->db->get();
-      }
-      else if ($filter == "any") {
-        $this->db->select('*');    
-        $this->db->from('feedback');
-        $this->db->like('name', $search);
-        $this->db->or_like('reason', $search);
-        $query = $this->db->get();
-      }
-
-      return $query->result_array();
-    }
-
+    $query = $this->db->get();
+    return $query->result_array();
   }
 
-  public function create_feedback() {
+  public function count_feedback() {
+    $month = $this->input->post('selectMonth');
+
+    $this->db->select('feedback.feedback_id, feedback.name, feedback.email, feedback.phone_number, feedback.date_added, feedback.feature, feedback_scores.feedback_type, feedback_scores.q1, feedback_scores.q2, feedback_scores.q3, feedback_scores.q4, feedback_scores.q5, feedback_scores.suggestion');    
+    $this->db->from('feedback');
+    $this->db->join('feedback_scores', 'feedback.fs_id = feedback_scores.fs_id');
+
+    if ($month == 0) {
+
+    }
+    else if ($month == 1) {
+      $this->db->where('MONTH(date_added)', 1);
+    }
+    else if ($month == 2) {
+      $this->db->where('MONTH(date_added)', 2);
+    }
+    else if ($month == 3) {
+      $this->db->where('MONTH(date_added)', 3);
+    }
+    else if ($month == 4) {
+      $this->db->where('MONTH(date_added)', 4);
+    }
+    else if ($month == 5) {
+      $this->db->where('MONTH(date_added)', 5);
+    }
+    else if ($month == 6) {
+      $this->db->where('MONTH(date_added)', 6);
+    }
+    else if ($month == 7) {
+      $this->db->where('MONTH(date_added)', 7);
+    }
+    else if ($month == 8) {
+      $this->db->where('MONTH(date_added)', 8);
+    }
+    else if ($month == 9) {
+      $this->db->where('MONTH(date_added)', 9);
+    }
+    else if ($month == 10) {
+      $this->db->where('MONTH(date_added)', 10);
+    }
+    else if ($month == 11) {
+      $this->db->where('MONTH(date_added)', 11);
+    }
+    else if ($month == 12) {
+      $this->db->where('MONTH(date_added)', 12);
+    }
+
+    $query = $this->db->get();
+    return count($query->result());
+  }
+
+  public function report_feedback() {
+    $month = $this->input->post('selectMonth');
+
+    $this->db->select('feedback.feedback_id, feedback.name, feedback.email, feedback.phone_number, feedback.date_added, feedback.feature, feedback_scores.feedback_type, feedback_scores.q1, feedback_scores.q2, feedback_scores.q3, feedback_scores.q4, feedback_scores.q5, feedback_scores.suggestion');    
+    $this->db->from('feedback');
+    $this->db->join('feedback_scores', 'feedback.fs_id = feedback_scores.fs_id');
+
+    if ($month == 0) {
+
+    }
+    else if ($month == 1) {
+      $this->db->where('MONTH(date_added)', 1);
+    }
+    else if ($month == 2) {
+      $this->db->where('MONTH(date_added)', 2);
+    }
+    else if ($month == 3) {
+      $this->db->where('MONTH(date_added)', 3);
+    }
+    else if ($month == 4) {
+      $this->db->where('MONTH(date_added)', 4);
+    }
+    else if ($month == 5) {
+      $this->db->where('MONTH(date_added)', 5);
+    }
+    else if ($month == 6) {
+      $this->db->where('MONTH(date_added)', 6);
+    }
+    else if ($month == 7) {
+      $this->db->where('MONTH(date_added)', 7);
+    }
+    else if ($month == 8) {
+      $this->db->where('MONTH(date_added)', 8);
+    }
+    else if ($month == 9) {
+      $this->db->where('MONTH(date_added)', 9);
+    }
+    else if ($month == 10) {
+      $this->db->where('MONTH(date_added)', 10);
+    }
+    else if ($month == 11) {
+      $this->db->where('MONTH(date_added)', 11);
+    }
+    else if ($month == 12) {
+      $this->db->where('MONTH(date_added)', 12);
+    }
+
+    $query = $this->db->get();
+      //return count($query->result());
+    return $query->result_array();
+  }
+
+  public function get_feedbacks_where() {
+    $this->db->select('feedback.feedback_id, feedback.name, feedback.email, feedback.phone_number, feedback.date_added, feedback.feature, feedback_scores.feedback_type, feedback_scores.q1, feedback_scores.q2, feedback_scores.q3, feedback_scores.q4, feedback_scores.q5, feedback_scores.suggestion');    
+    $this->db->from('feedback');
+    $this->db->join('feedback_scores', 'feedback.fs_id = feedback_scores.fs_id');
+    $query = $this->db->get();
+    return $query->result_array();
+  }
+
+  public function create_feedback($feedback_type) {
+
+    $message = $this->input->post('message');
+    if ($message == "") {
+      $message = "None given";
+    }
     $data = array(
-      'name' => $this->input->post('name'),
-      'email' => $this->input->post('email'),
-      'phone_number' => $this->input->post('phone-number'),
-      'reason' => $this->input->post('reason'),
-      'message' => $this->input->post('message'),
+      'feedback_type' => $feedback_type,
+      'q1' => $this->input->post('question-1'),
+      'q2' => $this->input->post('question-2'),
+      'q3' => $this->input->post('question-3'),
+      'q4' => $this->input->post('question-4'),
+      'q5' => $this->input->post('question-5'),
+      'suggestion' => $message,
+    );
+
+    $this->db->insert('feedback_scores', $data);
+    $fs_id = $this->db->insert_id();
+
+    $name = $this->input->post('name');
+    $email = $this->input->post('email');
+    $phone_number = $this->input->post('phone-number');
+
+    if ($this->input->post('name') == "")
+      $name = "Anonymous";
+    if ($this->input->post('email') == "")
+      $email = "None given";
+    if ($this->input->post('phone-number') == "")
+      $phone_number = "None given";
+
+    $data = array(
+      'name' => $name,
+      'email' => $email,
+      'phone_number' => $phone_number,
+      'fs_id' => $fs_id,
     );
 
     return $this->db->insert('feedback', $data);
@@ -82,6 +194,17 @@ class Feedback_model extends CI_Model {
 
     $this->db->where('feedback_id', $this->input->post('id'));
     return $this->db->update('feedback', $data);
+  }
+
+  public function feedback_charts($feedback_type) {
+      //SELECT AVG(q1), AVG(q2), AVG(q3), AVG(q4), AVG(q5) FROM `feedback_full` WHERE 1
+
+    $this->db->select('AVG(q1), AVG(q2), AVG(q3), AVG(q4), AVG(q5)');
+    $this->db->from('feedback_scores');
+    $this->db->where("feedback_type", $feedback_type);
+
+    $query = $this->db->get();
+    return $query->result_array();
   }
 }
 ?>

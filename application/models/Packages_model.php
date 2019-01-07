@@ -7,7 +7,7 @@
 		public function get_packages() {
 				$this->db->order_by('package_id');
 				//old query = package.package_id as pid, package_content.package_content_id as pcid, package.price, package.package_no, package_content.type_of_menu as menu     
-				$query = $this->db->get('Package');
+				$query = $this->db->get('package');
 				//$this->db->join('package', 'Package_PC.package_id = package.package_id', 'inner');
 				//$this->db->join('package_content', 'Package_PC.package_content_id = package_content.package_content_id', 'inner');
 				return $query->result_array();
@@ -47,7 +47,22 @@
 				'price' => $this->input->post('price')
 			);
 
-			return $this->db->insert('package', $data);
+			$this->db->insert('package', $data);
+
+            $insertId = $this->db->insert_id();
+
+            $raw_data = $this->input->post('type_of_menu');
+
+            foreach($raw_data as $rd) {
+                $data = array(
+                    'package_id' => $insertId,
+                    'package_content_id' => $rd,
+                );
+
+                $this->db->insert('package_pc', $data);
+            }
+
+            return true;
 		}
 
 		public function delete_packages($id)

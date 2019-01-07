@@ -6,7 +6,8 @@
     <div class="container footer-container">
 
       <div class="footer-row">
-        <div class="col-md-3">
+
+        <div class="col-md-4">
 
           <h3>Important Service</h3>
           <ul id="footer-menu">
@@ -17,7 +18,7 @@
           </ul>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
 
           <h3>Social Media</h3>
               <p>
@@ -26,15 +27,8 @@
 
         </div>
 
-        <div class="col-md-3">
-          
-          <h3>Newsletter</h3>
-              <p>
-                Get instant access below to our events checked guide (helpful for planning events properly) and our weekly newsletter full tips.
-              </p>
-        </div>
-
-        <div class="col-md-3"> 
+        
+        <div class="col-md-4"> 
         
           <h3>Contact Us</h3>
           <p>Blk 112 Lot 35 Phase 2 Mabuhay, Mamatid Cabuyao Laguna 0936 - 827 - 5666. <a href="#">Click here to send us message.</a></p>
@@ -45,6 +39,11 @@
         <p class="copyright">
           Copyright &copy; 2018 All Rights Reserved.
         </p>
+      </div>
+      <div class="footer-row">
+        <a href="<?php echo site_url('/admin'); ?>" class="copyright">
+          Admin Panel
+        </a>
       </div>
 
     </div><!-- .container-fluid -->

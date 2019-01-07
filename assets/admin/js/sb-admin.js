@@ -1,12 +1,14 @@
 (function($) {
   "use strict"; // Start of use strict
 
+  $("#dataTable").DataTable();
+
   // Toggle the side navigation
-  $("#sidebarToggle").click(function(e) {
+  /*$("#sidebarToggle").click(function(e) {
     e.preventDefault();
     $("body").toggleClass("sidebar-toggled");
     $(".sidebar").toggleClass("toggled");
-  });
+  });*/
 
   // Prevent the content wrapper from scrolling when the fixed side navigation hovered over
   $('body.fixed-nav .sidebar').on('mousewheel DOMMouseScroll wheel', function(e) {

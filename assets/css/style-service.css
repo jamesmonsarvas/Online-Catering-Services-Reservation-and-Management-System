@@ -1,0 +1,186 @@
+.foods {
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 0;
+    border-top: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+    background: #f0f0f0;
+}
+.foods .entry-header {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+.entry-header {
+    text-align: center;
+}
+
+.da-thumbs {
+    width: 100%;
+    overflow: initial;
+    position: relative;
+    padding: 0;
+}
+
+.da-thumbs .row {
+    /* padding: 0; */
+}
+
+.da-thumbs .gallery-item a {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.da-thumbs .service-desc {
+    display: none;
+    color: #ffffff;
+    background: rgba(0,0,0,0.7);
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    padding: 35% 20px;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+}
+
+.da-thumbs img {
+    width: 100%;
+}
+
+.da-thumbs a:hover .service-desc {
+    display: block;
+    z-index: 10;
+}
+
+.da-thumbs .gallery-wrap {
+    padding: 0 8px;
+}
+
+.da-thumbs .gallery-item {
+    width: 100%;
+    float: left;
+    margin: 5px 0;
+    background: #fff;
+    padding: 8px;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.da-thumbs .gallery-item a {
+    overflow: hidden;
+}
+.da-thumbs .gallery-item a, .da-thumbs .gallery-item a img {
+    display: block;
+    position: relative;
+}   
+
+/*
+Reservation
+*/
+.reservation-content {
+    height: 350px;
+    padding: 20px 10px;
+    margin-bottom: 25px;
+    background-color: #E0E0E0;
+}
+.reservation-desc {
+    padding: 0 10px;
+}
+.reservation-details ul {
+    list-style: none;
+    padding: 0;
+}
+.reservation-details ul li:first-child:before,
+.reservation-details ul li:nth-child(2):before,
+.reservation-details ul li:last-child:before{
+    font-family: FontAwesome;
+    content: '\f0c8';
+    font-size: 25px;
+    padding-right: 8px;
+    vertical-align: middle;
+}
+.reservation-details ul li:first-child:before {
+    color: #ff1a1a;
+}
+.reservation-details ul li:nth-child(2):before {
+    color: rgba(41, 180, 178, 0.5);
+}
+.reservation-details ul li:last-child:before {
+    color: rgba(41, 180, 178, 0.15);
+}
+
+.service-title {
+    margin: 0 auto;
+}
+
+.gallery-wrap img{
+    height: 450px;
+}
+.modal.show .modal-dialog {
+    max-width: 1200px;
+}
+.modal-content {
+    width: 100%;
+}
+.modal-img {
+    text-align: center;
+    margin: 0 auto;
+    padding: 50px !important;
+}
+.modal-body {
+    padding: 50px;
+}
+
+.block {
+    position: fixed;
+}
+
+.block {
+    position: fixed;
+    background: #2184cd;
+    color: #fff;
+    padding: 20px;
+    width: 400px;
+}
+
+.contact-food {
+    margin-top: 50px !important;
+}
+.feedback-option {
+    margin-top: 50px;   
+    border: 1px solid #E0E0E0;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: #EDECEC;
+}
+
+
+.reference-info {
+    padding: 0 150px;
+}
+#error-items {
+    margin: 0;
+}
+.error-msg {
+    width: 100%;
+    padding: 0;
+}
+.error-msg h4 {
+    font-weight: 700;
+}
+.error-msg h4:before {
+    font-family: FontAwesome;
+    content: '\f071';
+    margin: 0 15px 0 20px;
+}
+.error-msg ul li {
+    list-style: none;
+}
+.error-msg li {
+    padding-left: 30px;
+}
+.error-msg li:before {
+    font-family: FontAwesome;
+    content: '\f105';
+    margin-right: 10px;
+}

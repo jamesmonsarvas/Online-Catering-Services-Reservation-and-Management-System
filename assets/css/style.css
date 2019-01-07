@@ -26,6 +26,12 @@ body {
   max-width: 1170px;
 }
 
+.icons {
+  border-radius: 100%;
+  height: 200px;
+  width: 200px;
+}
+
 /* DesireBasic Font */
 
 @font-face {
@@ -319,6 +325,13 @@ img,
 svg,
 video {
   vertical-align: middle;
+}
+
+.about-img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  width: 10000px;
 }
 
 img {
@@ -693,6 +706,7 @@ input[type="submit"]:active:before {
   -moz-transition: all .3s ease;
   -ms-transition: all .3s ease;
   -o-transition: all .3s ease;
+  height: 300px;
 }
 
 #home-page #trademark-services .our-services .service:hover > img,
@@ -861,8 +875,96 @@ input[type="submit"]:active:before {
 
 /* Reservation Page */
 
-#reservation-page #terms-and-condition {
-  margin-bottom: 50px;
+.validation {
+  position: fixed;
+  font-size: 14px;
+  width: 500px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px; /* Negative half of height. */
+  margin-left: -250px; /* Negative half of width. */
+  z-index: 999 !important;
+
+}
+
+.validation .validation-true,
+.validation .validation-false {
+  background: #ffffff;
+  color: #999;
+}
+
+.validation-true center {
+  background-color: #ff7c7c;
+}
+#close-validation {
+  border: none;
+  background: none;
+  color: #ffffff;
+}
+#reservation-form {
+  padding: 25px 0;
+}
+.validation-true, 
+.validation-false {
+  background: #ff7c7c;
+  color: #ffffff;
+  width: 50%;
+  margin: 0 auto;
+}
+.true-content::before,
+.false-content::before{
+  font-size: 50px;
+  margin-left: 70px;
+}
+.true-content::before {
+  font-family: FontAwesome;
+  content: '\f274';
+  color: #00e600;
+}
+.false-content::before {
+  font-family: FontAwesome;
+  content: '\f071';
+  color: #ff7c7c;
+}
+.validation-true p,
+.validation-false p {
+  margin: 0;
+}
+.validation-true p:first-child {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.validation-false p:first-child {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 700;
+}
+.validation-true .true-content, 
+.validation-false .false-content {
+  margin: 0;
+  padding: 20px 25px;
+}
+.validation-true center ,
+.validation-false center {
+  padding: 5px 0;
+}
+.validation-true center{
+  background-color: #00e600;
+}
+.validation-false center {
+  background-color: #ff7c7c;
+}
+  
+#reservation-page #error-msg{
+  background: #ff7c7c;
+  color: #ffffff;
+  width: 60%;
+  margin: 20px auto;
+  border-radius: 10px;
+  padding: 15px;
 }
 
 /* Footer */
@@ -1087,4 +1189,28 @@ https://www.phpied.com/delay-loading-your-print-css/
   h3 {
     page-break-after: avoid;
   }
+
 }
+
+.reservation-desc {
+  height: 250px;
+}
+
+.event-details {
+  display: none;
+}
+
+.reference-no {
+  color: green;
+  font-family: Calibri, Verdana, sans-serif;
+  font-size: 48px;
+}
+
+.feedback-score {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+

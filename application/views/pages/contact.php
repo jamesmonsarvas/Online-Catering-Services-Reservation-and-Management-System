@@ -21,29 +21,35 @@
       <div class="row">
       
         <div class="col-md-12 centered-content">
-      
-          <h2 class="entry-title border-lr">Give us a message</h2>
 
+          <!-- <a href="<?php echo site_url('system_feedback'); ?>">System Feedback</a> | <a href="<?php echo site_url('service_feedback'); ?>">Service Feedback</a> -->
+
+          <h2 class="entry-title border-lr">Give us a message</h2>
+          <br><br><br>
           <div class="container">
 
-            <?php echo form_open('pages/create', 'class="row contact-food" id="contact-form"'); ?>
+            <?php //echo form_open('pages/create', 'class="row contact-food" id="contact-form"'); ?>
 
-            <div class="col-md-6">
-              <input type="text" name="name" id="name" placeholder="Full name*"></input>
+            <div class="row contact-food" id="contact-form">
+            <div class="col-md-5">
+              <!-- <input type="text" name="name" id="name" placeholder="Full name*"></input>
               <input type="text" name="email" id="email" placeholder="Email address*"></input>
               <input type="text" name="phone-number" id="phone-number" placeholder="Telephone number*"></input>
-              <input type="text" name="reason" id="reason" placeholder="Reason for contact*"></input>
+              <input type="text" name="reason" id="reason" placeholder="Reason for contact*"></input> -->
+              <a class="feedback-option" href="<?php echo site_url('system_feedback'); ?>">I would like to give feeedback about the site</a>
             </div>
-            
-            <div class="col-md-6">
-              <textarea id="message" name="message" placeholder="Message*"></textarea>
+            <div class="col-md-2">
             </div>
+            <div class="col-md-5">
+              <!-- <textarea id="message" name="message" placeholder="Message*"></textarea> -->
+              <a class="feedback-option" href="<?php echo site_url('service_feedback'); ?>">I would like to give feeedback about your service</a>
+            </div>
+            </div>
+            <!-- <input type="submit" value="submit" class="default-btn"> -->
 
-            <input type="submit" value="submit" class="default-btn">
+            <?php // echo form_close(); ?>
 
-            <?php echo form_close(); ?>
-
-            <script>
+            <!-- <script>
 
               var flag = true;
 
@@ -75,7 +81,7 @@
                 }
 
               });
-            </script>
+            </script> -->
 
           </div><!-- .container -->
 
@@ -92,7 +98,7 @@
           <div class="row">
             <div class="col-md-12">
               
-              <div class="flexslider" id="feedback-slider">
+              <!-- <div class="flexslider" id="feedback-slider">
                 <ul class="slides">
                   <?php foreach ($feedbacks as $feedback) : ?>
                     <?php if( $feedback['feature'] == 1 ) : ?>
@@ -103,7 +109,7 @@
                     <?php endif; ?>
                   <?php endforeach; ?>
                 </ul>
-              </div>
+              </div> -->
 
             </div>
           </div>
