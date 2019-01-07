@@ -68,6 +68,8 @@
                   echo "Pending";
                   else if ($reservation['status'] == 0)
                     echo "Approved";
+                  else if ($reservation['status'] == 2)
+                    echo "Confirmed by User";
                   else 
                     echo "Cancelled";
                   ?>
@@ -157,16 +159,18 @@
                                   echo "Pending";
                                 else if ($reservation['status'] == 0)
                                   echo "Approved";
+                                else if ($reservation['status'] == 2)
+                                  echo "Confirmed by User";
                                 else
                                   echo "Cancelled";
                                 ?>
                               </p>
-                              <?php if ($reservation['status'] == 1) : ?>
+                              <?php if ($reservation['status'] == 1 || $reservation['status'] == 2) : ?>
                                 <p><b>Manage: </b></p>
                                 <div class="row row-inverse">
                                   <div class="col-md-2">
                                     <input type="hidden" name="id" value="<?php echo $reservation['reservation_id']; ?>">
-                                    <input type='submit' class='btn btn-success' value='Approve'>
+                                    <input type='submit' class='btn btn-success' value='Approve' <?php if ($reservation['status'] != 2) { echo 'disabled'; } ?>>
                                     <?php echo form_close(); ?>
                                   </div>
 
@@ -174,6 +178,15 @@
                                     <?php echo form_open('admin/reservation/cancel_reservation/'); ?>
                                     <input type="hidden" name="id" value="<?php echo $reservation['reservation_id']; ?>">
                                     <input type='submit' class='btn btn-danger' value='Cancel'>
+                                    <?php echo form_close(); ?>
+                                  </div>
+
+                                  <div class="col-md-2">
+                                    <?php echo form_open('admin/reservation/send_email'); ?>
+                                    <input type="hidden" name="id" value="<?php echo $reservation['reservation_id']; ?>">
+                                    <input type="hidden" name="reference-no" value="<?php echo $reservation['reference_no']; ?>">
+                                    <input type="hidden" name="email" value="<?php echo $reservation['email_address']; ?>">
+                                    <input type='submit' class='btn btn-secondary' value='Send email'>
                                     <?php echo form_close(); ?>
                                   </div>
                                 </div>

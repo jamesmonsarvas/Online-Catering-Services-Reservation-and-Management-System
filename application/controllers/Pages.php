@@ -8,7 +8,9 @@ class Pages extends CI_Controller {
     $data['title'] = ucfirst($page);
 
     $data['feedbacks'] = $this->Feedback_model->get_feedbacks();
-
+    $data['packages'] = $this->Packages_model->get_packages();
+    $data['packages_content'] = $this->Packages_model->get_packages_content();
+    $data['all_package_content'] = $this->Packages_model->get_all_packages();
     $this->load->view('templates/header', $data);
     $this->load->view('pages/' . $page, $data);
     $this->load->view('templates/footer');

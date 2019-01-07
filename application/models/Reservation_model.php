@@ -254,6 +254,35 @@ class Reservation_model extends CI_Model {
 
 	}
 
+	public function get_reservation_by_rn($rn) {
+		$this->db->select('*');
+		$this->db->from('reservation');
+		$this->db->where('reference_no', $rn);
+
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
+	public function add_reservation_details($id) {
+		$data = array(
+			'reservation_id' => $id,
+			'package_id' => $this->input->post('package'),
+			'budget' => $this->input->post('budget'),
+			'color_theme' => $this->input->post('color-theme'),
+			'function' => $this->input->post('function'),
+			'demographic' => $this->input->post('demographic'),
+		);
+
+		$this->db->insert('reservation_details', $data);
+
+		$data = array(
+			'status' => 2,
+		);
+
+		$this->db->where('reservation_id', $id);
+		return $this->db->update('reservation', $data);
+	}
+
 	public function reservation_chart() {
 		//SELECT MONTH(date_of_event) MONTH, COUNT(*) COUNT, YEAR(date_of_event) as YEAR FROM reservation GROUP BY MONTH(date_of_event)
 

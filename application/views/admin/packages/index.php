@@ -138,7 +138,7 @@
                 <a href="<?php echo site_url('admin/packages/add_content/') . $package['package_id']; ?>" class="btn default-btn btn-primary btn-inverse" title="Edit"><i class="far fa-edit"></i></a>
               </td>
               <td>
-                <?php echo form_open('admin/packages/delete/' . $package['package_id']); ?>
+                <?php echo form_open('admin/packages/delete/' .   $package['package_id']); ?>
                     <button class="btn default-btn btn-danger btn-inverse" value="Delete" title="Delete"><i class="far fa-trash-alt"></i></button>
                     <!-- <input type="submit" class="btn default-btn btn-danger btn-inverse" value="Delete"> -->
                 <?php echo form_close(); ?>

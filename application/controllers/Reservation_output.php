@@ -23,6 +23,20 @@ class Reservation_output extends CI_Controller {
     }
   }
 
+  public function confirm_verification() {
+    $this->load->library('MG_encryption');
+    $reference_no = $this->input->post('id');
+    $reference_no2 = $this->mg_encryption->safe_b64decode($reference_no);
+
+    $reservation = $this->Reservation_model->get_reservation_by_rn($reference_no2);
+
+    var_dump($reservation);
+
+    $this->Reservation_model->add_reservation_details($reservation[0]['reservation_id']);
+
+    redirect('');
+  }
+
   public function view_reference() {
     $this->load->helper('url');
     $this->load->library('mg_encryption');
