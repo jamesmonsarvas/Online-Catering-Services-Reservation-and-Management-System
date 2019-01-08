@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Kirstian Event Needs - Online Catering Services Reservation and Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="<?php echo site_url('assets/images/favicon.ico'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/bootstrap.min.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/fontawesome-all.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/style.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/style-service.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/flexslider.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/jquery-ui.min.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/calendar.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/calendar-stylesheet.css'); ?>">
+  
+  <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
+  <script src="<?php echo site_url('assets/js/ckeditor5-build-classic/ckeditor.js') ?>"></script>
+  
+    
+</head>
+<body id="<?=basename($_SERVER['PHP_SELF'],'.php')?>">
+
 <br><br><br>
 <?php 
 if (isset($_GET['msg']) && $_GET['msg'] == "true") {
@@ -221,3 +245,13 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 	</div><!-- .container -->
 
 </div>
+
+  <script src="<?php echo site_url('assets/js/bootstrap.min.js'); ?>"></script>
+  <script src="<?php echo site_url('assets/js/popper.min.js'); ?>"></script>
+  <script src="<?php echo site_url('assets/js/scrollreveal.js'); ?>"></script>
+  <script src="<?php echo site_url('assets/js/jquery.flexslider-min.js'); ?>"></script>
+  <script src="<?php echo site_url('assets/js/jquery-ui.min.js'); ?>"></script>
+  <script src="<?php echo site_url('assets/js/calendar.min.js'); ?>"></script>
+  <script src="<?php echo site_url('assets/js/script.js'); ?>"></script>
+</body>
+</html>

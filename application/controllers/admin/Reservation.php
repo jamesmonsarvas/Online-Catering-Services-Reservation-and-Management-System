@@ -25,35 +25,59 @@ class Reservation extends Admin_Controller {
         $this->load->library('MG_encryption');
         $reference = $this->input->post('reference-no');
         $reference_no = $this->mg_encryption->safe_b64encode($reference);
+
         $this->load->library('email');
         $this->email->set_mailtype("html");
 
         $email = $this->input->post('email');
 
-        $headers = "MIME-Version: 1.0" . "\r\n";
-        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        // $headers = "MIME-Version: 1.0" . "\r\n";
+        // $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-        // More headers
-        $headers .= 'From: <noreply@kirstianeventneeds>' . "\r\n";
+        // // More headers
+        // $headers .= 'From: <noreply@kirstianeventneeds>' . "\r\n";
 
-        echo $reference."<br>";
-        echo $reference_no;
-        $email_content = "
-        <html>
-            <body>
-                <p>Test email 2</p>
-                <br>
-                <a href='http://www.kensystem.org/second-reservation?id=".$reference_no."'>Click here</a>
-            </body>
-        </html>
-        ";
+        // echo $reference."<br>";
+        // echo $reference_no;
+        // $email_content = "
+        // <html>
+        //     <body>
+        //         <p>Test email 2</p>    
+        //         <a href='http://www.kensystem.org/second-reservation?id=".$reference_no."'>Click here</a>
+        //     </body>
+        // </html>
+        // ";
 
-        if (!mail($email, "Please fill up the needed additional information", $email_content, $headers)) {
-            print_r("Error");
+        // if (!mail($email, "Please fill up the needed additional information", $email_content, $headers)) {
+        //     print_r("Error");
+        // }
+        // else {
+        //     print_r("Email sent");
+        //     redirect('admin/reservation/index');
+        // }
+        //$config['protocol'] = "smtp";
+        $config['priority'] = 1;
+        $config['charset'] = 'UTF-8';
+
+        $this->email->initialize($config);
+
+        $this->email->from('your@example.com', 'Your Name');
+        $this->email->to('ma.gutlay1012@gmail.com');
+        $this->email->cc('another@another-example.com');
+        $this->email->bcc('them@their-example.com');
+
+        $this->email->subject('Email Test');
+
+        $data['reference_no'] = $reference_no;
+        $email_content = $this->load->view('admin/reservation/email-page', $data, TRUE);
+        $this->email->message($email_content);
+
+        if ($this->email->send()) {
+            print_r("Email sent");
+            redirect('admin/reservation/index');
         }
         else {
-            print_r("Email sent");
-            //redirect('admin/reservation/index');
+            print_r("Error");
         }
     }
 }

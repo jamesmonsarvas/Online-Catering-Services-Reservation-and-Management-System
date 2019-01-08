@@ -4,7 +4,7 @@ body, html {
 }
 
 body#login {
-  background: url('../assets/admin/image-7.jpg') no-repeat top center;
+  background-image: url('../img/image-7.jpg') no-repeat top center;
   background-attachment: fixed;
   background-size: cover;
 }

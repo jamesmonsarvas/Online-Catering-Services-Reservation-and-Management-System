@@ -30,7 +30,8 @@
           <tr>
             <th>Name</th>
             <th>Type of Event</th>
-            <th>Venue</th>
+            <th>Date of Event</th>
+            <th>Email Address</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -62,7 +63,14 @@
                   ?>
 
                 </td>
-                <td><?php echo $reservation['place_of_event']; ?></td>
+                <td>
+                  <?php
+                  $date = strtotime($reservation['date_of_event']);
+                  echo date("M d Y" ,$date); ?>
+                </td>
+                <td>
+                  <?php echo $reservation['email_address']; ?>
+                </td>
                 <td>
                   <?php if($reservation['status'] == 1)
                   echo "Pending";
@@ -225,11 +233,14 @@
 
           <tfoot>
             <tr>
-              <th>Name</th>
-              <th>Type of Event</th>
-              <th>Venue</th>
-              <th>Status</th>
-              <th></th>
+              <tr>
+            <th>Name</th>
+            <th>Type of Event</th>
+            <th>Date of Event</th>
+            <th>Email Address</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
             </tr>
           </tfoot>
 
