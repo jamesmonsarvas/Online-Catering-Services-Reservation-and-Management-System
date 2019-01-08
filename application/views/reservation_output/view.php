@@ -56,12 +56,6 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 			</p>
 
 		</div>
-		<div class="row">
-			<div class="col-sm-12">
-				<button id="prev"><</button>
-				<button id="next">></button>
-			</div>
-		</div>
 		<div class="row reservation-details">
 			
 			<div id="calendar" class="col-md-9">
@@ -82,7 +76,15 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 					<li>EMPTY</li>
 				</ul>
 			</div>
-		</div>		
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-sm-6 ">
+				<button id="prev" class="btn-prev"><i class="fas fa-angle-double-left"></i></button>
+				<button id="next" class="btn-next"><i class="fas fa-angle-double-right"></i></button>
+			</div>
+			<div class="col-md-3"></div>
+		</div>	
 		<script>
 			$(function () {
 				var dateToday = new Date();

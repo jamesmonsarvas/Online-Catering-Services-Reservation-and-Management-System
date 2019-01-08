@@ -967,6 +967,17 @@ input[type="submit"]:active:before {
   padding: 15px;
 }
 
+.calendar {
+  margin-bottom: 25px !important;
+}
+.btn-prev, .btn-next {
+  border: none;
+  padding: 0 50px;
+}
+.fas.fa-angle-double-left, .fas.fa-angle-double-right {
+  font-size: xx-large;
+}
+
 /* Footer */
 
 #footer {
@@ -1212,5 +1223,29 @@ https://www.phpied.com/delay-loading-your-print-css/
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+}
+
+.packages-list b {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.packages-list b:after {
+    font-family: FontAwesome;
+    content: '\f466';
+    font-size: 18px;
+    padding-left: 8px;
+}
+.packages-list u {
+  text-decoration: none;
+  letter-spacing: 2.5px;
+  font-weight: 900;
+}
+.packages-list li {
+  list-style: square;
+}
+.packages-list li label{
+  margin-left: 10px;
+  margin-bottom: 0;
+  letter-spacing: 1.5px;
 }
 

@@ -1,4 +1,5 @@
 <?php
+
 class Services_model extends CI_Model {
 	public function __construct(){
 		$this->load->database();
@@ -11,6 +12,7 @@ class Services_model extends CI_Model {
 			$this->db->order_by('ID', 'DESC');
 			$query = $this->db->get('services_cms');
 			return $query->result_array();
+
 		}
 
 		$query = $this->db->get_where('services_cms', array('services_slug' => $slug));
