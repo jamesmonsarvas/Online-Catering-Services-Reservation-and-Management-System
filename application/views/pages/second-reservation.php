@@ -49,25 +49,6 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 
 		</div>
 
-		<div id="terms-and-condition">
-
-			<div class="row">
-				<div class="col-md-8">
-					<h3>Terms and Conditions</h3>
-					<ul>
-						<li>Php 5,000 reservation fee to save the date</li>
-						<li>75% down payment 15 days before</li>
-						<li>25% balance before the event</li>
-						<li>Additional 15% service charge</li>
-						<li>Customer agree to pay in case of loss or damage of property/items based on market value</li>
-						<li>Just two events that differ from time of event can be reserved on a date.</li>
-					</ul>
-
-				</div><!-- .col-md-6 -->
-			</div><!-- .row -->
-
-		</div><!-- #terms-and-condition -->
-
 		<div id="error-msg" style="display: none;">
 			<div class="row">
 				<div class="col-md-12 error-msg">
@@ -147,6 +128,25 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 				</div>
 
 			</div><!-- .col-md-12 -->
+
+			<div id="terms-and-condition">
+
+			<div class="row">
+				<div class="col-md-8">
+					<h3>Terms and Conditions</h3>
+					<ul>
+						<li>Php 5,000 reservation fee to save the date</li>
+						<li>75% down payment 15 days before</li>
+						<li>25% balance before the event</li>
+						<li>Additional 15% service charge</li>
+						<li>Customer agree to pay in case of loss or damage of property/items based on market value</li>
+						<li>Just two events that differ from time of event can be reserved on a date.</li>
+					</ul>
+
+				</div><!-- .col-md-6 -->
+			</div><!-- .row -->
+
+		</div><!-- #terms-and-condition -->
 
 			<div class="col-md-12">
 				<input type="checkbox" name="tac-checkbox" id="tac-checkbox"> I have read and agreed the Terms and Conditions
