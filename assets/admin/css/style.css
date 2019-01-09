@@ -3,15 +3,17 @@ body, html {
   min-height: 100%;
 }
 
-body#login {
-  background-image: url('../img/image-7.jpg') no-repeat top center;
+body #admin-login {
+  background: url('../img/image-7.jpg') no-repeat top center;
   background-attachment: fixed;
   background-size: cover;
 }
-
+#admin-login {
+  padding-bottom: 100px;
+}
 #admin-login #login-logo {
   display: block;
-  margin-top: 50px;
+  padding-top: 50px;
   text-align: center;
 }
 
@@ -266,7 +268,7 @@ a.dropdown-item {
 }
 
 .copyright {
-  margin-top: 80px;
+  /*margin-top: 80px;*/
 }
 
 .event-modal .modal-dialog{
