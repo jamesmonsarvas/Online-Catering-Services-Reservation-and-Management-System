@@ -98,8 +98,9 @@
 
                         <!-- Modal body -->
                         <div class="modal-body">
+                          <h4>Reservation Details</h4>
                           <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-6">
 
                               <p>
                                 <b>Name: </b>
@@ -115,11 +116,11 @@
                               </p>
                               <p>
                                 <?php echo form_open('admin/reservation/approve_reservation/' . $reservation['reservation_id']); ?>
-                                <b>Color Theme: </b>
-                                <input type="text" name="color-theme" >
+                                <b>Reference Number: </b>
+                                <?php echo $reservation['reference_no'] ?>
                               </p>
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-md-6">
                               <p>
                                 <b>Type of Event: </b>
                                 <?php
@@ -146,14 +147,12 @@
                                 <?php echo $reservation['exp_people_count']; ?>
                               </p>
                               <p>
-                                <b>Packages: </b>
-                                <select name="package_id">
-                                  <?php foreach($packages as $package) : ?>
-                                    <option value="<?php echo $package['package_id']; ?>">
-                                      <?php echo $package['package_no']; ?>
-                                    </option>
-                                  <?php endforeach; ?>
-                                </select>
+                                <b>Email Address: </b>
+                                <?php echo $reservation['email_address'] ?>
+                              </p>
+                              <p>
+                                <b>Contact Number: </b>
+                                <?php echo $reservation['telephone'] ?>
                               </p>
 
                             </div>
@@ -173,6 +172,41 @@
                                   echo "Cancelled";
                                 ?>
                               </p>
+                            </div>
+                          </div>
+                          <?php if ($reservation['status'] == 2 || $reservation['status'] == 0) : ?>
+                            <h4>Additional Details</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <p>
+                                    <b>Color Theme: </b>
+                                    <span><?php echo $reservation['color_theme']; ?>
+                                    <input type="hidden" name="color-theme" value="<?php echo $reservation['color_theme'] ?>">
+                                  </p>
+                                  <p>
+                                    <b>Budget: </b>
+                                    <?php echo "&#8369;".$reservation['budget']; ?>
+                                  </p>
+                                  <p>
+                                    <b>Package No: </b>
+                                    <?php echo $reservation['package_no']; ?>
+                                    <input type="hidden" name="package_id" value="<?php echo $reservation['package_id']; ?>">
+                                  </p>
+                                </div>
+                                <div class="col-md-6">
+                                  <p>
+                                    <b>Function: </b>
+                                    <?php echo $reservation['function'] ?>
+                                  </p>
+                                  <p>
+                                    <b>Demographic: </b>
+                                    <?php echo $reservation['demographic'] ?>
+                                  </p>
+                                </div>
+                            </div>
+                          <?php endif; ?>
+                          <div class="row">
+                            <div class="col-md-12">
                               <?php if ($reservation['status'] == 1 || $reservation['status'] == 2) : ?>
                                 <p><b>Manage: </b></p>
                                 <div class="row row-inverse">

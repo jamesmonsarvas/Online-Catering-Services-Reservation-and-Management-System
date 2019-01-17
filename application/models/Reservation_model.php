@@ -43,6 +43,8 @@ class Reservation_model extends CI_Model {
 
 		$this->db->select('*');
 		$this->db->from('reservation');
+    $this->db->join('reservation_details', 'reservation.reservation_id = reservation_details.reservation_id', 'left');
+    $this->db->join('package', 'reservation_details.package_id = package.package_id', 'left');
 
 		if ($search == "Pending"){
 			$this->db->where('status', 1);
@@ -56,6 +58,9 @@ class Reservation_model extends CI_Model {
 		else if ($search == "Confirmed") {
 			$this->db->where('status', 2);
 		}
+    else if ($search == "All") {
+
+    }
 
 		$query = $this->db->get();
 		return $query->result_array();
