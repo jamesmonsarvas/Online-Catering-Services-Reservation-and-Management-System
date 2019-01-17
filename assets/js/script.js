@@ -1,5 +1,6 @@
 $(function () {
 
+
   $("#datepicker").datepicker().attr('readonly', 'readonly');
 
   $(window).scroll(function () {
