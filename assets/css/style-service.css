@@ -115,7 +115,15 @@ Reservation
 .service-modal-body {
   padding: 0 100px !important;
 }
-
+.service-modal-img {
+    padding: 50px 0 !important;
+}
+.service-modal-img img {
+    width: 100%;
+    height: 505px;
+    background-size: cover;
+    background-position: center center;
+}
 .gallery-wrap img{
     height: 450px;
 }
@@ -128,7 +136,7 @@ Reservation
 .modal-img {
     text-align: center;
     margin: 0 auto;
-    padding: 50px !important;
+    padding: 50px;
 }
 .modal-body {
     padding: 50px;
