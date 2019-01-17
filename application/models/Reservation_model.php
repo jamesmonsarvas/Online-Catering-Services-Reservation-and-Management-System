@@ -17,6 +17,16 @@ class Reservation_model extends CI_Model {
 
 	}
 
+	public function get_reservation_by_id($id) {
+		$this->db->select('*');
+		$this->db->from('reservation');
+		$this->db->join('services_cms', 'reservation.type_of_event = services_cms.ID');
+		$this->db->where('reservation_id', $id);
+
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
 	public function get_pending_reservations() {
 		$this->db->order_by('status', 'DESC');
 		$this->db->select('*');    
@@ -41,10 +51,10 @@ class Reservation_model extends CI_Model {
 			$this->db->where('status', 0);
 		}
 		else if ($search == "Cancelled") {
-			$this->db->where('status', 2);
+			$this->db->where('status', 3);
 		}
-		else {
-
+		else if ($search == "Confirmed") {
+			$this->db->where('status', 2);
 		}
 
 		$query = $this->db->get();

@@ -18,8 +18,8 @@
       <input type="submit" name="submit" value="All" class="btn-add btn-add-inverse" > |
       <input type="submit" name="submit" value="Pending" class="btn-add btn-add-inverse"> |
       <input type="submit" name="submit" value="Approved" class="btn-add btn-add-inverse"> |
-      <input type="submit" name="submit" value="Cancelled" class="btn-add btn-add-inverse">
-
+      <input type="submit" name="submit" value="Cancelled" class="btn-add btn-add-inverse"> |
+      <input type="submit" name="submit" value="Confirmed" class="btn-add btn-add-inverse">
       <?php echo form_close(); ?>
 
       <br>
@@ -194,7 +194,7 @@
                                     <input type="hidden" name="id" value="<?php echo $reservation['reservation_id']; ?>">
                                     <input type="hidden" name="reference-no" value="<?php echo $reservation['reference_no']; ?>">
                                     <input type="hidden" name="email" value="<?php echo $reservation['email_address']; ?>">
-                                    <input type='submit' class='btn btn-secondary' value='Send email'>
+                                    <input type='submit' class='btn btn-secondary' value='Send email' <?php if ($reservation['status'] == 2) { echo 'disabled'; } ?>>
                                     <?php echo form_close(); ?>
                                   </div>
                                 </div>
@@ -234,13 +234,13 @@
           <tfoot>
             <tr>
               <tr>
-            <th>Name</th>
-            <th>Type of Event</th>
-            <th>Date of Event</th>
-            <th>Email Address</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
+                <th>Name</th>
+                <th>Type of Event</th>
+                <th>Date of Event</th>
+                <th>Email Address</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
             </tr>
           </tfoot>
 
@@ -250,4 +250,21 @@
     </div>
     <div class="card-footer small text-muted">Updated at <?php echo $max; ?> </div>
   </div>
+
+  <?php
+  if (isset($_GET['msg']) && $_GET['msg'] == 'true') {
+    echo "<script>alert('Email has been sent. Please wait for the user to confirm his/her reservation.');</script>";
+  }
+  elseif (isset($_GET['msg']) && $_GET['msg'] == 'false') {
+    echo "<script>alert('Uh oh. There seems to be a problem sending the email. Please try again.');</script>";
+  }
+  ?>
+
+
+
+
+
+
+
+
 

@@ -2,6 +2,9 @@
   <li class="breadcrumb-item">
     <a href="<?php echo site_url('/admin') ?>">Dashboard</a>
   </li>
+  <li class="breadcrumb-item">
+    <a href="<?php echo site_url('/admin/services/index') ?>">Services</a>
+  </li>
   <li class="breadcrumb-item active">Create New Service</li>
 </ol>
 
@@ -24,7 +27,9 @@
     </div>
   </div>
 
-  <button class="btn-add">Service Summary</button> | <button class="btn-add">Service Description</button>
+  <input type="button" name="service-summary-btn" value="Input Service Summary" id="service-summary-btn" class="btn-add" /> 
+  | 
+  <input type="button" name="service-desc-btn" value="Input Service Description" id="service-desc-btn" class="btn-add" />
 
   <div class="row">
     <div class="col-sm-9">
@@ -41,22 +46,22 @@
         <textarea name="services-desc" class="form-control editor2">
         </textarea>
       </fieldset>
+    </div>
+    <div class="col-sm-3">
+      <fieldset>
+        <legend for="services-img" class="services-img-legend1">Choose Image To Be Displayed</legend>
+        <input type="file" class="form-control" name="new-img">
+      </fieldset>
+    </div>
   </div>
-  <div class="col-sm-3">
-    <fieldset>
-      <legend for="services-img" class="services-img-legend1">Choose Image To Be Displayed</legend>
-      <input type="file" class="form-control" name="new-img">
-    </fieldset>
-  </div>
-</div>
 
-   <div class="service-button-row">
-     <button type="submit" class="btn btn-default btn-add">Submit</button>
-   </div>
+  <div class="service-button-row">
+   <button type="submit" class="btn btn-default btn-add">Submit</button>
+ </div>
 
-<?php echo form_close(); ?>
+ <?php echo form_close(); ?>
 
-<script>
+ <script>
   ClassicEditor
   .create( document.querySelector( '.editor' ), {
     toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
