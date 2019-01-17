@@ -267,6 +267,7 @@ class Reservation_model extends CI_Model {
 	public function get_reservation_by_rn($rn) {
 		$this->db->select('*');
 		$this->db->from('reservation');
+    $this->db->join('services_cms', 'reservation.type_of_event = services_cms.ID');
 		$this->db->where('reference_no', $rn);
 
 		$query = $this->db->get();

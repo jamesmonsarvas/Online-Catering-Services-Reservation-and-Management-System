@@ -35,12 +35,12 @@ class Pages extends CI_Controller {
 
   public function createsystemfeedback() {
     $this->Feedback_model->create_feedback(1);
-    redirect('contact');
+    redirect('contact?cf=1');
   }
 
   public function createservicefeedback() {
     $this->Feedback_model->create_feedback(2);
-    redirect('contact');
+    redirect('contact?cf=1');
   }
 }
 

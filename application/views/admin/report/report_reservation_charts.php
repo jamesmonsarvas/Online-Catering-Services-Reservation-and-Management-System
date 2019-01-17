@@ -41,7 +41,7 @@ foreach($report_chart as $rp)
 }
 
 echo "<script>
-var myObject = ".json_encode($array)."
+var myObject = ".json_encode($array).";
 </script>";
 ?>
 

@@ -122,3 +122,9 @@
 
 
 </div> <!-- contact-page -->
+
+<?php 
+  if (isset($_GET['cf']) && $_GET['cf'] == "1") {
+    echo "<script>alert('Thank you for your feedback. We value your opinions and will be making sure your suggestions will be applied in the future.')</script>";
+  }
+?>

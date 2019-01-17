@@ -24,6 +24,8 @@ $(function () {
         //console.log(element);
       }
     });
+
+    newObject = newObject.reverse();
       
     months.forEach((month, index) => {
       if (newObject[indexNo] !== undefined) {
@@ -65,8 +67,8 @@ $(function () {
           yAxes: [{
             ticks: {
               min: 0,
-              max: 10,
-              maxTicksLimit: 5
+              max: 200,
+              maxTicksLimit: 20
             },
             gridLines: {
               display: true

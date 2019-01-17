@@ -13,7 +13,7 @@ $(function () {
 
   view_graph();
   function view_graph(year = 2018) {
-    var months = ['January', 'Febraury', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     var monthsData = [];
     var indexNo = 0;
 
@@ -22,15 +22,16 @@ $(function () {
     myObject.forEach(function(element) {
       if (element[2] == year) {
         newObject.push(element);
-        //console.log(element);
       }
     });
+
+    newObject = newObject.reverse();
 
     months.forEach((month, index) => {
       if (newObject[indexNo] !== undefined) {
         if (newObject[indexNo][0] == month) {
           monthsData.push(newObject[indexNo][1]);
-          indexNo += 1;
+          indexNo++;
         }
         else {
           monthsData.push(0);
@@ -66,8 +67,8 @@ $(function () {
           yAxes: [{
             ticks: {
               min: 0,
-              max: 10,
-              maxTicksLimit: 5
+              max: 200,
+              maxTicksLimit: 20
             },
             gridLines: {
               display: true

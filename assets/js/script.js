@@ -1,6 +1,6 @@
 $(function () {
 
-  $("#datepicker").datepicker();
+  $("#datepicker").datepicker().attr('readonly', 'readonly');
 
   $(window).scroll(function () {
     if ($(this).scrollTop() > 10) {

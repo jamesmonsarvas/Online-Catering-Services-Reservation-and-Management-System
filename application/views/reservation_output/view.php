@@ -151,6 +151,9 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 						<?php endforeach; ?>
 						],
 					});
+          $('.clickable').click(function(){
+            $('.reservation-desc').html($(this).children('.event-details').html());
+          });
 				}
 			});
 		</script>
@@ -239,12 +242,12 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 
 				<div class="row">
 					<div class="form-group col-md-4">
-						<input type="text" id="datepicker" class="form-control" name="date" placeholder="4. Pick a date for the tasting experience">
+						<input type="text" id="datepicker" class="form-control" name="date" placeholder="4. Pick a date">
 					</div>
 
 					<div class="form-group col-md-4">
 						<select name="time" id="time">
-							<option value>5. Pick a time for the tasting experience</option>
+							<option value>5. Pick a time</option>
 							<option value="11AM">11AM</option>
 							<option value="12PM">12PM</option>
 							<option value="1PM">1PM</option>
