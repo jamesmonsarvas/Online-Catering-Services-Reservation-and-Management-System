@@ -16,7 +16,8 @@
 			<p>
 				Number of Reservations: <?php echo $count_reservations; ?> 
 			</p>
-			<a href="<?php echo site_url('admin/report/report_reservation_charts') ?>" class="btn btn-secondary btn-add">View Charts & Graphs</a>
+			<a href="<?php echo site_url('admin/report/report_reservation_charts') ?>" class="btn btn-secondary btn-add">View Charts & Graphs</a> | 
+      <a href="<?php echo site_url('admin/report/print_report_reservation') ?>" class="btn btn-secondary btn-add">Print</a>
 			<p>
 				Reservations for the month of : <select name="selectMonth" id="selectMonth">
 					<option value="0" <?php if ($month == "0") { echo 'selected'; } ?>>All</option>

@@ -18,7 +18,8 @@
         Number of Reservations: <?php echo $count_feedbacks; ?> 
       </p>
       <p>
-        <a href="<?php echo site_url('admin/report/report_feedback_charts') ?>" class="btn btn-secondary btn-add">View Charts & Graphs</a>
+        <a href="<?php echo site_url('admin/report/report_feedback_charts') ?>" class="btn btn-secondary btn-add">View Charts & Graphs</a>| 
+      <a href="<?php echo site_url('admin/report/print_report_feedback') ?>" class="btn btn-secondary btn-add">Print</a>
       </p>
       <p>
         Reservations for the month of : <select name="selectMonth" id="selectMonth">

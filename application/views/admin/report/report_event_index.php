@@ -17,7 +17,8 @@
       <p>
         Number of Event: <?php echo $count_events; ?> 
       </p>
-      <a href="<?php echo site_url('admin/report/report_event_charts') ?>" class="btn btn-secondary btn-add">View Charts & Graphs</a>
+      <a href="<?php echo site_url('admin/report/report_event_charts') ?>" class="btn btn-secondary btn-add">View Charts & Graphs</a> | 
+      <a href="<?php echo site_url('admin/report/print_report_event') ?>" class="btn btn-secondary btn-add">Print</a>
       <p>
         Events for the month of : <select name="selectMonth" id="selectMonth">
         <option value="0" <?php if ($month == "0") { echo 'selected'; } ?>>All</option>

@@ -55,5 +55,21 @@
       $this->load->view('templates/_parts/admin_master_footer_view');
     }
 
+    public function print_report_reservation() {
+      $data['report_chart'] = $this->Reservation_model->reservation_chart();
+      $this->load->view('admin/report/print_report_reservation', $data);
+    }
+
+    public function print_report_event() {
+      $data['report_chart'] = $this->Event_model->event_chart();
+      $this->load->view('admin/report/print_report_event', $data);
+    }
+
+    public function print_report_feedback() {
+      $data['report_chart'] = $this->Feedback_model->feedback_charts(1);
+      $data['report_chart2'] = $this->Feedback_model->feedback_charts(2);
+      $this->load->view('admin/report/print_report_feedback', $data);
+    }
+
   } 
 ?>

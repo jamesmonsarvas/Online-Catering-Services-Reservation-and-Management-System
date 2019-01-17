@@ -1,4 +1,4 @@
-<body style="background: pink; font-family: Times New Roman;">
+<body style="background: white; font-family: Times New Roman;">
 	<table align="center" border="0">
 		<tr>
 			<td>
