@@ -40,10 +40,6 @@
 		border-bottom: 1px solid #b3b3b3;
 	}
 
-  a:visited {
-    color: white;
-  }
-
 </style>
 </head>
 <body>
@@ -68,56 +64,25 @@
 					<div class="row content-body">
 
 						<div class="message-header">
-
+              <h3>Your reservation has been cancelled</h3>
 						</div>
 
 						<div class="message-body">
 
 							<h3>Hi! <?php echo $reservation[0]['firstname']; ?> <?php echo $reservation[0]['lastname']; ?></h3>
 							<p>
-								We are here to provide a high quality catering service. We do cater events like debut, wedding, birthdays, inaugurals, and fiestas. We are in this catering business industry since 1998 and we have catered a lot of events since then. Here is the reservation details you made with us. Please make sure you keep this information for future purposes
+								We are here to inform you that your reservation has been cancelled and will be discontinued. This is likely because of:
+                <ul>
+                  <li>List the reasons here</li>
+                </ul>
+                We are deeply sorry for this and we hope to have served you better in the future
 							</p>
 
-							<h3>RESERVATION DETAILS:</h3>
-
-							<p>
-								<table>
-									<tr>
-										<td>REFERENCE NUMBER: <?php echo $reservation[0]['reference_no']; ?></td>
-									</tr>
-									<tr>
-										<td>TYPE OF EVENT: <?php echo $reservation[0]['services_title']; ?></td>
-									</tr>
-									<tr>
-										<td>SCHEDULED DATE: <?php
-										 $date = strtotime($reservation[0]['date_of_event']);
-										 echo date("M d Y" ,$date);
-										 ?>, <?php echo $reservation[0]['time_of_event']; ?></td>
-									</tr>
-									<tr>
-										<td>PLACE OF EVENT: <?php echo $reservation[0]['place_of_event']; ?></td>
-									</tr>
-									<tr>
-										<td>EXPECTED PEOPLE COUNT: <?php echo $reservation[0]['exp_people_count']; ?></td>
-									</tr>
-								</table>
-							</p>
-							
 						</div>
 
 						<div class="message-footer">
 							
 							<h4>Thank you for making a reservation at us! We hope to serve you the best services and help you make an amazing event.</h4>
-
-							<p>
-								Please click the link to confirm your reservation:
-								<span>
-									<a href='http://www.kensystem.org/second-reservation?id=<?php echo $enc_reference_no; ?>'>
-										http://www.kensystem.org/second-reservation?id=<?php echo $enc_reference_no; ?>
-									</a>
-								</span>
-							</p>
-
 
 						</div>
 					</div>
