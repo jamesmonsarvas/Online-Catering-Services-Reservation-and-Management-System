@@ -112,6 +112,9 @@ Reservation
 .service-title {
     margin: 0 auto;
 }
+.service-modal-body {
+  padding: 0 100px !important;
+}
 
 .gallery-wrap img{
     height: 450px;

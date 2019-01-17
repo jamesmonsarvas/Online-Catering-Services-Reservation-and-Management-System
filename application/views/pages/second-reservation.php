@@ -83,6 +83,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 				</div><!-- .col-md-6 -->
 			</div><!-- .row -->
 		</div><!-- #error-msg -->
+		
 
 		<?php echo form_open('reservation/confirm_verification', 'id="reservation-form"'); ?>
 

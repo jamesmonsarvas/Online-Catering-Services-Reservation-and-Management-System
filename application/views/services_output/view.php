@@ -47,12 +47,14 @@
                     </div>
                   </div>
                   <div class="row no-gutters">
-                    <div class="col-md-6 modal-img">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 modal-img">
                       <img src="<?php echo base_url(); ?>/<?php echo $service['img_src']; ?>" />
                     </div>
+                    <div class="col-md-2"></div>
 
-                    <div class="col-md-6">
-                      <div class="modal-body">
+                    <div class="col-md-12">
+                      <div class="modal-body service-modal-body">
                         <?php echo $service['services_desc']; ?>
                       </div>
                   </div>
