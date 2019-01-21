@@ -31,7 +31,7 @@
         <div class="col-md-4"> 
         
           <h3>Contact Us</h3>
-          <p>Blk 112 Lot 35 Phase 2 Mabuhay, Mamatid Cabuyao Laguna 0936 - 827 - 5666. <a href="#">Click here to send us message.</a></p>
+          <p>#83 J.P. Rizal St., Brgy. Sala, City of Cabuyao, Laguna<a href="#">Click here to send us message.</a></p>
         </div>
       </div><!-- .footer-row -->
 

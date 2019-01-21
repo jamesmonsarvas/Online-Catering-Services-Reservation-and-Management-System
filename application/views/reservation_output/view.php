@@ -306,6 +306,7 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 
 			  var flag = true;
 			  var beforeDateFlag = true;
+        var afterFifteenDaysDateFlag = true;
 			  var numbers = "1234567890";
 
 			  var reservationForm = document.getElementById('reservation-form');
@@ -362,12 +363,32 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 			  		r_date.style.borderColor = "#292929";
 			  		beforeDateFlag = false;
 			  	}
-			  	if (beforeDateFlag == true && r_date.value != "")
+
+          var compute = date_int - today_int;
+          var compute1 = new Date(compute);
+
+          if (compute1.getDate() < 17) {
+            r_date.style.borderColor = "red";
+            afterFifteenDaysDateFlag = true;
+          }
+          else {
+            r_date.style.borderColor = "#292929";
+            afterFifteenDaysDateFlag = false;
+          }
+
+			  	if (afterFifteenDaysDateFlag == true && r_date.value != "")
 			  	{
 			  		e.preventDefault();
-			  		$('#error-items').append("<li>Date picked has passed. Cannot create reservation.</li>");
+			  		$('#error-items').append("<li>Date picked should be 15 days before the event. Cannot create reservation.</li>");
 			  		$('#error-msg').css("display", "block");
 			  	}
+
+          if (beforeDateFlag == true && r_date.value != "")
+          {
+            e.preventDefault();
+            $('#error-items').append("<li>Date picked has passed. Cannot create reservation.</li>");
+            $('#error-msg').css("display", "block");
+          }
 
 			  	for (var r_index = 0; r_index < r_valid.length; r_index++) {
 			  		if (r_valid[r_index] == true) {

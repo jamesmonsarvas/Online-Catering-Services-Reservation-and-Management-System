@@ -39,11 +39,13 @@ class Reservation_model extends CI_Model {
 	}
 
 	public function get_reservations_where() {
+    //SELECT * FROM `reservation` LEFT JOIN `reservation_details` ON `reservation`.`reservation_id` = `reservation_details`.`r_id` LEFT JOIN `package` ON `reservation_details`.`package_id` = `package`.`package_id` ORDER BY `reservation`.`reservation_id` ASC 
+
 		$search = $this->input->post('submit');
 
 		$this->db->select('*');
 		$this->db->from('reservation');
-    $this->db->join('reservation_details', 'reservation.reservation_id = reservation_details.reservation_id', 'left');
+    $this->db->join('reservation_details', 'reservation.reservation_id = reservation_details.r_id', 'left');
     $this->db->join('package', 'reservation_details.package_id = package.package_id', 'left');
 
 		if ($search == "Pending"){
@@ -281,7 +283,7 @@ class Reservation_model extends CI_Model {
 
 	public function add_reservation_details($id) {
 		$data = array(
-			'reservation_id' => $id,
+			'r_id' => $id,
 			'package_id' => $this->input->post('package'),
 			'budget' => $this->input->post('budget'),
 			'color_theme' => $this->input->post('color-theme'),

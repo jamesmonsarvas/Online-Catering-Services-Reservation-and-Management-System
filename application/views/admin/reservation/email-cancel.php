@@ -71,11 +71,7 @@
 
 							<h3>Hi! <?php echo $reservation[0]['firstname']; ?> <?php echo $reservation[0]['lastname']; ?></h3>
 							<p>
-								We are here to inform you that your reservation has been cancelled and will be discontinued. This is likely because of:
-                <ul>
-                  <li>List the reasons here</li>
-                </ul>
-                We are deeply sorry for this and we hope to have served you better in the future
+								We are here to inform you that your reservation has been cancelled and will be discontinued. We are deeply sorry for this and we hope to have served you better in the future.
 							</p>
 
 						</div>
