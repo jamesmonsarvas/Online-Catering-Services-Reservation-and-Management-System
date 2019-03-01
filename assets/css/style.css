@@ -23,7 +23,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1170px;
+  max-width: 1200px;
 }
 
 .icons {
@@ -1203,7 +1203,7 @@ https://www.phpied.com/delay-loading-your-print-css/
 
 }
 
-.reservation-desc {
+/*.reservation-desc {
   height: 250px;
 }
 
@@ -1223,29 +1223,31 @@ https://www.phpied.com/delay-loading-your-print-css/
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-}
+}*/
 
-.packages-list b {
+/*.packages-list b {
   font-size: 20px;
   text-transform: uppercase;
 }
-.packages-list b:after {
+.packages-list b:before {
     font-family: FontAwesome;
     content: '\f466';
     font-size: 18px;
-    padding-left: 8px;
+    padding-right: 10px;
 }
 .packages-list u {
   text-decoration: none;
   letter-spacing: 2.5px;
   font-weight: 900;
 }
+.packages-list ul {
+  padding-left: 15px;
+}
 .packages-list li {
   list-style: square;
 }
 .packages-list li label{
-  margin-left: 10px;
   margin-bottom: 0;
   letter-spacing: 1.5px;
 }
-
+*/

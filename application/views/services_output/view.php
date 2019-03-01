@@ -65,6 +65,7 @@
               </div>
             </div>
           </div>
+          <!-- end of modal -->
         <?php endforeach; ?>
       </div>
     </div>

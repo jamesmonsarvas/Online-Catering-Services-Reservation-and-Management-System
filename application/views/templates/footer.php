@@ -50,6 +50,8 @@
 
   </footer><!-- #footer -->
 
+  <script src="<?php echo site_url('assets/js/jquery.fancybox.min.js'); ?>"></script>
+
   <script src="<?php echo site_url('assets/js/bootstrap.min.js'); ?>"></script>
   <script src="<?php echo site_url('assets/js/popper.min.js'); ?>"></script>
   <script src="<?php echo site_url('assets/js/scrollreveal.js'); ?>"></script>

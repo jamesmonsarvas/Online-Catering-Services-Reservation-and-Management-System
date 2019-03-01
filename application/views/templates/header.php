@@ -14,6 +14,8 @@
   <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/jquery-ui.min.css'); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/calendar.css'); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/calendar-stylesheet.css'); ?>">
+
+  <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/jquery.fancybox.min.css'); ?>">
   
   <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
   <script src="<?php echo site_url('assets/js/ckeditor5-build-classic/ckeditor.js') ?>"></script>
