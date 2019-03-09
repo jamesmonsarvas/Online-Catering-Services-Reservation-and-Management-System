@@ -216,10 +216,15 @@ if (isset($_GET['msg']) && $_GET['msg'] == "true") {
 					<div class="form-group col-md-4">
 						<select name="place" id="place">
 							<option value>2. Where will it be?</option>
-							<option value="Alabang">Alabang</option>
+							<!-- <option value="Alabang">Alabang</option>
 							<option value="Cabuyao">Cabuyao</option>
 							<option value="Calamba">Calamba</option>
-							<option value="Pansol">Pansol</option>
+							<option value="Pansol">Pansol</option> -->
+              <?php foreach($provinces as $p) : ?>
+                <option value="<?php echo $p['province'] ?>">
+                  <?php echo $p['province'] ?>
+                </option>
+              <?php endforeach; ?>
 						</select>
 					</div>
 

@@ -2,8 +2,10 @@
 class Reservation_output extends CI_Controller {
 
   public function view() {
+    $this->load->model('Provinces_model');
 
     $data['reservations'] = $this->Reservation_model->get_reservations();
+    $data['provinces'] = $this->Provinces_model->get_all_provinces();
     $this->load->view('templates/header');
     $this->load->view('reservation_output/view', $data);
     $this->load->view('templates/footer');
