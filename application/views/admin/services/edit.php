@@ -1,6 +1,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
+
 <ol class="breadcrumb">
   <li class="breadcrumb-item">
     <a href="<?php echo site_url('/admin') ?>">Dashboard</a>
@@ -24,120 +25,63 @@
   </div>
 </div>
 
-
-<!-- <div class="container"> -->
-  <!-- Nav pills -->
-  <ul class="nav nav-pills" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link btn-add active" data-toggle="pill" href="#home" name="service-summary-btn" value="Edit Service Summary" id="service-summary-btn" class="btn-add">SERVICE SUMMARY</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link btn-add" data-toggle="pill" href="#menu1" name="service-desc-btn" value="Edit Service Description" id="service-desc-btn" class="btn-add">SERVICE DESCRIPTION</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link btn-add" data-toggle="pill" href="#menu2">PHOTO DISPLAYED</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link btn-add" data-toggle="pill" href="#menu3">GALLERY</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link btn-add" data-toggle="pill" href="#menu4">AMENITIES</a>
-    </li>
-  </ul>
-
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div id="home" class="tab-pane active"><br>
-      <div class="row">
-          <div class="col-md-12">
-            <fieldset class="fieldset-summary">
-              <legend for="services-summary" class="services-summary-legend">Service Summary</legend>
-              <textarea name="service-summary" class="form-control editor">
-                <?php echo $services['service_summary']; ?>
-              </textarea>
-            </fieldset>
-          </div>
-      </div>
-     <div class="service-button-row">
-       <button type="submit" class="btn btn-default btn-add">Submit</button>
-     </div>
-    </div>
-    <div id="menu1" class="tab-pane fade"><br>
-      <div class="row">
-          <div class="col-md-12">
-            <fieldset class="fieldset-desc">
-              <legend for="services-desc" class="services-desc-legend">Service Description</legend>
-              <textarea name="services-desc" class="form-control editor2">
-                <?php echo $services['services_desc']; ?>
-              </textarea>
-            </fieldset>
-          </div>
-      </div>
-     <div class="service-button-row">
-       <button type="submit" class="btn btn-default btn-add">Submit</button>
-     </div>
-    </div>
-    <div id="menu2" class="tab-pane fade"><br>
-      <div class="row">
-        <div class="col-md-3"></div>
-         <div class="col-sm-6">
-            <fieldset>
-              <legend for="services-img" class="services-img-legend">Image Displayed</legend>
-              <img src="<?php echo site_url().$services['img_src']; ?>" alt="" style="width: 100%; height: 100%;">
-              <?php echo form_open_multipart('admin/services/do_upload', "id='upload-image'");?>
-              <input type="hidden" name="id" value="<?php echo $services['ID']; ?>">
-              <input type="hidden" name="services-slug" value="<?php echo $services['services_slug']; ?>">
-              <input type="file" id="services-img" name="services-img">
-            </fieldset>
-          <?php echo form_close(); ?>
-        </div>
-        <div class="col-md-3"></div>
-      </div>  
-    </div>
+<div class="tabs">
+  <div class="tab-button-outer">
+    <ul id="tab-button">
+      <li><a href="#tab01">SERVICE SUMMARY</a></li>
+      <li><a href="#tab02">SERVICE DESCRIPTION</a></li>
+      <li><a href="#tab03">PHOTO DISPLAYED</a></li>
+      <li><a href="#tab04">GALLERY</a></li>
+      <li><a href="#tab05">AMENITIES</a></li>
+    </ul>
   </div>
-<!-- </div> -->
+  <div class="tab-select-outer">
+    <select id="tab-select">
+      <option value="#tab01">SERVICE SUMMARY</option>
+      <option value="#tab02">SERVICE DESCRIPTION</option>
+      <option value="#tab03">PHOTO DISPLAYED</option>
+      <option value="#tab04">GALLERY</option>
+      <option value="#tab05">AMENITIES</option>
+    </select>
+  </div>
 
-<!-- <input type="button" name="service-summary-btn" value="Edit Service Summary" id="service-summary-btn" class="btn-add" /> 
-| 
-<input type="button" name="service-desc-btn" value="Edit Service Description" id="service-desc-btn" class="btn-add" />
- -->
-<!-- <div class="row">
-  <div class="col-sm-9">
-
-    <fieldset class="fieldset-summary">
-      <legend for="services-summary" class="services-summary-legend">Service Summary</legend>
+  <div id="tab01" class="tab-contents">
       <textarea name="service-summary" class="form-control editor">
         <?php echo $services['service_summary']; ?>
       </textarea>
-    </fieldset>
+     <div class="service-button-row">
+       <button type="submit" class="btn btn-default btn-add">Submit</button>
+     </div>
+  </div>
 
-    <fieldset class="fieldset-desc">
-      <legend for="services-desc" class="services-desc-legend">Service Description</legend>
+  <div id="tab02" class="tab-contents">
       <textarea name="services-desc" class="form-control editor2">
         <?php echo $services['services_desc']; ?>
       </textarea>
-    </fieldset>
+     <div class="service-button-row">
+       <button type="submit" class="btn btn-default btn-add">Submit</button>
+     </div>
+  </div>
 
-   <div class="service-button-row">
-     <button type="submit" class="btn btn-default btn-add">Submit</button>
-   </div>
-   </form>
- </div> -->
-<!--  <div class="col-sm-3">
-    <fieldset>
-      <legend for="services-img" class="services-img-legend">Image Displayed</legend>
+  <div id="tab03" class="tab-contents">
+    <div class="col-md-4">
       <img src="<?php echo site_url().$services['img_src']; ?>" alt="" style="width: 100%; height: 100%;">
       <?php echo form_open_multipart('admin/services/do_upload', "id='upload-image'");?>
       <input type="hidden" name="id" value="<?php echo $services['ID']; ?>">
       <input type="hidden" name="services-slug" value="<?php echo $services['services_slug']; ?>">
       <input type="file" id="services-img" name="services-img">
-    </fieldset>
-  <?php echo form_close(); ?>
+    </div>
+  </div>
 
-</div> -->
-</div>
+  <div id="tab04" class="tab-contents">
+    <p>Gallery Items</p>
+  </div>
 
+  <div id="tab05" class="tab-contents">
+    <p>Amenities</p>
+  </div>
 
+</div> <!-- tabs -->
 
 <script>
   ClassicEditor
@@ -176,4 +120,35 @@
   .catch( error => {
     console.log( error );
   } );
+
+  $(function() {
+  var $tabButtonItem = $('#tab-button li'),
+      $tabSelect = $('#tab-select'),
+      $tabContents = $('.tab-contents'),
+      activeClass = 'is-active';
+
+  $tabButtonItem.first().addClass(activeClass);
+  $tabContents.not(':first').hide();
+
+  $tabButtonItem.find('a').on('click', function(e) {
+    var target = $(this).attr('href');
+
+    $tabButtonItem.removeClass(activeClass);
+    $(this).parent().addClass(activeClass);
+    $tabSelect.val(target);
+    $tabContents.hide();
+    $(target).show();
+    e.preventDefault();
+  });
+
+  $tabSelect.on('change', function() {
+    var target = $(this).val(),
+        targetSelectNum = $(this).prop('selectedIndex');
+
+    $tabButtonItem.removeClass(activeClass);
+    $tabButtonItem.eq(targetSelectNum).addClass(activeClass);
+    $tabContents.hide();
+    $(target).show();
+  });
+});
 </script>
